@@ -1,0 +1,105 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 8
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f038d7edfc132940911beaca143aa29, type: 3}
+  m_Name: DataTable_pre
+  m_EditorClassIdentifier: 
+  Character:
+  - ID: 1000
+    CharacterName: 
+    HP: 1000
+    Attack: 500
+    Defence: 250
+    Speed: 100
+    AttackSpeed: 100
+    AttackRange: 100
+    skillGage: 1000
+    GageHeal: 100
+    Rare: 1
+    Level: 1
+    Escape: 5
+    CriticalPower: 0
+    CriticalPersent: 0
+  - ID: 2000
+    CharacterName: 
+    HP: 1000
+    Attack: 400
+    Defence: 250
+    Speed: 100
+    AttackSpeed: 100
+    AttackRange: 2000
+    skillGage: 1000
+    GageHeal: 100
+    Rare: 1
+    Level: 1
+    Escape: 5
+    CriticalPower: 0
+    CriticalPersent: 0
+  - ID: 3000
+    CharacterName: 
+    HP: 1000
+    Attack: 200
+    Defence: 500
+    Speed: 100
+    AttackSpeed: 100
+    AttackRange: 100
+    skillGage: 1000
+    GageHeal: 100
+    Rare: 1
+    Level: 1
+    Escape: 5
+    CriticalPower: 0
+    CriticalPersent: 0
+  - ID: 101000
+    CharacterName: 
+    HP: 10000
+    Attack: 3000
+    Defence: 1000
+    Speed: 100
+    AttackSpeed: 100
+    AttackRange: 100
+    skillGage: 1000
+    GageHeal: 100
+    Rare: 3
+    Level: 80
+    Escape: 5
+    CriticalPower: 0
+    CriticalPersent: 0
+  - ID: 102000
+    CharacterName: 
+    HP: 10000
+    Attack: 1600
+    Defence: 1000
+    Speed: 100
+    AttackSpeed: 100
+    AttackRange: 2000
+    skillGage: 1000
+    GageHeal: 100
+    Rare: 3
+    Level: 80
+    Escape: 5
+    CriticalPower: 0
+    CriticalPersent: 0
+  - ID: 103000
+    CharacterName: 
+    HP: 10000
+    Attack: 1000
+    Defence: 2000
+    Speed: 100
+    AttackSpeed: 100
+    AttackRange: 100
+    skillGage: 1000
+    GageHeal: 100
+    Rare: 3
+    Level: 80
+    Escape: 5
+    CriticalPower: 0
+    CriticalPersent: 0
