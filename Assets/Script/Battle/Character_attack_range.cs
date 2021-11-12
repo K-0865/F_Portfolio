@@ -18,12 +18,12 @@ public class Character_attack_range : MonoBehaviour
         _box_range = this.gameObject.GetComponent<BoxCollider2D>();
         attack_range = this.gameObject.GetComponentInParent<CharacterData>().CharacterStatus.AttackRange;
         _c_move = this.gameObject.GetComponentInParent<Character_Movement>();
-        float _box_range_size_x = attack_range / 3.125f;
-        float offset_x = _box_range_size_x * -0.3125f;
+        float _box_range_size_x = attack_range / 100f;
+        float offset_x = _box_range_size_x / 2f;
 
 
         _box_range.offset = new UnityEngine.Vector2(offset_x, 0);
-        _box_range.size = new UnityEngine.Vector2(_box_range_size_x, 4);
+        _box_range.size = new UnityEngine.Vector2(_box_range_size_x, 1);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
