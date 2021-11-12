@@ -14,12 +14,12 @@ public class CharacterTable
     public float Speed;
     public float AttackSpeed;
     public float AttackRange;
-    public float skillGage;
-    public float GageHeal;
+    public float skillGauge;
+    public float GaugeHealing;
     public float Rare;
     public float Level;
     public float Escape;
-    public float CriticalPower;
-    public float CriticalPersent;
+    public float CriticalDMG;
+    public float CriticalHit;
 
 }
