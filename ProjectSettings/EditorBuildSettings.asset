@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/TestDate/tap-test.unity
+    guid: 8db9f8e5198ed7643a126e2970d037e8
+  - enabled: 1
+    path: Assets/TestDate/ui-test.unity
+    guid: a22f22a3fe18511429e4c8a2c630bb60
+  - enabled: 1
+    path: Assets/Scenes/PreTitlle.unity
+    guid: c4fc3510baad09d459b09334edd6fa8f
+  - enabled: 1
+    path: Assets/Scenes/PreHome.unity
+    guid: b5838b08cefae7d4a8037e63afff65a2
+  - enabled: 1
+    path: Assets/Scenes/PreCharacter.unity
+    guid: 61b6cffd9c962fc4b8c706e6c6abc00e
+  - enabled: 1
+    path: Assets/Scenes/PreGacha.unity
+    guid: db06c1aada7246d4c8e81464c691b73d
+  - enabled: 1
+    path: Assets/Scenes/PreGallery.unity
+    guid: a6a744f886403f94ca4dd50bf074c38a
+  - enabled: 1
+    path: Assets/Scenes/PreQuest.unity
+    guid: 35fa8fefc5c5bc74da86f928d6201085
+  m_configObjects: {}
