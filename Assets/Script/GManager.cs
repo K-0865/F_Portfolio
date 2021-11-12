@@ -7,7 +7,7 @@ using System.IO;
 public class GManager : MonoBehaviour
 {
     public static GManager instance = null;
-
+    
     private void Awake()
     {
         Application.targetFrameRate = 60; // 60fpsに設定
@@ -21,7 +21,7 @@ public class GManager : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
-
+    
     [System.Serializable]
     public class Player
     {
@@ -30,6 +30,8 @@ public class GManager : MonoBehaviour
         public float Stamina;
         public float coin;
         public float jewel;
+        public int []character_pos = new []{1000};
+
     }
 
     public void savePlayerData(Player player)
