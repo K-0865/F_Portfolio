@@ -19,7 +19,7 @@ public class Character_attack_range : MonoBehaviour
         attack_range = this.gameObject.GetComponentInParent<CharacterData>().CharacterStatus.AttackRange;
         _c_move = this.gameObject.GetComponentInParent<Character_Movement>();
         float _box_range_size_x = attack_range / 100f;
-        float offset_x = _box_range_size_x / 2f;
+        float offset_x = _box_range_size_x / 4f;
 
 
         _box_range.offset = new UnityEngine.Vector2(offset_x, 0);
@@ -43,7 +43,7 @@ public class Character_attack_range : MonoBehaviour
     {
         Debug.Log("not Found Enemy >>");
 
-        _c_move._found_enemy = true;
+        _c_move._found_enemy = false;
         
     }
 

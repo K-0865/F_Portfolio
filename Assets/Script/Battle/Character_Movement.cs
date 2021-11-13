@@ -33,11 +33,20 @@ public class Character_Movement : MonoBehaviour
         if (!_found_enemy)
         {
             _animator.SetBool("run",true);
+            _animator.SetBool("isAttack",false);
         }
         else if(_found_enemy)
         {
             _animator.SetBool("run", false);
+            
+            _animator.SetTrigger("isAttack");
+            // 
         }
+    }
+
+    void AttackEnd()
+    {
+        _animator.ResetTrigger("isAttack");
     }
     // Update is called once per frame
     void C_Walk_R()
@@ -49,7 +58,7 @@ public class Character_Movement : MonoBehaviour
         else
         {
             this.gameObject.transform.position += new Vector3(0, 0) * Time.deltaTime;
-
+            
         }
     }
     void Update()
