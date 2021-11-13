@@ -48,9 +48,7 @@ public class Character_Present_Data : MonoBehaviour
 
     void float_popup(GameObject pop)
     {
-        
-                Destroy(pop,1);
-           
+        Destroy(pop,1);
     }
     void Update()
     {
