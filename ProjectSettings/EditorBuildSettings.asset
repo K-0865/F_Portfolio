@@ -5,10 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/TestDate/tap-test.unity
     guid: 8db9f8e5198ed7643a126e2970d037e8
-  - enabled: 1
+  - enabled: 0
     path: Assets/TestDate/ui-test.unity
     guid: a22f22a3fe18511429e4c8a2c630bb60
   - enabled: 1
