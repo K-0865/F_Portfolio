@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [ExcelAsset]
-public class DataTable_pre : ScriptableObject
+public class Quest_List : ScriptableObject
 {
-	public List<CharacterTable> Character;
+	public List<StageLists> StageList;
 }
