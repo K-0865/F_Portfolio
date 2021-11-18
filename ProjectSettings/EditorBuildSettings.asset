@@ -18,15 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/PreHome.unity
     guid: b5838b08cefae7d4a8037e63afff65a2
   - enabled: 1
-    path: Assets/Scenes/PreCharacter.unity
-    guid: 61b6cffd9c962fc4b8c706e6c6abc00e
-  - enabled: 1
-    path: Assets/Scenes/PreGacha.unity
-    guid: db06c1aada7246d4c8e81464c691b73d
-  - enabled: 1
-    path: Assets/Scenes/PreGallery.unity
-    guid: a6a744f886403f94ca4dd50bf074c38a
-  - enabled: 1
     path: Assets/Scenes/PreQuest.unity
     guid: 35fa8fefc5c5bc74da86f928d6201085
+  - enabled: 1
+    path: Assets/Scenes/dummy.unity
+    guid: 171e18a2da880f74788922f4c33c3603
   m_configObjects: {}
