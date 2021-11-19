@@ -12,3 +12,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5858a2ed5ae9dbf4e99608da46a4f44e, type: 3}
   m_Name: Quest_List
   m_EditorClassIdentifier: 
+  StageList:
+  - MapID: 101
+    MapName: "\u59CB\u307E\u308A\u306E\u5834\u6240"
+    StageCount: 1
+    EnrmyPlace: 1
+    BossFlag: 0
+    EnemyID1: 104000
+    EnemyID2: 104000
+    EnemyID3: 104000
+    EnemyID4: 104000
+    EnemyID5: 104000
+  - MapID: 102
+    MapName: "\u65B0\u305F\u306A\u51FA\u4F1A\u3044"
+    StageCount: 1
+    EnrmyPlace: 1
+    BossFlag: 0
+    EnemyID1: 104000
+    EnemyID2: 104000
+    EnemyID3: 104000
+    EnemyID4: 104000
+    EnemyID5: 104000
+  - MapID: 103
+    MapName: "\u3042\u308C\u306F\u30FB\u30FB\uFF1F"
+    StageCount: 1
+    EnrmyPlace: 1
+    BossFlag: 0
+    EnemyID1: 104000
+    EnemyID2: 104000
+    EnemyID3: 104000
+    EnemyID4: 104000
+    EnemyID5: 104000

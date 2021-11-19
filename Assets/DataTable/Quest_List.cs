@@ -6,5 +6,5 @@ using UnityEngine;
 [ExcelAsset]
 public class Quest_List : ScriptableObject
 {
-	public List<StageLists> StageList;
+	public List<StageTable> StageList;
 }

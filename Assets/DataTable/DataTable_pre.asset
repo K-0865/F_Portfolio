@@ -103,3 +103,4 @@ MonoBehaviour:
     Escape: 5
     CriticalDMG: 50
     CriticalHit: 5
+  StageList: []
