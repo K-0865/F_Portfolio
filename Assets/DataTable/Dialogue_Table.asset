@@ -12,3 +12,76 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5bd74ded19234a4896fe1038f870917, type: 3}
   m_Name: Dialogue_Table
   m_EditorClassIdentifier: 
+  Dialogue:
+  - DialogueID: 501000
+    DialogueName: "\u57FA\u672C1"
+    Dialogue: 
+    CharacterID1: 101000
+    CharacterID2: 0
+    CharacterID3: 0
+    Continue: 0
+    SkillID: 0
+    RouletteID: 0
+  - DialogueID: 502000
+    DialogueName: "\u57FA\u672C2"
+    Dialogue: 
+    CharacterID1: 101000
+    CharacterID2: 0
+    CharacterID3: 0
+    Continue: 0
+    SkillID: 0
+    RouletteID: 1
+  - DialogueID: 503000
+    DialogueName: "\u57FA\u672C3-1"
+    Dialogue: 
+    CharacterID1: 101000
+    CharacterID2: 102000
+    CharacterID3: 0
+    Continue: 1
+    SkillID: 0
+    RouletteID: 2
+  - DialogueID: 503000
+    DialogueName: "\u57FA\u672C3-2"
+    Dialogue: 
+    CharacterID1: 101000
+    CharacterID2: 102000
+    CharacterID3: 0
+    Continue: 2
+    SkillID: 0
+    RouletteID: 2
+  - DialogueID: 505000
+    DialogueName: "\u57FA\u672C4"
+    Dialogue: 
+    CharacterID1: 101000
+    CharacterID2: 0
+    CharacterID3: 0
+    Continue: 0
+    SkillID: 1
+    RouletteID: 0
+  - DialogueID: 506000
+    DialogueName: "\u57FA\u672C5"
+    Dialogue: 
+    CharacterID1: 103000
+    CharacterID2: 0
+    CharacterID3: 0
+    Continue: 0
+    SkillID: 0
+    RouletteID: 0
+  - DialogueID: 507000
+    DialogueName: "\u57FA\u672C6"
+    Dialogue: 
+    CharacterID1: 102000
+    CharacterID2: 0
+    CharacterID3: 0
+    Continue: 0
+    SkillID: 0
+    RouletteID: 0
+  - DialogueID: 508000
+    DialogueName: "\u57FA\u672C7"
+    Dialogue: 
+    CharacterID1: 104000
+    CharacterID2: 0
+    CharacterID3: 0
+    Continue: 0
+    SkillID: 0
+    RouletteID: 3
