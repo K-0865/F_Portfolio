@@ -40,7 +40,7 @@ public class GManager : MonoBehaviour
 
         string jsonstr = JsonUtility.ToJson(player);
 
-        writer = new StreamWriter(Application.dataPath + "/savedata.json", false);
+        writer = new StreamWriter(Application.dataPath + "./savedata.json", false);
         writer.Write(jsonstr);
         writer.Flush();
         writer.Close();
@@ -50,7 +50,7 @@ public class GManager : MonoBehaviour
     {
         string datastr = "";
         StreamReader reader;
-        reader = new StreamReader(Application.dataPath + "/savedata.json");
+        reader = new StreamReader(Application.dataPath + "./savedata.json");
         datastr = reader.ReadToEnd();
         reader.Close();
 

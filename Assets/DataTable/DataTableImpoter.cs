@@ -23,29 +23,29 @@ public class CharacterTable
     public float CriticalHit;
 }
 
-public class StageLists
-{
-    public int MapID;
-    public string MapName;
-    public int StageNum;
-    public int EnrmyPlace;
-    public bool BossFlag;
-    public int EnemyNum1;
-    public int EnemyNum2;
-    public int EnemyNum3;
-    public int EnemyNum4;
-    public int EnemyNum5;
-}
-
-public class Dialogues
-{
-    public int DialogueID;
-    public string DialogueName;
-    public string Dialogue;
-    public int CharacterID1;
-    public int CharacterID2;
-    public int CharacterID3;
-    public int Continue;
-    public int SkillID;
-    public int RouletteID;
-}
+// public class StageTable
+// {
+//     public int MapID;
+//     public string MapName;
+//     public int StageCount;
+//     public int EnrmyPlace;
+//     public bool BossFlag;
+//     public int EnemyNum1;
+//     public int EnemyNum2;
+//     public int EnemyNum3;
+//     public int EnemyNum4;
+//     public int EnemyNum5;
+// }
+//
+// public class Dialogues
+// {
+//     public int DialogueID;
+//     public string DialogueName;
+//     public string Dialogue;
+//     public int CharacterID1;
+//     public int CharacterID2;
+//     public int CharacterID3;
+//     public int Continue;
+//     public int SkillID;
+//     public int RouletteID;
+// }
