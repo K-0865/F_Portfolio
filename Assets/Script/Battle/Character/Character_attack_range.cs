@@ -29,12 +29,23 @@ public class Character_attack_range : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log(other.tag);
-        
+        Character_Present_Data other_data = other.GetComponent<Character_Present_Data>();
+        Debug.Log(other_data._alive);
+        if (other_data._alive == true)
+        {
             if (other.gameObject.tag == "enemy")
             {
                 Debug.Log("Found Enemy >>");
                 _c_move._found_enemy = true;
             }
+        }
+        else
+        {
+            _c_move._found_enemy = false;
+
+        }
+        
+            
             
         
     }
@@ -42,7 +53,7 @@ public class Character_attack_range : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other)
     {
         Debug.Log("not Found Enemy >>");
-        
+      
         _c_move._found_enemy = false;
         
     }

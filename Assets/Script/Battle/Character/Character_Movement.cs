@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Character_Movement : MonoBehaviour
 {
+
     public enum Face_Direction
     {
         LEFT,

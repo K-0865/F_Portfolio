@@ -20,7 +20,8 @@ public class Character_Present_Data : MonoBehaviour
     private float _attack;
     private float _def;
     [SerializeField]
-    private bool _alive = true;
+    public bool _alive = true;
+    public bool _dead = false;
 
     private dmg_ct _sdmg;
     
@@ -57,6 +58,7 @@ public class Character_Present_Data : MonoBehaviour
         }
         else
         {
+            
             _alive = true;
         }    
     }

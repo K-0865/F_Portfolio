@@ -26,8 +26,8 @@ public class HP : MonoBehaviour
         _hp = _data._hp;
         _Maxhp = _data._maxHp;
         _slider.value = _hp / _Maxhp * 1;
-        Debug.Log(_slider.value);
-        if (_hp == _Maxhp)
+        //Debug.Log(_slider.value);
+        if (_hp == _Maxhp || _hp <= 0)
         {
             _slider.gameObject.SetActive(false);
 
