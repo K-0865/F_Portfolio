@@ -14,7 +14,7 @@ public class Character_attack_range : MonoBehaviour
     
     void Start()
     {
-        this.gameObject.tag = gameObject.transform.parent.tag;
+        this.gameObject.tag = "attack";
         _box_range = this.gameObject.GetComponent<BoxCollider2D>();
         attack_range = this.gameObject.GetComponentInParent<CharacterData>().CharacterStatus.AttackRange;
         _c_move = this.gameObject.GetComponentInParent<Character_Movement>();
@@ -28,21 +28,21 @@ public class Character_attack_range : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (this.gameObject.tag == "Player")
-        {
+        Debug.Log(other.tag);
+        
             if (other.gameObject.tag == "enemy")
             {
                 Debug.Log("Found Enemy >>");
                 _c_move._found_enemy = true;
             }
             
-        }
+        
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
         Debug.Log("not Found Enemy >>");
-
+        
         _c_move._found_enemy = false;
         
     }

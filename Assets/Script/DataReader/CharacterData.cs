@@ -20,7 +20,6 @@ public class CharacterData : MonoBehaviour
                 break;
             }
         }
-
         this.gameObject.tag = this.transform.parent.tag;
 
     }

@@ -13,7 +13,7 @@ public class MapManager : MonoBehaviour
    {
       for (int i = 0; i < data.StageList.Count; i++)
       {
-         Debug.Log(data.StageList[i].MapID);
+         //Debug.Log(data.StageList[i].MapID);
          if (data.StageList[i].MapID == _mapID)
          {
             _PreviewData = data.StageList[i];

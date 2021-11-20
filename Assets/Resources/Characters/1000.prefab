@@ -72,6 +72,61 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _data: {fileID: 2659134467759169186}
   attack: 0
+--- !u!1 &830186094216409127
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8688363011370659944}
+  - component: {fileID: 2057940002204955641}
+  - component: {fileID: 3616055779747188431}
+  m_Layer: 0
+  m_Name: DMG
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8688363011370659944
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 830186094216409127}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 5.41, y: 0, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8805803116334396781}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!210 &2057940002204955641
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 830186094216409127}
+  m_Enabled: 1
+  m_SortingLayerID: 1459671685
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &3616055779747188431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 830186094216409127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e8d2e59d87334e909fa2e01960ec60d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3276816085701268622
 GameObject:
   m_ObjectHideFlags: 0
@@ -106,6 +161,7 @@ Transform:
   m_Children:
   - {fileID: 2659134467759169184}
   - {fileID: 964699947}
+  - {fileID: 8688363011370659944}
   m_Father: {fileID: 668128048564098851}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -124,6 +180,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -171,8 +228,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5920dd56bad274056ae23b76a0f4b286, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damagepop: {fileID: 7999730468944530290, guid: 27dbf263ce2ca498baa8192d381ad26a,
-    type: 3}
   _id: 1000
   _hp: 0
   _alive: 0

@@ -9,31 +9,32 @@ public class Character_Present_Data : MonoBehaviour
     // Start is called before the first frame update
     
     private CharacterData sn;
-    [SerializeField] private GameObject damagepop;
     [SerializeField] private int _id;
     public int _ID
     {
         get { return _id; }
     }
-    private float _maxHp;
+    public float _maxHp;
     [SerializeField]
-    private float _hp;
+    public float _hp;
     private float _attack;
     private float _def;
     [SerializeField]
     private bool _alive = true;
 
-    private TextMeshPro damage_get;
-
+    private dmg_ct _sdmg;
     
     private void Start()
     {
         sn = this.gameObject.GetComponentInChildren<CharacterData>();
+        _sdmg = this.gameObject.GetComponentInChildren<dmg_ct>();
         _maxHp = sn.CharacterStatus.HP;
         _hp = sn.CharacterStatus.HP;
         _attack = sn.CharacterStatus.Attack;
         _def = sn.CharacterStatus.Defence;
-        damage_get = damagepop.gameObject.GetComponent<TextMeshPro>();
+        // damage_get = damagepop.gameObject.GetComponent<TextMeshPro>();
+        //_sDMG.Init(123,new Vector3(0,0,0));
+        //_sDMG.Init(124,new Vector3(0,0,0));
     }
 
     
@@ -41,9 +42,7 @@ public class Character_Present_Data : MonoBehaviour
     {
         float sum = damage - this._def;
         _hp -= sum;
-        damage_get.SetText(sum.ToString());
-        GameObject pop = Instantiate(damagepop, new Vector3(this.transform.position.x,this.transform.position.y + 1f),Quaternion.identity);
-        float_popup(pop);
+        _sdmg.Init((int)sum,new Vector3(0,0,0));
     }
 
     void float_popup(GameObject pop)
