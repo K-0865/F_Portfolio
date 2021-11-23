@@ -42,15 +42,25 @@ public class Character_Movement : MonoBehaviour
         else if(data._found_enemy && data._alive)
         {
             _animator.SetBool("run", false);
+            if (!isAttack)
+            {
+                StartCoroutine("Attack", 2f);
+            }
             
-            _animator.SetTrigger("isAttack");
-            // 
         }
         else if(data._dead)
         {
             _animator.SetBool("run", false);
 
         }
+    }
+
+    IEnumerator Attack(float sec)
+    {
+        isAttack = true;
+        _animator.SetTrigger("isAttack");
+        yield return new WaitForSeconds(sec);
+        isAttack = false;
     }
 
     void AttackStart()
