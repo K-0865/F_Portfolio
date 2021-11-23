@@ -450,8 +450,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 843994333}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.5443438, y: 0.2887797, z: -10.083346}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1838016645}
@@ -551,7 +551,7 @@ PrefabInstance:
     - target: {fileID: 4857597927585221856, guid: c0f1b7fcaf9c244028b5dadc566ca923,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4857597929078127434, guid: c0f1b7fcaf9c244028b5dadc566ca923,
         type: 3}
@@ -613,6 +613,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: 4000
       objectReference: {fileID: 0}
+    - target: {fileID: 4857597929078127438, guid: c0f1b7fcaf9c244028b5dadc566ca923,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0f1b7fcaf9c244028b5dadc566ca923, type: 3}
 --- !u!1 &1838016643
@@ -668,8 +673,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1838016643}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.5443438, y: -0.2887797, z: 10.083346}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1991856091}
@@ -693,7 +698,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1991856090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -821,12 +826,17 @@ PrefabInstance:
     - target: {fileID: 4833907227177195172, guid: 34983fee36d914d808dfd4bd89bcdc00,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4833907228873122058, guid: 34983fee36d914d808dfd4bd89bcdc00,
         type: 3}
       propertyPath: m_Name
       value: 5000
+      objectReference: {fileID: 0}
+    - target: {fileID: 4833907228873122058, guid: 34983fee36d914d808dfd4bd89bcdc00,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4833907228873122062, guid: 34983fee36d914d808dfd4bd89bcdc00,
         type: 3}
