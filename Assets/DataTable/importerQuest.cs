@@ -10,7 +10,9 @@ public class StageTable
     public int MapID;
     public string MapName;
     public int StageCount;
-    public int EnrmyPlace;
+    public int EnemyStage1;
+    public int EnemyStage2;
+    public int EnemyStage3;
     public bool BossFlag;
     public int EnemyID1;
     public int EnemyID2;

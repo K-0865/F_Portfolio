@@ -21,7 +21,7 @@ public class character_attack : MonoBehaviour
         data_move = this.gameObject.GetComponentInParent<Character_Movement>();
         attack = data_char_sc.CharacterStatus.Attack;
 
-        Debug.Log(data_char_sc);
+//        Debug.Log(data_char_sc);
     }
 
     private void Update()

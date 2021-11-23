@@ -5,6 +5,8 @@ using UnityEngine;
 public class BattleManager : MonoBehaviour
 {
     // Start is called before the first frame update
+    public int stage_count = 0;
+    public int hit_count;
     void Start()
     {
         

@@ -64,16 +64,16 @@ public class Character_attack_range : MonoBehaviour
         //
         if ((other.gameObject.tag == "enemy" && main_tag == "Player") || (other.gameObject.tag == "Player" && main_tag == "enemy"))
         {
-            Debug.Log(other.tag);
+           // Debug.Log(other.tag);
             Character_Present_Data other_data = other.GetComponent<Character_Present_Data>();
             Character_Present_Data user_data =
                 GetComponentInParent<Transform>().GetComponentInParent<Character_Present_Data>();
-            Debug.Log(other_data._alive);
+            //Debug.Log(other_data._alive);
             if (other_data._alive)
             {
                 user_data._found_enemy = true;
                 //other_data._found_enemy = true;
-                Debug.Log("Found Enemy >>");
+              //  Debug.Log("Found Enemy >>");
             }
             else
             {
@@ -85,9 +85,33 @@ public class Character_attack_range : MonoBehaviour
 
     }
 
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        string main_tag = transform.parent.parent.tag;
+
+        if ((other.gameObject.tag == "enemy" && main_tag == "Player") || (other.gameObject.tag == "Player" && main_tag == "enemy"))
+        {
+            //Debug.Log(other.tag);
+            Character_Present_Data other_data = other.GetComponent<Character_Present_Data>();
+            Character_Present_Data user_data =
+                GetComponentInParent<Transform>().GetComponentInParent<Character_Present_Data>();
+           // Debug.Log(other_data._alive);
+            if (other_data._alive)
+            {
+                user_data._found_enemy = true;
+                //other_data._found_enemy = true;
+                //Debug.Log("Found Enemy >>");
+            }
+            else
+            {
+                //user_data._found_enemy = false;
+                other_data._found_enemy = false;
+            }
+        }    }
+
     private void OnTriggerExit2D(Collider2D other)
     {
-        Debug.Log("not Found Enemy >>");
+//        Debug.Log("not Found Enemy >>");
         string main_tag = transform.parent.parent.tag;
 
         if (other.tag == "enemy" || other.tag == "Player")
