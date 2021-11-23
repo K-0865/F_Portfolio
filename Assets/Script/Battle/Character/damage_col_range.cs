@@ -11,7 +11,6 @@ public class damage_col_range : MonoBehaviour
 
     private void Start()
     {
-        
         attack = GetComponentInParent<character_rangeType>().attack;
     }
 
@@ -32,10 +31,12 @@ public class damage_col_range : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        string main_tag = transform.parent.parent.tag;
         // if (data_move.isAttack)
         // {
         //     Debug.Log("IN");
-        if (other.gameObject.tag == "enemy" || other.gameObject.tag == "Player")
+        
+        if ((other.gameObject.tag == "enemy" && main_tag == "Player") || (other.gameObject.tag == "Player" && main_tag == "enemy"))
         {
             if (other.gameObject.GetComponent<Character_Present_Data>()._alive == true)
             {
