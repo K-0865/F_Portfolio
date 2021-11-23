@@ -42,6 +42,8 @@ public class Character_attack_range : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        string main_tag = transform.parent.parent.tag;
+
         // Debug.Log(other.tag);
         // Character_Present_Data other_data = other.GetComponent<Character_Present_Data>();
         // Debug.Log(other_data._alive);
@@ -60,7 +62,7 @@ public class Character_attack_range : MonoBehaviour
         // }
         //
         //
-        if (other.gameObject.tag == "enemy" || other.gameObject.tag == "Player")
+        if ((other.gameObject.tag == "enemy" && main_tag == "Player") || (other.gameObject.tag == "Player" && main_tag == "enemy"))
         {
             Debug.Log(other.tag);
             Character_Present_Data other_data = other.GetComponent<Character_Present_Data>();
@@ -86,6 +88,8 @@ public class Character_attack_range : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other)
     {
         Debug.Log("not Found Enemy >>");
+        string main_tag = transform.parent.parent.tag;
+
         if (other.tag == "enemy" || other.tag == "Player")
         {
             Character_Present_Data user_data =
