@@ -1,9 +1,9 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class character_attack : MonoBehaviour
+public class character_rangeType : MonoBehaviour
 {
     private Character_Movement _c_move;
    
@@ -13,6 +13,7 @@ public class character_attack : MonoBehaviour
     private Character_Movement data_move;
     public float attack;
     public bool _isAttack;
+    [SerializeField] private GameObject bullet;
     void Start()
     {
 
@@ -24,32 +25,18 @@ public class character_attack : MonoBehaviour
         Debug.Log(data_char_sc);
     }
 
+    public void Range_bullet()
+    {
+        GameObject obj = Instantiate(bullet);
+        obj.transform.parent = this.transform;
+        obj.transform.position = this.transform.position;
+    }
     private void Update()
     {
         //Debug.Log(data_move.isAttack);
     }
 
     
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        // if (data_move.isAttack)
-        // {
-        //     Debug.Log("IN");
-            if (other.gameObject.tag == "enemy" || other.gameObject.tag == "Player")
-            {
-                if (other.gameObject.GetComponent<Character_Present_Data>()._alive == true)
-                {
-                    other.gameObject.GetComponent<Character_Present_Data>().getDamage(attack);
-                }
-                // else
-                // {
-                //     Debug.Log("Out_Damge");
-                //     _c_move._found_enemy = false;
-                //
-                // }
-            }
-            
-    }
-
+    
     
 }

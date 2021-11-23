@@ -1,15 +1,18 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using TMPro;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
 public class Character_Present_Data : MonoBehaviour
 {
     // Start is called before the first frame update
     
-    private CharacterData sn;
+    public CharacterData sn;
     [SerializeField] private int _id;
+    
     public int _ID
     {
         get { return _id; }
@@ -22,7 +25,8 @@ public class Character_Present_Data : MonoBehaviour
     [SerializeField]
     public bool _alive = true;
     public bool _dead = false;
-
+    public bool _found_enemy = false;
+    public int attack_step;
     private dmg_ct _sdmg;
     
     private void Start()
@@ -43,23 +47,29 @@ public class Character_Present_Data : MonoBehaviour
     {
         float sum = damage - this._def;
         _hp -= sum;
-        _sdmg.Init((int)sum,new Vector3(0,0,0));
+        _sdmg.Init((int)sum,new Vector3(this.transform.position.x,this.transform.position.y+0.5f,0));
+        
+       
     }
-
-    void float_popup(GameObject pop)
-    {
-        Destroy(pop,1);
-    }
+    
     void Update()
     {
         if (_hp <= 0)
         {
+            _dead = true;
             _alive = false;
         }
         else
         {
-            
+            _dead = false;
             _alive = true;
-        }    
+        }
+
+        if (_dead)
+        {
+            Destroy(this.gameObject.GetComponent<Collider2D>());
+            Destroy(this.gameObject.GetComponentInChildren<Collider2D>());
+            _found_enemy = false;
+        }
     }
 }

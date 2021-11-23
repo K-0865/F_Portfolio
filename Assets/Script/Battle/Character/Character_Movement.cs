@@ -11,12 +11,15 @@ public class Character_Movement : MonoBehaviour
         LEFT,
         RIGHT
     }
+
+    public bool isAttack = false;
     // Start is called before the first frame update
     private Animator _animator;
-    public bool _found_enemy = false;
     public Face_Direction _faceDirection = Face_Direction.LEFT;
+    private Character_Present_Data data;
     void Start()
     {
+        data = GetComponent<Character_Present_Data>();
         _animator = this.gameObject.GetComponent<Animator>();
         if (this.gameObject.tag == "Player")
         {
@@ -31,36 +34,67 @@ public class Character_Movement : MonoBehaviour
     {
         // if Enemy not in area this object walk leaf to right to find enemy
         // it's mean if not have enemy in stage object will walk unit far of right
-        if (!_found_enemy)
+        if (!data._found_enemy && data._alive)
         {
             _animator.SetBool("run",true);
             _animator.SetBool("isAttack",false);
         }
-        else if(_found_enemy)
+        else if(data._found_enemy && data._alive)
         {
             _animator.SetBool("run", false);
             
             _animator.SetTrigger("isAttack");
             // 
         }
+        else if(data._dead)
+        {
+            _animator.SetBool("run", false);
+
+        }
     }
 
+    void AttackStart()
+    {
+        isAttack = true;
+    }
+    
     void AttackEnd()
     {
-        _animator.ResetTrigger("isAttack");
+        isAttack = false;
+    }
+
+    void RangeAttack()
+    {
+        GetComponentInChildren<character_rangeType>().Range_bullet();
     }
     // Update is called once per frame
     void C_Walk_R()
     {
-        if (_animator.GetBool("run") == true)
+        if (_faceDirection == Face_Direction.LEFT)
         {
-            this.gameObject.transform.position += new Vector3(1, 0) * Time.deltaTime;
+            if (_animator.GetBool("run") == true)
+            {
+                this.gameObject.transform.position += new Vector3(1, 0) * Time.deltaTime;
+            }
+            else
+            {
+                this.gameObject.transform.position += new Vector3(0, 0) * Time.deltaTime;
+            
+            }
         }
         else
         {
-            this.gameObject.transform.position += new Vector3(0, 0) * Time.deltaTime;
+            if (_animator.GetBool("run") == true)
+            {
+                this.gameObject.transform.position -= new Vector3(1, 0) * Time.deltaTime;
+            }
+            else
+            {
+                this.gameObject.transform.position += new Vector3(0, 0) * Time.deltaTime;
             
+            }
         }
+        
     }
     void Update()
     {

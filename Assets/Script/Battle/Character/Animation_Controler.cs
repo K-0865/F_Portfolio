@@ -18,13 +18,8 @@ public class Animation_Controler : MonoBehaviour
 
     private void Update()
     {
-        if (data._alive == true)
+        if (data._dead)
         {
-            
-        }
-        else if (data._alive == false && data._dead ==  false)
-        {
-            data._dead = true;
             _animator.SetTrigger("isDead");
         }
        

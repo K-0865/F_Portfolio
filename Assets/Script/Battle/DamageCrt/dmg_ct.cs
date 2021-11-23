@@ -14,22 +14,19 @@ public class dmg_ct : MonoBehaviour {
     private const int SORT_MAX = 30000;
 
     // Start is called before the first frame update
-    void Start() {
-        //初期化
-        //ここではテスト用にスタートで初期化しているけど、数字を表示させたいタイミングで呼び出すのがベター
-       //Init(125, new Vector3(0, 0, 0));
-       //Init(123, new Vector3(0, 0, 0));
-
+    void Start()
+    {
+        this.tag = transform.parent.tag;
     }
 
     public void Init(int point, Vector3 pos) {
         //必要な情報を格納
         this.point = point;
- 
+        init_pos = pos;
         //表示用のダメージを作る
         CreateNum(point);
 
-        init_pos = pos;
+        
 
         //表示順を一番上に
         GetComponent<SortingGroup>().sortingOrder = dam_sort;
@@ -50,6 +47,7 @@ public class dmg_ct : MonoBehaviour {
 
         //数字プレハブを読み込む、テスト用のフォルダとファイル名
         GameObject obj = LoadGObject( "DMG", "Num");
+        obj.gameObject.transform.position = init_pos;
 
 
         //桁の分だけオブジェクトを作り登録していく
@@ -59,9 +57,9 @@ public class dmg_ct : MonoBehaviour {
 
             //子供として登録
             numObj.transform.parent = transform;
-
             //現在チェックしている桁の数字を割り出す
             int digNum = GetPointDigit(point, i + 1);
+
             //ポイントから数字を切り替える
             numObj.GetComponent<NumCtrl>().ChangeSprite(digNum);
 
@@ -70,17 +68,14 @@ public class dmg_ct : MonoBehaviour {
 
             //位置をずらす
             float ajs_x = size_w * i - (size_w * digit) / 2;
-            
             Vector3 pos = new Vector3(numObj.transform.position.x - ajs_x, numObj.transform.position.y, numObj.transform.position.z);
             numObj.transform.position = pos;
-            //Digital_Pos(numObj,pos,i);
-            
-            Destroy(numObj,1f);
+            Destroy(numObj,1);
             numObj = null;
         }
+
     }
 
-   
 
     // Update is called once per frame
     void Update() {
