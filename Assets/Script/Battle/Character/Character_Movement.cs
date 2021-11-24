@@ -44,7 +44,7 @@ public class Character_Movement : MonoBehaviour
             _animator.SetBool("run", false);
             if (!isAttack)
             {
-                StartCoroutine("Attack", data._attack_speed/100);
+                StartCoroutine("Attack", 100/data._attack_speed);
             }
             
         }
