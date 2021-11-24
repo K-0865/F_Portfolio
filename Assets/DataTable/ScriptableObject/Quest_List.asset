@@ -16,9 +16,7 @@ MonoBehaviour:
   - MapID: 101
     MapName: "\u59CB\u307E\u308A\u306E\u5834\u6240"
     StageCount: 1
-    EnemyStage1: 2
-    EnemyStage2: 0
-    EnemyStage3: 0
+    EnrmyPlace: 0
     BossFlag: 0
     EnemyID1: 4000
     EnemyID2: 5000
@@ -28,9 +26,7 @@ MonoBehaviour:
   - MapID: 102
     MapName: "\u65B0\u305F\u306A\u51FA\u4F1A\u3044"
     StageCount: 1
-    EnemyStage1: 2
-    EnemyStage2: 0
-    EnemyStage3: 0
+    EnrmyPlace: 0
     BossFlag: 0
     EnemyID1: 104000
     EnemyID2: 104000
@@ -40,9 +36,7 @@ MonoBehaviour:
   - MapID: 103
     MapName: "\u3042\u308C\u306F\u30FB\u30FB\uFF1F"
     StageCount: 1
-    EnemyStage1: 2
-    EnemyStage2: 0
-    EnemyStage3: 0
+    EnrmyPlace: 0
     BossFlag: 0
     EnemyID1: 104000
     EnemyID2: 104000
