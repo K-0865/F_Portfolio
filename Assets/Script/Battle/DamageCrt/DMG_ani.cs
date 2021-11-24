@@ -13,12 +13,15 @@ public class DMG_ani : MonoBehaviour
     private void Start()
     {
         this.tag = transform.parent.tag;
+        gameObject.GetComponent<SpriteRenderer>().color = new Color(1f, 642988f, 0f);
+
     }
 
     // Update is called once per frame
     void Update()
     {
         speed = 1f * Time.deltaTime;
+        
         // gameObject.transform.position += Vector3.MoveTowards(now, target,speed);
         if (this.tag == "enemy")
         {
@@ -31,6 +34,8 @@ public class DMG_ani : MonoBehaviour
             this.gameObject.transform.position -= new Vector3(speed, 0f);
 
         }
-        
+
+        gameObject.GetComponent<SpriteRenderer>().color -= new Color(0, 0, 0, 0.02f);
+        //Debug.Log(color);
     }
 }
