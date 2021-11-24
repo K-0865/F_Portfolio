@@ -30,7 +30,7 @@ public class GManager : MonoBehaviour
         public float Stamina;
         public float coin;
         public float jewel;
-        public int []character_pos = new []{1000};
+        public int []character_pos = new []{1000,1000,1000}; //BUG Still cant fix
 
     }
 

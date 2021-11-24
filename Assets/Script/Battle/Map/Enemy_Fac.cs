@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Enemy_Fac : MonoBehaviour
 {
+    
     // Start is called before the first frame update
     private StageTable _stageTable;
     [SerializeField]

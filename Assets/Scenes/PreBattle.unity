@@ -720,12 +720,7 @@ MonoBehaviour:
     Stamina: 0
     coin: 0
     jewel: 0
-    character_pos: e8030000
-  _character:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+    character_pos: e8030000e8030000e8030000
 --- !u!4 &1991856091
 Transform:
   m_ObjectHideFlags: 0

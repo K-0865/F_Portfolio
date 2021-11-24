@@ -9,7 +9,7 @@ public class char_factory : MonoBehaviour
     private GManager.Player player_data;
 
     private BattleManager _battleManager;
-    [SerializeField]
+    //[SerializeField]
     private GameObject []_character = new GameObject[4];
     private GameObject []_character_clone = new GameObject[4];
 
