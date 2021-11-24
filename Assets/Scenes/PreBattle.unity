@@ -443,6 +443,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stage_count: 0
   hit_count: 0
+  allies_alive_count: 0
+  enemies_alive_count: 0
+  totals_mobs: 0
 --- !u!4 &843994335
 Transform:
   m_ObjectHideFlags: 0
@@ -456,7 +459,7 @@ Transform:
   m_Children:
   - {fileID: 1838016645}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1532303818
 GameObject:
@@ -556,7 +559,7 @@ PrefabInstance:
     - target: {fileID: 4857597929078127434, guid: c0f1b7fcaf9c244028b5dadc566ca923,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4857597929078127434, guid: c0f1b7fcaf9c244028b5dadc566ca923,
         type: 3}
@@ -698,7 +701,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1991856090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -749,6 +752,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: 1000
       objectReference: {fileID: 0}
+    - target: {fileID: 4259247366632295280, guid: 133ffab376436482daa44bf833952b06,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4893705994444405749, guid: 133ffab376436482daa44bf833952b06,
         type: 3}
       propertyPath: _dead
@@ -762,12 +770,17 @@ PrefabInstance:
     - target: {fileID: 7828201082172641926, guid: 133ffab376436482daa44bf833952b06,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7828201082172641926, guid: 133ffab376436482daa44bf833952b06,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7828201082172641926, guid: 133ffab376436482daa44bf833952b06,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.73
+      value: -9.7300005
       objectReference: {fileID: 0}
     - target: {fileID: 7828201082172641926, guid: 133ffab376436482daa44bf833952b06,
         type: 3}
@@ -841,7 +854,7 @@ PrefabInstance:
     - target: {fileID: 4833907228873122062, guid: 34983fee36d914d808dfd4bd89bcdc00,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4833907228873122062, guid: 34983fee36d914d808dfd4bd89bcdc00,
         type: 3}

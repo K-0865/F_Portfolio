@@ -14,10 +14,11 @@ public class Enemy_Fac : MonoBehaviour
     [SerializeField]
     private GameObject []_enemy = new GameObject[4];
     private GameObject []_enemy_clone = new GameObject[4];
+    private BattleManager _battleManager;
 
     private void Awake()
     {
-        
+        _battleManager = GetComponentInParent<Transform>().GetComponentInParent<BattleManager>();
         now_wave = GetComponentInParent<Transform>().GetComponentInParent<BattleManager>().stage_count;
         _stageTable = GetComponentInParent<MapManager>().get_PreviewData();
         Enemy_data = GetComponentInParent<MapManager>().get_EnemyData();
@@ -37,7 +38,7 @@ public class Enemy_Fac : MonoBehaviour
                 _enemy_clone[i] = Instantiate(_enemy[i]);
                 _enemy_clone[i].transform.parent = transform;
                 _enemy_clone[i].transform.position = pos_e;
-
+                _battleManager.enemies_alive_count++;
             }
         }else if (now_wave == 1)
         {

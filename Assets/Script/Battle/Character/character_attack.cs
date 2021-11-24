@@ -35,7 +35,9 @@ public class character_attack : MonoBehaviour
         // if (data_move.isAttack)
         // {
         //     Debug.Log("IN");
-            if (other.gameObject.tag == "enemy" || other.gameObject.tag == "Player")
+        string main_tag = transform.parent.tag;
+
+            if ((other.gameObject.tag == "enemy" && main_tag == "Player") || (other.gameObject.tag == "Player" && main_tag == "enemy"))
             {
                 if (other.gameObject.GetComponent<Character_Present_Data>()._alive == true)
                 {

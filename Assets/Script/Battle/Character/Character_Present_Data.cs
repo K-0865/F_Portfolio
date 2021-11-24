@@ -12,7 +12,7 @@ public class Character_Present_Data : MonoBehaviour
     
     public CharacterData sn;
     [SerializeField] private int _id;
-    
+    private BattleManager _battleManager;
     public int _ID
     {
         get { return _id; }
@@ -28,15 +28,17 @@ public class Character_Present_Data : MonoBehaviour
     public bool _found_enemy = false;
     public int attack_step;
     private dmg_ct _sdmg;
-    
+    public float _attack_speed;
     private void Start()
     {
+        _battleManager = GameObject.Find("BattleManager").GetComponent<BattleManager>();
         sn = this.gameObject.GetComponentInChildren<CharacterData>();
         _sdmg = this.gameObject.GetComponentInChildren<dmg_ct>();
         _maxHp = sn.CharacterStatus.HP;
         _hp = sn.CharacterStatus.HP;
         _attack = sn.CharacterStatus.Attack;
         _def = sn.CharacterStatus.Defence;
+        _attack_speed = sn.CharacterStatus.AttackSpeed;
         // damage_get = damagepop.gameObject.GetComponent<TextMeshPro>();
         //_sDMG.Init(123,new Vector3(0,0,0));
         //_sDMG.Init(124,new Vector3(0,0,0));
@@ -70,6 +72,14 @@ public class Character_Present_Data : MonoBehaviour
             Destroy(this.gameObject.GetComponent<Collider2D>());
             Destroy(this.gameObject.GetComponentInChildren<Collider2D>());
             _found_enemy = false;
+            if (this.tag == "Player")
+            {
+                _battleManager.allies_alive_count++;
+            }
+            else
+            {
+                _battleManager.enemies_alive_count--;
+            }
         }
     }
 }

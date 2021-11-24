@@ -7,11 +7,15 @@ public class char_factory : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField]
     private GManager.Player player_data;
+
+    private BattleManager _battleManager;
     [SerializeField]
     private GameObject []_character = new GameObject[4];
+    private GameObject []_character_clone = new GameObject[4];
+
     void Start()
     {
-
+        _battleManager = GetComponentInParent<BattleManager>();
         for (int i = 0; i < player_data.character_pos.Length; i++)
         {
             
@@ -19,7 +23,12 @@ public class char_factory : MonoBehaviour
             {
                 
                 _character[i] = (GameObject)Resources.Load ("Characters/"+player_data.character_pos[i]);
-                Instantiate(_character[i],this.transform);
+                _character_clone[i] = Instantiate(_character[i]);
+                _character_clone[i].transform.parent = this.transform;
+                float pos = (10 + ((i + 1) * 2))*-1;
+                Vector3 pos_e = new Vector3(pos,0f,0f);
+                _character_clone[i].transform.position = pos_e;
+                _battleManager.allies_alive_count++;
             }
             
         }
