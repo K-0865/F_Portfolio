@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
@@ -20,6 +21,8 @@ public class GManager : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+        
+
     }
     
     [System.Serializable]
@@ -30,10 +33,21 @@ public class GManager : MonoBehaviour
         public float Stamina;
         public float coin;
         public float jewel;
-        public int []character_pos = new []{1000,1000,1000}; //BUG Still cant fix
 
+        public int[] character_pos { get; private set; } = new[] {1000,1000 };
+        public int []get_char_pos()
+        {
+            return character_pos;
+        }
+
+        public void set_char_pos(int [] data)
+        {
+            character_pos = data;
+        }
+        
     }
 
+    
     public void savePlayerData(Player player)
     {
         StreamWriter writer;

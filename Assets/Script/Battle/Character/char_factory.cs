@@ -8,6 +8,7 @@ public class char_factory : MonoBehaviour
     [SerializeField]
     private GManager.Player player_data;
 
+    private int [] player_pos;
     private BattleManager _battleManager;
     //[SerializeField]
     private GameObject []_character = new GameObject[4];
@@ -15,7 +16,11 @@ public class char_factory : MonoBehaviour
 
     void Start()
     {
+        //player_pos = GameObject.Find("GameManeger").GetComponent<GManager.Player>().character_pos;
+        player_pos = player_data.get_char_pos();
+        
         _battleManager = GetComponentInParent<BattleManager>();
+        Debug.Log(player_pos.Length);
         for (int i = 0; i < player_data.character_pos.Length; i++)
         {
             
