@@ -33,7 +33,8 @@ public class Character_Movement : MonoBehaviour
     private void C_Walk_Animation()
     {
         // if Enemy not in area this object walk leaf to right to find enemy
-        // it's mean if not have enemy in stage object will walk unit far of right
+       
+         // it's mean if not have enemy in stage object will walk unit far of right
         if (!data._found_enemy && data._alive)
         {
             _animator.SetBool("run",true);
@@ -53,6 +54,7 @@ public class Character_Movement : MonoBehaviour
             _animator.SetBool("run", false);
 
         }
+    
     }
 
     IEnumerator Attack(float sec)
@@ -108,9 +110,15 @@ public class Character_Movement : MonoBehaviour
     }
     void Update()
     {
-        C_Walk_Animation();
-        C_Walk_R();
-        
+        if (!GameObject.Find("BattleManager").GetComponent<BattleManager>().isPause)
+        {
+            _animator.enabled = true;
+            C_Walk_Animation();
+            C_Walk_R();
+        }    else if (GameObject.Find("BattleManager").GetComponent<BattleManager>().isPause)
+        {
+            _animator.enabled = false;
+        }
     }
 
     

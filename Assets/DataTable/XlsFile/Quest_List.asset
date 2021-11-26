@@ -16,7 +16,7 @@ MonoBehaviour:
   - MapID: 101
     MapName: "\u59CB\u307E\u308A\u306E\u5834\u6240"
     StageCount: 1
-    EnemyStage1: 2
+    EnemyStage1: 4
     EnemyStage2: 0
     EnemyStage3: 0
     BossFlag: 0

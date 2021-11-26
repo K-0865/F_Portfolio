@@ -10,6 +10,7 @@ public class BattleManager : MonoBehaviour
     public int allies_alive_count;
     public int enemies_alive_count;
     public int totals_mobs;
+    public bool isPause;
     void Start()
     {
     }

@@ -16,16 +16,19 @@ public class damage_col_range : MonoBehaviour
 
     private void Update()
     {
-        float speed = 10f * Time.deltaTime;
-        if (GetComponentInParent<Character_Movement>()._faceDirection == Character_Movement.Face_Direction.LEFT)
+        if (!GameObject.Find("BattleManager").GetComponent<BattleManager>().isPause)
         {
-            this.gameObject.transform.position += new Vector3(speed, 0f, 0f);
+            float speed = 10f * Time.deltaTime;
+            if (GetComponentInParent<Character_Movement>()._faceDirection == Character_Movement.Face_Direction.LEFT)
+            {
+                this.gameObject.transform.position += new Vector3(speed, 0f, 0f);
 
-        }
-        else
-        {
-            this.gameObject.transform.position -= new Vector3(speed, 0f, 0f);
+            }
+            else
+            {
+                this.gameObject.transform.position -= new Vector3(speed, 0f, 0f);
 
+            }
         }
     }
 
@@ -35,21 +38,24 @@ public class damage_col_range : MonoBehaviour
         // if (data_move.isAttack)
         // {
         //     Debug.Log("IN");
-        
-        if ((other.gameObject.tag == "enemy" && main_tag == "Player") || (other.gameObject.tag == "Player" && main_tag == "enemy"))
+        if (!GameObject.Find("BattleManager").GetComponent<BattleManager>().isPause)
         {
-            if (other.gameObject.GetComponent<Character_Present_Data>()._alive == true)
+
+            if ((other.gameObject.tag == "enemy" && main_tag == "Player") ||
+                (other.gameObject.tag == "Player" && main_tag == "enemy"))
             {
-                other.gameObject.GetComponent<Character_Present_Data>().getDamage(attack);
-                Destroy(this.gameObject);
+                if (other.gameObject.GetComponent<Character_Present_Data>()._alive == true)
+                {
+                    other.gameObject.GetComponent<Character_Present_Data>().getDamage(attack);
+                    Destroy(this.gameObject);
+                }
+                // else
+                // {
+                //     Debug.Log("Out_Damge");
+                //     _c_move._found_enemy = false;
+                //
+                // }
             }
-            // else
-            // {
-            //     Debug.Log("Out_Damge");
-            //     _c_move._found_enemy = false;
-            //
-            // }
         }
-            
     }
 }
