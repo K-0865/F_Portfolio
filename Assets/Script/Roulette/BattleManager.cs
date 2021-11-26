@@ -13,6 +13,8 @@ public class BattleManager : MonoBehaviour
     public bool isPause;
     void Start()
     {
+        //GameObject.Find("BattleManger").GetComponent<BattleManager>().isPause = true;
+
     }
 
     // Update is called once per frame
