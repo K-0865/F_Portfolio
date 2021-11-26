@@ -47,8 +47,10 @@ public class Character_Present_Data : MonoBehaviour
     
     public void getDamage(float damage)
     {
-        float sum = damage - this._def;
+        float sum = damage - this._def;  // Damage Formula
         _hp -= sum;
+        
+        
         _sdmg.Init((int)sum,new Vector3(this.transform.position.x,this.transform.position.y+0.5f,0));
         GameObject.Find("BattleManager").GetComponent<BattleManager>().hit_count++;
 
@@ -67,14 +69,14 @@ public class Character_Present_Data : MonoBehaviour
             _alive = true;
         }
 
-        if (_dead)
+        if (_dead && this.gameObject.GetComponent<Collider2D>() == true)
         {
             Destroy(this.gameObject.GetComponent<Collider2D>());
             Destroy(this.gameObject.GetComponentInChildren<Collider2D>());
             _found_enemy = false;
             if (this.tag == "Player")
             {
-                _battleManager.allies_alive_count++;
+                _battleManager.allies_alive_count--;
             }
             else
             {

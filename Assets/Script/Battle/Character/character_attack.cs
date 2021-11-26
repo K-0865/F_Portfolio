@@ -29,15 +29,16 @@ public class character_attack : MonoBehaviour
         //Debug.Log(data_move.isAttack);
     }
 
-    
+
     private void OnTriggerEnter2D(Collider2D other)
     {
-        // if (data_move.isAttack)
-        // {
-        //     Debug.Log("IN");
-        string main_tag = transform.parent.tag;
-        
-            if ((other.gameObject.tag == "enemy" && main_tag == "Player") || (other.gameObject.tag == "Player" && main_tag == "enemy"))
+        if (data_move.isAttack)
+        {
+            Debug.Log("IN");
+            string main_tag = transform.parent.tag;
+
+            if ((other.gameObject.tag == "enemy" && main_tag == "Player") ||
+                (other.gameObject.tag == "Player" && main_tag == "enemy"))
             {
                 if (other.gameObject.GetComponent<Character_Present_Data>()._alive == true)
                 {
@@ -50,8 +51,8 @@ public class character_attack : MonoBehaviour
                 //
                 // }
             }
-            
+
+        }
     }
 
-    
 }

@@ -34,6 +34,7 @@ public class char_factory : MonoBehaviour
                 Vector3 pos_e = new Vector3(pos,0f,0f);
                 _character_clone[i].transform.position = pos_e;
                 _battleManager.allies_alive_count++;
+                Debug.Log(_battleManager.allies_alive_count);
             }
             
         }
