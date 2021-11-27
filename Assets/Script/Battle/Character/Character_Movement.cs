@@ -61,20 +61,12 @@ public class Character_Movement : MonoBehaviour
     {
         isAttack = true;
         _animator.SetTrigger("isAttack");
+       
         yield return new WaitForSeconds(sec);
         isAttack = false;
     }
 
-    void AttackStart()
-    {
-        isAttack = true;
-    }
-    
-    void AttackEnd()
-    {
-        isAttack = false;
-    }
-
+  
     void RangeAttack()
     {
         GetComponentInChildren<character_rangeType>().Range_bullet();
