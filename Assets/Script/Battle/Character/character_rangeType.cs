@@ -25,11 +25,54 @@ public class character_rangeType : MonoBehaviour
         Debug.Log(data_char_sc);
     }
 
-    public void Range_bullet()
+    public GameObject FindClosestEnemy(string tag_name)
     {
-        GameObject obj = Instantiate(bullet);
-        obj.transform.parent = this.transform;
-        obj.transform.position = this.transform.position;
+        GameObject[] gos;
+        List<GameObject> list_obj = new List<GameObject>();
+        gos = GameObject.FindGameObjectsWithTag(tag_name);
+        GameObject closest = null;
+        float distance = Mathf.Infinity;
+        Vector3 position = transform.position;
+        foreach (var go in gos)
+        {
+            if (go.GetComponent<Character_Present_Data>()._alive)
+            {
+                list_obj.Add(go);
+            }
+        }
+        Debug.Log(list_obj.Count);
+        foreach (GameObject go in list_obj)
+        {
+            Vector3 diff = go.transform.position - position;
+            float curDistance = diff.sqrMagnitude;
+            if (curDistance < distance)
+            {
+                closest = go;
+                distance = curDistance;
+            }
+        }
+        return closest;
+    }
+    public void Range_bullet()
+    { 
+       
+        var me_tag = this.gameObject.transform.parent.tag;
+        
+        if (me_tag == "Player")
+        {
+            var find_enemy = FindClosestEnemy("enemy");
+            GameObject obj = Instantiate(bullet);
+            obj.transform.parent = this.transform;
+            obj.transform.position = find_enemy.transform.position;
+        }
+        else
+        {
+            var find_enemy = FindClosestEnemy("Player");
+            GameObject obj = Instantiate(bullet);
+            obj.transform.parent = this.transform;
+            obj.transform.position = find_enemy.transform.position;
+        }
+        
     }
     private void Update()
     {

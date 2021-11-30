@@ -16,7 +16,7 @@ public class dmg_ct : MonoBehaviour {
     // Start is called before the first frame update
     void Start()
     {
-        this.tag = transform.parent.tag;
+        //this.tag = transform.parent.tag;
     }
 
     public void Init(int point, Vector3 pos) {

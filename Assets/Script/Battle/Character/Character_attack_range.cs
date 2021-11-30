@@ -7,35 +7,49 @@ using Vector2 = System.Numerics.Vector2;
 public class Character_attack_range : MonoBehaviour
 {
     // Start is called before the first frame update
-    private BoxCollider2D _box_range;
-
+    //private BoxCollider2D _box_range;
+    private CircleCollider2D _circle2d;
     //private CharacterData _characterData;
     [SerializeField] private float attack_range;
     // private Character_Movement _c_move;
-
+    // SKill Num Read >> Skill ID READ >> SKILL RANGE READ >> change  Range
     void Start()
     {
         this.gameObject.tag = "attack";
-        _box_range = this.gameObject.GetComponent<BoxCollider2D>();
+        _circle2d = GetComponent<CircleCollider2D>();
+        //_box_range = this.gameObject.GetComponent<BoxCollider2D>();
         attack_range = this.gameObject.GetComponentInParent<CharacterData>().CharacterStatus.AttackRange;
         // _c_move = this.gameObject.GetComponentInParent<Character_Movement>();
 
-
-
+        //CIRCLE COLLIDER
         if (attack_range == 100f)
         {
-            float _box_range_size_x = attack_range / 100f;
-            float offset_x = _box_range_size_x / 4f;
-            _box_range.offset = new UnityEngine.Vector2(offset_x, 0);
-            _box_range.size = new UnityEngine.Vector2(_box_range_size_x, 1);
+            _circle2d.offset = new UnityEngine.Vector2(0.4f, 0f);
+            _circle2d.radius = 1f;
+
+
         }
         else if (attack_range == 2000f)
         {
-            float _box_range_size_x = 10f;
-            float offset_x = 5f;
-            _box_range.offset = new UnityEngine.Vector2(offset_x, 0);
-            _box_range.size = new UnityEngine.Vector2(_box_range_size_x, 1);
+            _circle2d.offset = new UnityEngine.Vector2(4.5f, 0f);
+            _circle2d.radius = 5f; 
         }
+        
+        // BOX COLLIDER
+        // if (attack_range == 100f)
+        // {
+        //     float _box_range_size_x = attack_range / 100f;
+        //     float offset_x = _box_range_size_x / 4f;
+        //     _box_range.offset = new UnityEngine.Vector2(offset_x, 0);
+        //     _box_range.size = new UnityEngine.Vector2(_box_range_size_x, 1);
+        // }
+        // else if (attack_range == 2000f)
+        // {
+        //     float _box_range_size_x = 10f;
+        //     float offset_x = 5f;
+        //     _box_range.offset = new UnityEngine.Vector2(offset_x, 0);
+        //     _box_range.size = new UnityEngine.Vector2(_box_range_size_x, 1);
+        // }
 
 
     }
@@ -72,6 +86,7 @@ public class Character_attack_range : MonoBehaviour
             if (other_data._alive)
             {
                 user_data._found_enemy = true;
+                
                 //other_data._found_enemy = true;
               //  Debug.Log("Found Enemy >>");
             }
@@ -99,6 +114,7 @@ public class Character_attack_range : MonoBehaviour
             if (other_data._alive)
             {
                 user_data._found_enemy = true;
+                
                 //other_data._found_enemy = true;
                 //Debug.Log("Found Enemy >>");
             }

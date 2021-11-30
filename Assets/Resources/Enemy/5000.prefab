@@ -1,5 +1,21 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!58 &4062586535223158832
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4833907226897628969}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 4.5, y: 0}
+  serializedVersion: 2
+  m_Radius: 5
 --- !u!1 &4833907226975522169
 GameObject:
   m_ObjectHideFlags: 0
@@ -546,6 +562,7 @@ MonoBehaviour:
   _dead: 0
   _found_enemy: 0
   attack_step: 0
+  _attack_speed: 0
 --- !u!50 &4833907228873122056
 Rigidbody2D:
   serializedVersion: 4
@@ -709,6 +726,10 @@ PrefabInstance:
       value: attack
       objectReference: {fileID: 0}
     - target: {fileID: 922646131, guid: 50ff20857fbca4bfcbe7373e6dd22ffc, type: 3}
+      propertyPath: m_Size.y
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 922646131, guid: 50ff20857fbca4bfcbe7373e6dd22ffc, type: 3}
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
@@ -821,6 +842,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50ff20857fbca4bfcbe7373e6dd22ffc, type: 3}
+--- !u!1 &4833907226897628969 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 922646128, guid: 50ff20857fbca4bfcbe7373e6dd22ffc,
+    type: 3}
+  m_PrefabInstance: {fileID: 4833907227806091609}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &983857363708552077 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5670630118722333396, guid: 50ff20857fbca4bfcbe7373e6dd22ffc,

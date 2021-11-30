@@ -30,6 +30,7 @@ public class damage_col_range : MonoBehaviour
 
             }
         }
+        Destroy(this.gameObject,0.05f);
     }
 
     private void OnTriggerEnter2D(Collider2D other)

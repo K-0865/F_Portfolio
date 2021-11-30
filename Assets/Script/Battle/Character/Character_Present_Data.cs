@@ -69,7 +69,7 @@ public class Character_Present_Data : MonoBehaviour
             _alive = true;
         }
 
-        if (_dead && this.gameObject.GetComponent<Collider2D>() == true)
+        if (_dead && this.gameObject.GetComponent<Collider2D>())
         {
             Destroy(this.gameObject.GetComponent<Collider2D>());
             Destroy(this.gameObject.GetComponentInChildren<Collider2D>());

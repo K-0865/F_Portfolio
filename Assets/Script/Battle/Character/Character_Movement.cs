@@ -59,8 +59,8 @@ public class Character_Movement : MonoBehaviour
 
     IEnumerator Attack(float sec)
     {
-        isAttack = true;
         _animator.SetTrigger("isAttack");
+        isAttack = true;
        
         yield return new WaitForSeconds(sec);
         isAttack = false;
