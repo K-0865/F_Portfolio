@@ -14,9 +14,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PreTitlle.unity
     guid: c4fc3510baad09d459b09334edd6fa8f
-  - enabled: 1
-    path: Assets/Scenes/PreHome.unity
-    guid: b5838b08cefae7d4a8037e63afff65a2
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/PreQuest.unity
     guid: 35fa8fefc5c5bc74da86f928d6201085

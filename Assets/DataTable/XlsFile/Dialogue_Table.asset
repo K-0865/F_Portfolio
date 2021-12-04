@@ -19,69 +19,107 @@ MonoBehaviour:
     CharacterID1: 101000
     CharacterID2: 0
     CharacterID3: 0
-    Continue: 0
+    HomeID: 1
     SkillID: 0
     RouletteID: 0
+    Continue: 0
   - DialogueID: 502000
     DialogueName: "\u57FA\u672C2"
     Dialogue: 
     CharacterID1: 101000
     CharacterID2: 0
     CharacterID3: 0
-    Continue: 0
+    HomeID: 0
     SkillID: 0
     RouletteID: 1
-  - DialogueID: 503000
+    Continue: 0
+  - DialogueID: 503001
     DialogueName: "\u57FA\u672C3-1"
     Dialogue: 
     CharacterID1: 101000
     CharacterID2: 102000
     CharacterID3: 0
-    Continue: 1
+    HomeID: 0
     SkillID: 0
     RouletteID: 2
-  - DialogueID: 503000
+    Continue: 1
+  - DialogueID: 503002
     DialogueName: "\u57FA\u672C3-2"
     Dialogue: 
     CharacterID1: 101000
     CharacterID2: 102000
     CharacterID3: 0
-    Continue: 2
+    HomeID: 0
     SkillID: 0
     RouletteID: 2
+    Continue: 2
   - DialogueID: 505000
     DialogueName: "\u57FA\u672C4"
     Dialogue: 
     CharacterID1: 101000
     CharacterID2: 0
     CharacterID3: 0
-    Continue: 0
+    HomeID: 0
     SkillID: 1
     RouletteID: 0
+    Continue: 0
   - DialogueID: 506000
     DialogueName: "\u57FA\u672C5"
     Dialogue: 
     CharacterID1: 103000
     CharacterID2: 0
     CharacterID3: 0
-    Continue: 0
+    HomeID: 2
     SkillID: 0
     RouletteID: 0
+    Continue: 0
   - DialogueID: 507000
     DialogueName: "\u57FA\u672C6"
     Dialogue: 
     CharacterID1: 102000
     CharacterID2: 0
     CharacterID3: 0
-    Continue: 0
+    HomeID: 3
     SkillID: 0
     RouletteID: 0
+    Continue: 0
   - DialogueID: 508000
     DialogueName: "\u57FA\u672C7"
     Dialogue: 
     CharacterID1: 104000
     CharacterID2: 0
     CharacterID3: 0
-    Continue: 0
+    HomeID: 0
     SkillID: 0
     RouletteID: 3
+    Continue: 0
+  - DialogueID: 509000
+    DialogueName: "\u57FA\u672C8"
+    Dialogue: 
+    CharacterID1: 101000
+    CharacterID2: 102000
+    CharacterID3: 103000
+    HomeID: 0
+    SkillID: 0
+    RouletteID: 4
+    Continue: 1
+  - DialogueID: 510000
+    DialogueName: "\u57FA\u672C9"
+    Dialogue: 
+    CharacterID1: 101000
+    CharacterID2: 102000
+    CharacterID3: 103000
+    HomeID: 0
+    SkillID: 0
+    RouletteID: 4
+    Continue: 2
+  - DialogueID: 511000
+    DialogueName: "\u57FA\u672C10"
+    Dialogue: 
+    CharacterID1: 101000
+    CharacterID2: 102000
+    CharacterID3: 103000
+    HomeID: 0
+    SkillID: 0
+    RouletteID: 4
+    Continue: 3

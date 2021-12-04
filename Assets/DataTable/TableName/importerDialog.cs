@@ -14,7 +14,8 @@ public class Dialogues
     public int CharacterID1;
     public int CharacterID2;
     public int CharacterID3;
-    public int Continue;
+    public int HomeID;
     public int SkillID;
     public int RouletteID;
+    public int Continue;
 }
