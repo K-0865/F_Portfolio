@@ -22,7 +22,7 @@ public class BattleManager : MonoBehaviour
     {
         totals_mobs = enemies_alive_count + allies_alive_count;
     }
-
+    
     public void OnclickPause()
     {
         if (isPause)
