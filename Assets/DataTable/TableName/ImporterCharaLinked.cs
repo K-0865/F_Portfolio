@@ -7,6 +7,7 @@ public class Linked
 {
     public string CharacterName;
     public int CharacterID;
+    public int attribute;
     public string Character_ImageName;
     public int MiniCharacterID;
     public string MiniCharacterID_ImageName;
