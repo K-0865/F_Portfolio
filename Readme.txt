@@ -9,8 +9,8 @@
 ・UnityVer 2020.2.6f1
 
 使い方
-・Funkeln_schmuck.zip　を解凍する
-・出てきた　Funkeln_schmuck　を UnityHub→リストに追加 から開く
+・Funkeln.zip　を解凍する
+・出てきた　Funkeln　を UnityHub→リストに追加 から開く
 ・残りは煮るなり焼くなりどうぞ
 
 注意
@@ -21,7 +21,7 @@
 バージョン履歴
 ・1.00 ：初回生成
 ・1.05 ：Prefabsの日本語名の削除
-・1.20 ：Characterは前の敵を探す　FPS 60
+・1.20 ：Characterは前の敵を探す　FPS 60固定
 ・1.30 ：バトルシーンの追加
 ・1.40 ：完成版？UI仮置き
 ・1.50 ：バトルシーンの仕様変更
