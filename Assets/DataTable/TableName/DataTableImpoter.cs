@@ -3,10 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
+public enum CharacterId
+{
+}
+
 [System.Serializable]
 public class CharacterTable
 {
-    public int ID;
+    public CharacterId ID;
     public string CharacterName;
     public float HP;
     public float Attack;

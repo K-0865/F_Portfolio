@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
 
 public class HomeManager : MonoBehaviour
@@ -22,24 +23,25 @@ public class HomeManager : MonoBehaviour
 
 	private void Awake()
 	{
-		//Image = BackGroundImage.GetChild("Image").GameObject;
-		//RArrow = Image.GetChild("RArrow").GameObject;
-		//LArrow = Image.GetChild("LArrow").GameObject;
+		//Image = BackGroundImage.transform.Find("Image").gameObject;
+		//RArrow = Image.transform.Find("Image").gameObject;
+		//LArrow = Image.transform.Find("Image").gameObject;
 	}
 
-	public void FullScreenGet()
-	{
-		FullScreen();
-		Debug.Log("Full_get");
-	}
+	[SerializeField] private UnityEngine.UI.Button buttontest;
+	[SerializeField] private UnityEngine.UI.Image img;
+	[SerializeField] private UnityEngine.Sprite spr;
 
-	private void FullScreen()
+	public void FullScreen()
 	{
+		img.sprite = spr;
+		img.SetNativeSize();
+		//buttontest.onClick.AddListener();
 		Debug.Log("FullScreen");
 		if (Screen_switch)
 		{
-			RArrow.SetActive(false);
-			LArrow.SetActive(false);
+			//RArrow.SetActive(false);
+			//LArrow.SetActive(false);
 			PlayerStatus.SetActive(false);
 			Text_Box.SetActive(false);
 			Banner.SetActive(false);
