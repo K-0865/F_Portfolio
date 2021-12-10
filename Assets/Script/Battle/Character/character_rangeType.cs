@@ -56,7 +56,7 @@ public class character_rangeType : MonoBehaviour
     public void Range_bullet()
     { 
        
-        var me_tag = this.gameObject.transform.parent.tag;
+        string me_tag = this.gameObject.transform.parent.tag;
         
         if (me_tag == "Player")
         {
