@@ -51,6 +51,8 @@ public class character_rangeType : MonoBehaviour
                 distance = curDistance;
             }
         }
+
+        
         return closest;
     }
     public void Range_bullet()
@@ -61,13 +63,22 @@ public class character_rangeType : MonoBehaviour
         if (me_tag == "Player")
         {
             var find_enemy = FindClosestEnemy("enemy");
+            if (find_enemy == null)
+            {
+                return;
+            }
             GameObject obj = Instantiate(bullet);
             obj.transform.parent = this.transform;
             obj.transform.position = find_enemy.transform.position;
         }
-        else
+        else if(me_tag == "enemy")
         {
+            
             var find_enemy = FindClosestEnemy("Player");
+            if (find_enemy == null)
+            {
+                return;
+            }
             GameObject obj = Instantiate(bullet);
             obj.transform.parent = this.transform;
             obj.transform.position = find_enemy.transform.position;
