@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ReelCManager : MonoBehaviour {
+public class ReelController : MonoBehaviour {
 	public GameController gc;
 
 

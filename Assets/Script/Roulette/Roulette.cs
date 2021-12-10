@@ -10,7 +10,8 @@ public class Roulette : MonoBehaviour
     private int Rcount = 0;
     private List<int> DiaIDList = new List<int>();
     private List<int> DisplayDialogue = new List<int>();
-    private List<int> DiaCon= new List<int>();
+    private List<int> DiaCon = new List<int>();
+    private List<string> DiaDisplay = new List<string>();
     private int target1 = 0;
     private int target2 = 0;
     private int target3 = 0;
@@ -33,11 +34,24 @@ public class Roulette : MonoBehaviour
         for (int i = 0; i < data.Dialogue.Count; i++)
         {
             //Debug.Log(data.StageList[i].MapID);
-            if (data.Dialogue[i].CharacterID1 == _AliveCharacterID1 || 
+            if ((data.Dialogue[i].CharacterID1 == _AliveCharacterID1 || 
                 data.Dialogue[i].CharacterID1 == _AliveCharacterID2 || 
-                data.Dialogue[i].CharacterID1 == _AliveCharacterID3)
+                data.Dialogue[i].CharacterID1 == _AliveCharacterID3) &&(
+                data.Dialogue[i].CharacterID2 == _AliveCharacterID1 ||
+                data.Dialogue[i].CharacterID2 == _AliveCharacterID2 ||
+                data.Dialogue[i].CharacterID2 == _AliveCharacterID3 ||
+                data.Dialogue[i].CharacterID2 == 0 ||
+                data.Dialogue[i].CharacterID2 == null )&&(
+                data.Dialogue[i].CharacterID3 == _AliveCharacterID1 ||
+                data.Dialogue[i].CharacterID3 == _AliveCharacterID2 ||
+                data.Dialogue[i].CharacterID3 == _AliveCharacterID3 ||
+                data.Dialogue[i].CharacterID3 == 0 ||
+                data.Dialogue[i].CharacterID3 == null )
+                )
             {
-                DiaIDList.Add(data.Dialogue[i].CharacterID1);
+                DiaIDList.Add(data.Dialogue[i].DialogueID);
+                DiaCon.Add(data.Dialogue[i].Continue);
+                DiaDisplay.Add(data.Dialogue[i].Dialogue);
                 Rcount++;
             }
         }
@@ -51,14 +65,14 @@ public class Roulette : MonoBehaviour
 
         //一つ目のセリフ決定
         target1 = Random.Range(1, Rcount);
-        Roulette1(target1);
+        RouletteIn(target1);
 
         //2つ目のセリフ決定
-        if (1 == data.Dialogue[target1].Continue)
+        if (1 == DiaCon[target1])
         {
             //Continueが１の場合
             target2 = target1 + 1;
-            Roulette2(target2);
+            RouletteIn(target2);
         }
         else
         {
@@ -68,14 +82,14 @@ public class Roulette : MonoBehaviour
             {
                 target2 = Random.Range(1, Rcount);
             }
-            Roulette2(target2);
+            RouletteIn(target2);
             
             //3つ目のセリフの決定
-            if (1 == data.Dialogue[target1].Continue)
+            if (1 == DiaCon[target2])
             {
                 //2つ目のセリフのContinueが１の場合
                 target3 = target2 + 1;
-                Roulette3(target3);
+                RouletteIn(target3);
             }
             else
             {
@@ -85,7 +99,7 @@ public class Roulette : MonoBehaviour
                 {
                     target3 = Random.Range(1, Rcount);
                 }
-                Roulette3(target3);
+                RouletteIn(target3);
             }
         }
 
@@ -94,7 +108,7 @@ public class Roulette : MonoBehaviour
         {
             //Continueが2の場合
             target3 = target2 + 1;
-            Roulette3(target3);
+            RouletteIn(target3);
         }
         else
         {
@@ -104,31 +118,27 @@ public class Roulette : MonoBehaviour
             {
                 target3 = Random.Range(1, Rcount);
             }
-            Roulette3(target3);
+            RouletteIn(target3);
         }
-        
+
+        int DispCon = 0;
+        while (DispCon < data.Dialogue.Count)
+        {
+            if (data.Dialogue[DispCon].DialogueID == DisplayDialogue[DispCon])
+            {
+                Debug.Log(data.Dialogue[DispCon]);
+            } 
+            DispCon++;
+        }
+
         Debug.Log(data.Dialogue[target1].CharacterID1);
         Debug.Log(data.Dialogue[target2].CharacterID1);
         Debug.Log(data.Dialogue[target3].CharacterID1);
     }
 
-    private void Roulette1(int target)
+    private void RouletteIn(int target)
     {
-        DiaIDList.Add(data.Dialogue[target].DialogueID);
-    }
-    
-    private void Roulette2(int target)
-    {
-        DiaIDList.Add(data.Dialogue[target].DialogueID);
-    }
-    
-    private void Roulette3(int target)
-    {
-        DiaIDList.Add(data.Dialogue[target].DialogueID);
+        DisplayDialogue.Add(DiaIDList[target]);
     }
 
-    public void Sub()
-    {
-        
-    }
 }

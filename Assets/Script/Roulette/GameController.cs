@@ -14,7 +14,7 @@ public class GameController : MonoBehaviour {
     public Button playbt;
 
     public GameObject[] reels;
-    ReelCManager[] rc = new ReelCManager[3];
+    ReelController[] rc = new ReelController[3];
 
     int[] lineL,lineC,lineR;
     int stopline_len = 3;
@@ -23,7 +23,7 @@ public class GameController : MonoBehaviour {
     // Use this for initialization
     void Start () {
         for (int i = 0; i < 3; i++) {
-            rc[i] = reels [i].GetComponent<ReelCManager> ();
+            rc[i] = reels [i].GetComponent<ReelController> ();
         }
 
     }
