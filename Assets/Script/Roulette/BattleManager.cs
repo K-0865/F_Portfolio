@@ -11,7 +11,6 @@ public class BattleManager : MonoBehaviour
     public int enemies_alive_count;
     public int totals_mobs;
     public bool isPause;
-    [SerializeField] private int _RouletteGage;
     [SerializeField] private int _GageMax;
 
     [SerializeField] private GameObject Roulette;
@@ -25,15 +24,17 @@ public class BattleManager : MonoBehaviour
     void Update()
     {
         totals_mobs = enemies_alive_count + allies_alive_count;
+        if (hit_count > _GageMax)
+        {
+            callRoulette();
+        }
     }
 
     public void callRoulette()
     {
-        if (_RouletteGage >= _GageMax){
-            isPause = true;
-            Roulette.GetComponent<Roulette>().Roulette_main();
-            isPause = false;
-        }
+        isPause = true;
+        Roulette.GetComponent<Roulette>().Roulette_main();
+        isPause = false;
     }
     
     public void OnclickPause()

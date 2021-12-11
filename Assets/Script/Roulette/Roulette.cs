@@ -8,10 +8,10 @@ using Random = UnityEngine.Random;
 public class Roulette : MonoBehaviour
 {
     private int Rcount = 0;
-    private List<int> DiaIDList = new List<int>();
-    private List<int> DisplayDialogue = new List<int>();
-    private List<int> DiaCon = new List<int>();
-    private List<string> DiaDisplay = new List<string>();
+    private List<int> DiaIDList = new List<int>(200);
+    private List<int> DisplayDialogue = new List<int>(200);
+    private List<int> DiaCon = new List<int>(200);
+    private List<string> DiaDisplay = new List<string>(200);
     private int target1 = 0;
     private int target2 = 0;
     private int target3 = 0;
@@ -65,6 +65,7 @@ public class Roulette : MonoBehaviour
 
         //一つ目のセリフ決定
         target1 = Random.Range(1, Rcount);
+        Debug.Log(target1 + "調査");
         RouletteIn(target1);
 
         //2つ目のセリフ決定
