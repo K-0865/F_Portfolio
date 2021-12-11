@@ -1533,6 +1533,9 @@ MonoBehaviour:
   _AliveCharacterID1: 101000
   _AliveCharacterID2: 102000
   _AliveCharacterID3: 0
+  Reel_l: {fileID: 2023810178}
+  Reel_C: {fileID: 200037188}
+  Reel_R: {fileID: 487845164}
   _DialogueStatus:
     DialogueID: 0
     DialogueName: 
@@ -1544,7 +1547,7 @@ MonoBehaviour:
     SkillID: 0
     RouletteID: 0
     Continue: 0
-  rouletteGage: 0
+  RouletteManager: {fileID: 1161845926}
 --- !u!4 &1161845928
 Transform:
   m_ObjectHideFlags: 0
@@ -2494,7 +2497,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!331 &1946816939
 SpriteMask:
   m_ObjectHideFlags: 0

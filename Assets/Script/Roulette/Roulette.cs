@@ -25,9 +25,13 @@ public class Roulette : MonoBehaviour
     [SerializeField] private int _AliveCharacterID2;
     [SerializeField] private int _AliveCharacterID3;
 
+    [SerializeField] private GameObject Reel_l;
+    [SerializeField] private GameObject Reel_C;
+    [SerializeField] private GameObject Reel_R;
+
     [SerializeField] private Dialogues _DialogueStatus;
 
-    [SerializeField] private int rouletteGage;
+    [SerializeField] private GameObject RouletteManager;
 
     //初期化
     private void Initialize()
@@ -116,22 +120,60 @@ public class Roulette : MonoBehaviour
                target3 = Con_0_1[target3];
            }
        }
-        
-       
+
        Debug.Log(data.Dialogue[target1].Dialogue);
        Debug.Log(data.Dialogue[target2].Dialogue);
        Debug.Log(data.Dialogue[target3].Dialogue);
+
+       StartCoroutine("DisSlot", 1.5);
+       StartCoroutine("StartSlot", 10);
+       Debug.Log("スタート");
+       StartCoroutine("ReelStopL", 7);
+       StartCoroutine("ReelStopC", 7.5);
+       StartCoroutine("ReelStopR", 8);
+       StartCoroutine("ReelFin", 11);
+
     }
 
-
-  
-
-
-    //コルーチンテスト 139行目から
-    /*IEnumerator Stop(float sec)
+    IEnumerator DisSlot(float sec)
     {
         yield return new WaitForSeconds(sec);
-    }*/
-        
+        RouletteManager.GetComponent<GameController>().Play();
+    }
+    
+    //コルーチンテスト 139行目から
+    IEnumerator StartSlot(float sec)
+    {
+        yield return new WaitForSeconds(sec);
+        Debug.Log("コルーチンスタート");
+
+    }
+
+    IEnumerator ReelStopL(float sec)
+    {   
+        yield return new WaitForSeconds(sec);
+        Debug.Log("SlotL");
+        Reel_l.GetComponent<ReelController>().Reel_Stop();
+    }
+    IEnumerator ReelStopC(float sec)
+    {
+        yield return new WaitForSeconds(sec);
+        Debug.Log("SlotC");
+        Reel_C.GetComponent<ReelController>().Reel_Stop();
+    }
+    IEnumerator ReelStopR(float sec)
+    {
+        yield return new WaitForSeconds(sec);
+        Debug.Log("SlotR");
+        Reel_R.GetComponent<ReelController>().Reel_Stop();
+    }
+    IEnumerator ReelFin(float sec)
+    {
+        yield return new WaitForSeconds(sec);
+        Slot.SetActive(false);
+        Debug.Log("Fin");
+    }
+    
+
 
 }
