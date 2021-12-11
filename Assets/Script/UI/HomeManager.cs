@@ -15,9 +15,10 @@ public class HomeManager : MonoBehaviour
 	[SerializeField] GameObject MenuObject;
 	[SerializeField] GameObject FullScreenReturn;
 	[SerializeField] GameObject ResourceTank;
-	
+
 	//[SerializeField] private UnityEngine.UI.Button buttontest;
 	[SerializeField] private UnityEngine.UI.Image Back;
+	[SerializeField] private UnityEngine.UI.Image Charcter;
 
 	private GameObject Image;
 	private GameObject RArrow;
@@ -26,6 +27,7 @@ public class HomeManager : MonoBehaviour
 	private bool Screen_switch = true;
 
 	private int Toggle;
+	private int CharaChange;
 
 	private void Awake()
 	{
@@ -36,9 +38,9 @@ public class HomeManager : MonoBehaviour
 
 	private void InitializeHome()
 	{
-		
+
 	}
-	
+
 	public void FullScreen()
 	{
 		//buttontest.onClick.AddListener();
@@ -56,13 +58,16 @@ public class HomeManager : MonoBehaviour
 			FullScreenReturn.SetActive(true);
 			Screen_switch = false;
 			Debug.Log(Screen_switch);
+			if (Toggle % 10 == 0)
+			{
+				Mask_Character.SetActive(false);
+			}
 		}
 		else
 		{
 			RArrow.SetActive(true);
 			LArrow.SetActive(true);
 			PlayerStatus.SetActive(true);
-			Mask_Character.SetActive(true);
 			Text_Box.SetActive(true);
 			Banner.SetActive(true);
 			MiniButton_Down.SetActive(true);
@@ -71,6 +76,10 @@ public class HomeManager : MonoBehaviour
 			FullScreenReturn.SetActive(false);
 			Screen_switch = true;
 			Debug.Log(Screen_switch);
+			if (Toggle % 10 == 0)
+			{
+				Mask_Character.SetActive(true);
+			}
 		}
 	}
 
@@ -82,9 +91,29 @@ public class HomeManager : MonoBehaviour
 			case 1:
 				Back.sprite = ResourceTank.GetComponent<ResourceTank>().Still1;
 				Back.SetNativeSize();
+				Toggle = 2;
+				break;
+			case 2:
+				Back.sprite = ResourceTank.GetComponent<ResourceTank>().Still2;
+				Back.SetNativeSize();
+				Toggle = 10;
+				break;
+			case 10:
+				Back.sprite = ResourceTank.GetComponent<ResourceTank>().BackImage1;
+				Back.SetNativeSize();
+				Back.sprite = ResourceTank.GetComponent<ResourceTank>().Charcter1;
+				Back.SetNativeSize();
+				Toggle = 20;
+				break;
+			case 20:
+				Back.sprite = ResourceTank.GetComponent<ResourceTank>().BackImage2;
+				Back.SetNativeSize();
+				Back.sprite = ResourceTank.GetComponent<ResourceTank>().Charcter2;
+				Back.SetNativeSize();
 				Toggle = 1;
 				break;
+			default:
+				break;
 		}
-
 	}
 }

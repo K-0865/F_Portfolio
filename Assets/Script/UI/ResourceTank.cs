@@ -15,6 +15,8 @@ public class ResourceTank : MonoBehaviour
     public Sprite Charcter4;
     public Sprite Charcter5;
 
-    
-    
+    public Sprite BackImage1;
+    public Sprite BackImage2;
+    public Sprite BackImage3;
+
 }
