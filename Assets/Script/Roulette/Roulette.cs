@@ -16,6 +16,7 @@ public class Roulette : MonoBehaviour
     private int target2 = 0;
     private int target3 = 0;
     [SerializeField] private Dialogue_Table data = null;
+    [SerializeField] private GameObject Slot;
 
     [SerializeField] private int _AliveCharacterID1;
     [SerializeField] private int _AliveCharacterID2;
@@ -24,8 +25,6 @@ public class Roulette : MonoBehaviour
     [SerializeField] private Dialogues _DialogueStatus;
 
     [SerializeField] private int rouletteGage;
-
-    [SerializeField] private int GageMax;
 
     //初期化
     private void Initialize()
@@ -55,6 +54,8 @@ public class Roulette : MonoBehaviour
                 Rcount++;
             }
         }
+        
+        Slot.SetActive(true);
 
     }
 
@@ -131,15 +132,15 @@ public class Roulette : MonoBehaviour
             } 
             DispCon++;
         }
+        
+        
 
         Debug.Log(data.Dialogue[target1].CharacterID1);
         Debug.Log(data.Dialogue[target2].CharacterID1);
         Debug.Log(data.Dialogue[target3].CharacterID1);
 
         //コルーチンテスト152行目呼び出し
-       //StartCoroutine("Stop", 10f);
-
-
+       //StartCoroutine("Stop", 10f);231
     }
 
     private void RouletteIn(int target)
