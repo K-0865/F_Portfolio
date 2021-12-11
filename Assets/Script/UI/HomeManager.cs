@@ -15,12 +15,17 @@ public class HomeManager : MonoBehaviour
 	[SerializeField] GameObject MenuObject;
 	[SerializeField] GameObject FullScreenReturn;
 	[SerializeField] GameObject ResourceTank;
+	
+	//[SerializeField] private UnityEngine.UI.Button buttontest;
+	[SerializeField] private UnityEngine.UI.Image Back;
 
 	private GameObject Image;
 	private GameObject RArrow;
 	private GameObject LArrow;
 
 	private bool Screen_switch = true;
+
+	private int Toggle;
 
 	private void Awake()
 	{
@@ -29,20 +34,19 @@ public class HomeManager : MonoBehaviour
 		//LArrow = Image.transform.Find("Image").gameObject;
 	}
 
-	[SerializeField] private UnityEngine.UI.Button buttontest;
-	[SerializeField] private UnityEngine.UI.Image img;
-	[SerializeField] private UnityEngine.Sprite spr;
-
+	private void InitializeHome()
+	{
+		
+	}
+	
 	public void FullScreen()
 	{
-		img.sprite = ResourceTank.GetComponent<ResourceTank>().Still1;
-		img.SetNativeSize();
 		//buttontest.onClick.AddListener();
 		Debug.Log("FullScreen");
 		if (Screen_switch)
 		{
-			//RArrow.SetActive(false);
-			//LArrow.SetActive(false);
+			RArrow.SetActive(false);
+			LArrow.SetActive(false);
 			PlayerStatus.SetActive(false);
 			Text_Box.SetActive(false);
 			Banner.SetActive(false);
@@ -55,6 +59,8 @@ public class HomeManager : MonoBehaviour
 		}
 		else
 		{
+			RArrow.SetActive(true);
+			LArrow.SetActive(true);
 			PlayerStatus.SetActive(true);
 			Mask_Character.SetActive(true);
 			Text_Box.SetActive(true);
@@ -65,6 +71,19 @@ public class HomeManager : MonoBehaviour
 			FullScreenReturn.SetActive(false);
 			Screen_switch = true;
 			Debug.Log(Screen_switch);
+		}
+	}
+
+	public void SwitchBackGround()
+	{
+		InitializeHome();
+		switch (Toggle)
+		{
+			case 1:
+				Back.sprite = ResourceTank.GetComponent<ResourceTank>().Still1;
+				Back.SetNativeSize();
+				Toggle = 1;
+				break;
 		}
 
 	}
