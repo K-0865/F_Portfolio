@@ -34,7 +34,7 @@ public class BattleManager : MonoBehaviour
     {
         isPause = true;
         hit_count = 0;
-        Roulette.GetComponent<Roulette>().Roulette_main();
+        Roulette.GetComponent<Roulette>().Roul_main();
         yield return new WaitForSeconds(sec);
         isPause = false;
     }

@@ -9,12 +9,15 @@ public class Roulette : MonoBehaviour
 {
     private int Rcount = 0;
     private List<int> DiaIDList = new List<int>(200);
+    private List<int> DiaLine = new List<int>(200);
     private List<int> DisplayDialogue = new List<int>(200);
     private List<int> DiaCon = new List<int>(200);
     private List<string> DiaDisplay = new List<string>(200);
     private int target1 = 0;
     private int target2 = 0;
     private int target3 = 0;
+    List<int> Con_0_1 = new List<int>(99);
+    List<int> Con_2_3 = new List<int>(99);
     [SerializeField] private Dialogue_Table data = null;
     [SerializeField] private GameObject Slot;
 
@@ -48,6 +51,7 @@ public class Roulette : MonoBehaviour
                 data.Dialogue[i].CharacterID3 == null )
                 )
             {
+                DiaLine.Add(i);
                 DiaIDList.Add(data.Dialogue[i].DialogueID);
                 DiaCon.Add(data.Dialogue[i].Continue);
                 DiaDisplay.Add(data.Dialogue[i].Dialogue);
@@ -59,94 +63,67 @@ public class Roulette : MonoBehaviour
 
     }
 
-    public void Roulette_main()
+
+
+    public void Roul()
     {
         Initialize();
-        Rcount++;
-
-        //一つ目のセリフ決定
-        target1 = Random.Range(1, Rcount);
-        Debug.Log(target1 + "調査");
-        RouletteIn(target1);
-
-        //2つ目のセリフ決定
-        if (1 == DiaCon[target1])
+        for (int i = 0; i < DiaIDList.Count; i++)
         {
-            //Continueが１の場合
-            target2 = target1 + 1;
-            RouletteIn(target2);
-        }
-        else
-        {
-            //Continueが1以外の場合
-            target2 = Random.Range(1, Rcount);
-            while (target1  == target2)
+            if (DiaCon[i] == 0 || DiaCon[i] == 1)
             {
-                target2 = Random.Range(1, Rcount);
-            }
-            RouletteIn(target2);
-            
-            //3つ目のセリフの決定
-            if (1 == DiaCon[target2])
-            {
-                //2つ目のセリフのContinueが１の場合
-                target3 = target2 + 1;
-                RouletteIn(target3);
+                Con_0_1.Add(DiaLine[i]);
             }
             else
             {
-                //Continueが1以外の場合
-                target3 = Random.Range(1, Rcount);
-                while (target2  == target3)
-                {
-                    target3 = Random.Range(1, Rcount);
-                }
-                RouletteIn(target3);
+                Con_2_3.Add(DiaLine[i]);
             }
         }
-
-        //3つ目のセリフ決定
-        if (2 == data.Dialogue[target2].Continue)
-        {
-            //Continueが2の場合
-            target3 = target2 + 1;
-            RouletteIn(target3);
-        }
-        else
-        {
-            //Continueが2意外の場合
-            target3 = Random.Range(1, Rcount);
-            while (target1  == target2 && target2  == target3)
-            {
-                target3 = Random.Range(1, Rcount);
-            }
-            RouletteIn(target3);
-        }
-
-        int DispCon = 0;
-        while (DispCon < data.Dialogue.Count)
-        {
-            if (data.Dialogue[DispCon].DialogueID == DisplayDialogue[DispCon])
-            {
-                Debug.Log(data.Dialogue[DispCon]);
-            } 
-            DispCon++;
-        }
-        
-        
-
-        Debug.Log(data.Dialogue[target1].CharacterID1);
-        Debug.Log(data.Dialogue[target2].CharacterID1);
-        Debug.Log(data.Dialogue[target3].CharacterID1);
-
-        //コルーチンテスト152行目呼び出し
-       //StartCoroutine("Stop", 10f);231
     }
 
-    private void RouletteIn(int target)
+    public void Roul_main()
     {
-        DisplayDialogue.Add(DiaIDList[target]);
+       Roul();
+       target1 = Random.Range(0, Con_0_1.Count);
+       target1 = Con_0_1[target1];
+       if (data.Dialogue[target1].Continue == 1)
+       {
+           target2 = target1 + 1;
+       }
+       else
+       {
+           target2 = Random.Range(0, Con_0_1.Count);
+           target2 = Con_0_1[target2];
+           while (target1 == target2)
+           {
+               target2 = Random.Range(0, Con_0_1.Count);
+               target2 = Con_0_1[target2];
+           }
+       }
+
+       if (data.Dialogue[target2].Continue == 2)
+       {
+           target3 = target2 + 1;
+       }
+       else
+       {
+           target3 = Random.Range(0, Con_0_1.Count);
+           target3 = Con_0_1[target3];
+           while (target1 == target3 || target3 == target2)
+           {
+               target3 = Random.Range(0, Con_0_1.Count);
+               target3 = Con_0_1[target3];
+           }
+       }
+        
+       
+       Debug.Log(data.Dialogue[target1].Dialogue);
+       Debug.Log(data.Dialogue[target2].Dialogue);
+       Debug.Log(data.Dialogue[target3].Dialogue);
     }
+
+
+  
 
 
     //コルーチンテスト 139行目から

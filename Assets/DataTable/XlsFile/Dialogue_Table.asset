@@ -15,7 +15,7 @@ MonoBehaviour:
   Dialogue:
   - DialogueID: 501000
     DialogueName: "\u57FA\u672C1"
-    Dialogue: 
+    Dialogue: "\u3053\u3093\u306B\u3061\u306F"
     CharacterID1: 101000
     CharacterID2: 0
     CharacterID3: 0
@@ -25,7 +25,7 @@ MonoBehaviour:
     Continue: 0
   - DialogueID: 502000
     DialogueName: "\u57FA\u672C2"
-    Dialogue: 
+    Dialogue: "\u305B\u3044\u3084\u3063\uFF01\uFF01\uFF01"
     CharacterID1: 101000
     CharacterID2: 0
     CharacterID3: 0
@@ -35,7 +35,7 @@ MonoBehaviour:
     Continue: 0
   - DialogueID: 503001
     DialogueName: "\u57FA\u672C3-1"
-    Dialogue: 
+    Dialogue: "\u884C\u304F\u3088\u3063\uFF01"
     CharacterID1: 101000
     CharacterID2: 102000
     CharacterID3: 0
@@ -45,7 +45,7 @@ MonoBehaviour:
     Continue: 1
   - DialogueID: 503002
     DialogueName: "\u57FA\u672C3-2"
-    Dialogue: 
+    Dialogue: "\u3046\u3093\uFF01\uFF01"
     CharacterID1: 101000
     CharacterID2: 102000
     CharacterID3: 0
@@ -55,7 +55,7 @@ MonoBehaviour:
     Continue: 2
   - DialogueID: 504000
     DialogueName: "\u57FA\u672C4"
-    Dialogue: 
+    Dialogue: "\u3053\u308C\u3067\u3063\uFF01\uFF01\uFF01"
     CharacterID1: 101000
     CharacterID2: 0
     CharacterID3: 0
@@ -65,7 +65,7 @@ MonoBehaviour:
     Continue: 0
   - DialogueID: 505000
     DialogueName: "\u57FA\u672C5"
-    Dialogue: 
+    Dialogue: "\u306F\u308D\u306F\u308D\uFF5E"
     CharacterID1: 103000
     CharacterID2: 0
     CharacterID3: 0
@@ -75,7 +75,7 @@ MonoBehaviour:
     Continue: 0
   - DialogueID: 506000
     DialogueName: "\u57FA\u672C6"
-    Dialogue: 
+    Dialogue: "\u306A\u3093\u306E\u3088\u3046\uFF1F"
     CharacterID1: 102000
     CharacterID2: 0
     CharacterID3: 0
@@ -85,7 +85,7 @@ MonoBehaviour:
     Continue: 0
   - DialogueID: 507000
     DialogueName: "\u57FA\u672C7"
-    Dialogue: 
+    Dialogue: "\u30AD\u30B5\u30DE\u30C3\uFF01"
     CharacterID1: 104000
     CharacterID2: 0
     CharacterID3: 0
@@ -95,7 +95,7 @@ MonoBehaviour:
     Continue: 0
   - DialogueID: 508001
     DialogueName: "\u57FA\u672C8"
-    Dialogue: 
+    Dialogue: 1-Link
     CharacterID1: 101000
     CharacterID2: 102000
     CharacterID3: 103000
@@ -105,7 +105,7 @@ MonoBehaviour:
     Continue: 1
   - DialogueID: 508002
     DialogueName: "\u57FA\u672C9"
-    Dialogue: 
+    Dialogue: 2-Link
     CharacterID1: 101000
     CharacterID2: 102000
     CharacterID3: 103000
@@ -115,7 +115,7 @@ MonoBehaviour:
     Continue: 2
   - DialogueID: 508003
     DialogueName: "\u57FA\u672C10"
-    Dialogue: 
+    Dialogue: 3-Link
     CharacterID1: 101000
     CharacterID2: 102000
     CharacterID3: 103000
