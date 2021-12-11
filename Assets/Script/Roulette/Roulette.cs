@@ -120,14 +120,54 @@ public class Roulette : MonoBehaviour
                target3 = Con_0_1[target3];
            }
        }
-        
-       
+
+       for (int i = 0; i < 3; i++)
+       {
+           Debug.Log(get_CharacterID()[i] + ": ID");
+       }
        Debug.Log(data.Dialogue[target1].Dialogue);
        Debug.Log(data.Dialogue[target2].Dialogue);
        Debug.Log(data.Dialogue[target3].Dialogue);
     }
 
+    int []get_CharacterID()
+    {
+        int[] _ID = new int[4];
+        
+        if (data.Dialogue[target1].Continue == 1)
+        {
+            _ID[0] = data.Dialogue[target1].CharacterID1;
+        }
+        else
+        {
+            _ID[0] = data.Dialogue[target1].CharacterID1;
+        }
 
+        if (data.Dialogue[target2].Continue == 2)
+        {
+            _ID[1] = data.Dialogue[target2].CharacterID2;
+        }
+        else
+        {
+            _ID[1] = data.Dialogue[target2].CharacterID1;
+
+        }
+
+        if (data.Dialogue[target3].Continue == 3 )
+        {
+            _ID[2] = data.Dialogue[target3].CharacterID3;
+        }else if (data.Dialogue[target3].Continue == 2)
+        {
+            _ID[2] = data.Dialogue[target3].CharacterID2;
+        }
+        else
+        {
+            _ID[2] = data.Dialogue[target3].CharacterID1;
+
+        }
+        
+        return _ID;
+    }
   
 
 
