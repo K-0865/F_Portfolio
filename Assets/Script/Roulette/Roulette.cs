@@ -86,7 +86,7 @@ public class Roulette : MonoBehaviour
        Roul();
        target1 = Random.Range(0, Con_0_1.Count);
        target1 = Con_0_1[target1];
-       if (data.Dialogue[target1].Continue == 1)
+       if (data.Dialogue[target1].Continue == 1 && data.Dialogue[target1+1].Continue == 2)
        {
            target2 = target1 + 1;
        }
@@ -101,7 +101,8 @@ public class Roulette : MonoBehaviour
            }
        }
 
-       if (data.Dialogue[target2].Continue == 2)
+       if ((data.Dialogue[target2].Continue == 2 && data.Dialogue[target2+1].Continue == 3) ||
+           (data.Dialogue[target2].Continue == 1 && data.Dialogue[target2+1].Continue == 2))
        {
            target3 = target2 + 1;
        }
