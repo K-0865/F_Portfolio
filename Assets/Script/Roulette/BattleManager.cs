@@ -26,14 +26,16 @@ public class BattleManager : MonoBehaviour
         totals_mobs = enemies_alive_count + allies_alive_count;
         if (hit_count > _GageMax)
         {
-            callRoulette();
+            StartCoroutine("callRoulette",10f) ;
         }
     }
 
-    public void callRoulette()
+    public IEnumerator callRoulette(float sec)
     {
         isPause = true;
+        hit_count = 0;
         Roulette.GetComponent<Roulette>().Roulette_main();
+        yield return new WaitForSeconds(sec);
         isPause = false;
     }
     

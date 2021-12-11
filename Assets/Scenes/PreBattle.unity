@@ -388,9 +388,9 @@ MonoBehaviour:
   gc: {fileID: 1161845929}
   line_ID: 1
   imgobj:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1631463389005129176, guid: 3c57ea8d9659db14b9394b3f6651754e, type: 3}
+  - {fileID: 2063206540155955209, guid: 58326f486151d6441bdb8d40117e861b, type: 3}
+  - {fileID: 1016709188378276593, guid: 33f5fe8d02404934fae37e87008fa1e9, type: 3}
   speed: 10
 --- !u!1 &463316780
 GameObject:
@@ -622,9 +622,9 @@ MonoBehaviour:
   gc: {fileID: 1161845929}
   line_ID: 2
   imgobj:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1631463389005129176, guid: 3c57ea8d9659db14b9394b3f6651754e, type: 3}
+  - {fileID: 2063206540155955209, guid: 58326f486151d6441bdb8d40117e861b, type: 3}
+  - {fileID: 1016709188378276593, guid: 33f5fe8d02404934fae37e87008fa1e9, type: 3}
   speed: 11
 --- !u!1 &564776386
 GameObject:
@@ -2331,9 +2331,9 @@ MonoBehaviour:
   gc: {fileID: 1161845929}
   line_ID: 0
   imgobj:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1631463389005129176, guid: 3c57ea8d9659db14b9394b3f6651754e, type: 3}
+  - {fileID: 2063206540155955209, guid: 58326f486151d6441bdb8d40117e861b, type: 3}
+  - {fileID: 1016709188378276593, guid: 33f5fe8d02404934fae37e87008fa1e9, type: 3}
   speed: 12
 --- !u!1001 &5375444572423495401
 PrefabInstance:

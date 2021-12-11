@@ -135,11 +135,24 @@ public class Roulette : MonoBehaviour
         Debug.Log(data.Dialogue[target1].CharacterID1);
         Debug.Log(data.Dialogue[target2].CharacterID1);
         Debug.Log(data.Dialogue[target3].CharacterID1);
+
+        //コルーチンテスト152行目呼び出し
+       //StartCoroutine("Stop", 10f);
+
+
     }
 
     private void RouletteIn(int target)
     {
         DisplayDialogue.Add(DiaIDList[target]);
     }
+
+
+    //コルーチンテスト 139行目から
+    /*IEnumerator Stop(float sec)
+    {
+        yield return new WaitForSeconds(sec);
+    }*/
+        
 
 }
