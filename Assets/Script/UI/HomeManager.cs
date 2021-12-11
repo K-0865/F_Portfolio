@@ -14,6 +14,7 @@ public class HomeManager : MonoBehaviour
 	[SerializeField] GameObject MiniButton_Top;
 	[SerializeField] GameObject MenuObject;
 	[SerializeField] GameObject FullScreenReturn;
+	[SerializeField] GameObject ResourceTank;
 
 	private GameObject Image;
 	private GameObject RArrow;
@@ -34,7 +35,7 @@ public class HomeManager : MonoBehaviour
 
 	public void FullScreen()
 	{
-		img.sprite = spr;
+		img.sprite = ResourceTank.GetComponent<ResourceTank>().Still1;
 		img.SetNativeSize();
 		//buttontest.onClick.AddListener();
 		Debug.Log("FullScreen");
