@@ -24,6 +24,7 @@ public class Roulette : MonoBehaviour
     [SerializeField] private int _AliveCharacterID1;
     [SerializeField] private int _AliveCharacterID2;
     [SerializeField] private int _AliveCharacterID3;
+    [SerializeField] private int _AliveEnemyID;
 
     [SerializeField] private Dialogues _DialogueStatus;
 
@@ -38,15 +39,18 @@ public class Roulette : MonoBehaviour
             //Debug.Log(data.StageList[i].MapID);
             if ((data.Dialogue[i].CharacterID1 == _AliveCharacterID1 || 
                 data.Dialogue[i].CharacterID1 == _AliveCharacterID2 || 
-                data.Dialogue[i].CharacterID1 == _AliveCharacterID3) &&(
+                data.Dialogue[i].CharacterID1 == _AliveCharacterID3 || 
+                data.Dialogue[i].CharacterID1 == _AliveEnemyID) &&(
                 data.Dialogue[i].CharacterID2 == _AliveCharacterID1 ||
                 data.Dialogue[i].CharacterID2 == _AliveCharacterID2 ||
                 data.Dialogue[i].CharacterID2 == _AliveCharacterID3 ||
+                data.Dialogue[i].CharacterID2 == _AliveEnemyID ||
                 data.Dialogue[i].CharacterID2 == 0 ||
                 data.Dialogue[i].CharacterID2 == null )&&(
                 data.Dialogue[i].CharacterID3 == _AliveCharacterID1 ||
                 data.Dialogue[i].CharacterID3 == _AliveCharacterID2 ||
                 data.Dialogue[i].CharacterID3 == _AliveCharacterID3 ||
+                data.Dialogue[i].CharacterID3 == _AliveEnemyID ||
                 data.Dialogue[i].CharacterID3 == 0 ||
                 data.Dialogue[i].CharacterID3 == null )
                 )
