@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//クエストメニューの入れ替え（現在未設定,仕様変更予定）
+//出来る限りSetActiveを使用しない方向
 public class QuestMenu : MonoBehaviour
 {
     [SerializeField] GameObject Questmenu1;

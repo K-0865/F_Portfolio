@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//各キャラクターの頭上のHPバー
 public class HP : MonoBehaviour
 {
-    // Start is called before the first frame update
+    //初期化
     private Slider _slider;
     private Character_Present_Data _data;
     [SerializeField]
@@ -19,8 +20,8 @@ public class HP : MonoBehaviour
         
         
     }
-
-    // Update is called once per frame
+    
+    //HPが満タン時の表示、非表示の切り替え
     void Update()
     {
         _hp = _data._hp;
@@ -30,12 +31,10 @@ public class HP : MonoBehaviour
         if (_hp == _Maxhp || _hp <= 0)
         {
             _slider.gameObject.SetActive(false);
-
         }
         else
         {
             _slider.gameObject.SetActive (true);
-
         }
     }
 }

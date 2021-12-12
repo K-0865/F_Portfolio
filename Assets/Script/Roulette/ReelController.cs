@@ -82,12 +82,13 @@ public class ReelController : MonoBehaviour {
 		}
 	}
 
-
+	//リールを止める
 	public void Reel_Stop(){
 		turn = false;
 		gc.Stopbt_f (line_ID);
 	}
 
+	//リールが動いているかどうか
 	public void Reel_Move(){
 		turn = true;
 		flg = 0;

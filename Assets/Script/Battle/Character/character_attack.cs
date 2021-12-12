@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//各キャラクターの攻撃モーションと判定
 public class character_attack : MonoBehaviour
 {
     private Character_Movement _c_move;
@@ -29,7 +30,7 @@ public class character_attack : MonoBehaviour
         //Debug.Log(data_move.isAttack);
     }
 
-
+    //ダメージの判定
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (data_move.isAttack)

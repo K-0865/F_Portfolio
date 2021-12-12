@@ -12,7 +12,9 @@ public class TextBoxSwitch : MonoBehaviour
     [SerializeField] int max;
     int value = 0;
     int ran = 0;
-    // Start is called before the first frame update
+    
+    //テキストボックスをクリックされるたびにランダムで変更する（暫定）
+    //最終的にはスプライトを入れ替える形にする
     public void OnTapTextSwitch()
     {
         value = ran;

@@ -9,6 +9,7 @@ public class GManager : MonoBehaviour
 {
     public static GManager instance = null;
     
+    //全sceneに置くことで次のsceneに移ったときに破棄されずにこのオブジェクトが各シーンを移動できるようにする
     private void Awake()
     {
         Application.targetFrameRate = 60; // 60fpsに設定
@@ -25,6 +26,7 @@ public class GManager : MonoBehaviour
 
     }
     
+    //プレイヤーデータの保管（Jsonかplayerprehubで管理予定）
     [System.Serializable]
     public class Player
     {
@@ -47,7 +49,7 @@ public class GManager : MonoBehaviour
         
     }
 
-    
+    //Json書き出し用のテスト
     public void savePlayerData(Player player)
     {
         StreamWriter writer;
@@ -60,6 +62,7 @@ public class GManager : MonoBehaviour
         writer.Close();
     }
 
+    //Json読み込み用のテスト
     public Player loadPlayerData()
     {
         string datastr = "";

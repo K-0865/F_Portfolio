@@ -10,7 +10,6 @@ public class Roulette : MonoBehaviour
     private int Rcount = 0;
     private List<int> DiaIDList = new List<int>(200);
     private List<int> DiaLine = new List<int>(200);
-    private List<int> DisplayDialogue = new List<int>(200);
     private List<int> DiaCon = new List<int>(200);
     private List<string> DiaDisplay = new List<string>(200);
     private int target1 = 0;
@@ -40,6 +39,8 @@ public class Roulette : MonoBehaviour
         for (int i = 0; i < data.Dialogue.Count; i++)
         {
             //Debug.Log(data.StageList[i].MapID);
+            
+            //DialogueテーブルのCharacterID1,2,3に現在生きているバトルシーンに居るオブジェクトのIDがあるテーブルだけを抜き出す
             if ((data.Dialogue[i].CharacterID1 == _AliveCharacterID1 || 
                 data.Dialogue[i].CharacterID1 == _AliveCharacterID2 || 
                 data.Dialogue[i].CharacterID1 == _AliveCharacterID3) &&(
@@ -63,12 +64,13 @@ public class Roulette : MonoBehaviour
             }
         }
         
+        //スロットの表示
         Slot.SetActive(true);
 
     }
 
 
-
+    //Continueが0,1か2,3科を判定する
     public void Roul()
     {
         Initialize();
@@ -85,16 +87,22 @@ public class Roulette : MonoBehaviour
         }
     }
 
+    //Slotのメイン判定部
     public void Roul_main()
     {
        Roul();
+       
+       //1つ目のセリフを抽出する
        target1 = Random.Range(0, Con_0_1.Count);
        target1 = Con_0_1[target1];
+       
+       //２つ目のセリフを抽出する
+       //Continueが１か２なら次のセリフを２つ目のセリフにする
        if (data.Dialogue[target1].Continue == 1 && data.Dialogue[target1+1].Continue == 2)
        {
            target2 = target1 + 1;
        }
-       else
+       else //Continueが0か1なら次のセリフをランダムで決める
        {
            target2 = Random.Range(0, Con_0_1.Count);
            target2 = Con_0_1[target2];
@@ -105,12 +113,14 @@ public class Roulette : MonoBehaviour
            }
        }
 
+       //３つ目のセリフを抽出する
+       //２つ目のセリフのContinueが1か２ならその続きのセリフを３つ目のセリフにする
        if ((data.Dialogue[target2].Continue == 2 && data.Dialogue[target2+1].Continue == 3) ||
            (data.Dialogue[target2].Continue == 1 && data.Dialogue[target2+1].Continue == 2))
        {
            target3 = target2 + 1;
        }
-       else
+       else //上記の条件に当てはまらない場合３つ目のセリフをランダムで抽出する
        {
            target3 = Random.Range(0, Con_0_1.Count);
            target3 = Con_0_1[target3];
@@ -120,13 +130,14 @@ public class Roulette : MonoBehaviour
                target3 = Con_0_1[target3];
            }
        }
-
+       
+       //抽出したセリフの確認
        Debug.Log(data.Dialogue[target1].Dialogue);
        Debug.Log(data.Dialogue[target2].Dialogue);
        Debug.Log(data.Dialogue[target3].Dialogue);
 
-       StartCoroutine("DisSlot", 1.5);
-       StartCoroutine("StartSlot", 10);
+       //リールの操作に関するコルーチン
+       StartCoroutine("DisplaySlot", 2);
        Debug.Log("スタート");
        StartCoroutine("ReelStopL", 7);
        StartCoroutine("ReelStopC", 7.5);
@@ -135,20 +146,14 @@ public class Roulette : MonoBehaviour
 
     }
 
-    IEnumerator DisSlot(float sec)
+    //遅延を入れてリールスタート
+    IEnumerator DisplaySlot(float sec)
     {
         yield return new WaitForSeconds(sec);
         RouletteManager.GetComponent<GameController>().Play();
     }
-    
-    //コルーチンテスト 139行目から
-    IEnumerator StartSlot(float sec)
-    {
-        yield return new WaitForSeconds(sec);
-        Debug.Log("コルーチンスタート");
 
-    }
-
+    //各リールを0.5秒ごとに止める
     IEnumerator ReelStopL(float sec)
     {   
         yield return new WaitForSeconds(sec);
@@ -167,6 +172,8 @@ public class Roulette : MonoBehaviour
         Debug.Log("SlotR");
         Reel_R.GetComponent<ReelController>().Reel_Stop();
     }
+    
+    //スロットを非表示にする
     IEnumerator ReelFin(float sec)
     {
         yield return new WaitForSeconds(sec);

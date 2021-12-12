@@ -6,10 +6,9 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
 
+//データテーブルから取得したキャラクターのデータを各キャラクターのprefabに渡す
 public class Character_Present_Data : MonoBehaviour
 {
-    // Start is called before the first frame update
-    
     public CharacterData sn;
     [SerializeField] private int _id;
     private BattleManager _battleManager;
@@ -44,7 +43,7 @@ public class Character_Present_Data : MonoBehaviour
         //_sDMG.Init(124,new Vector3(0,0,0));
     }
 
-    
+    //ダメージ計算(攻撃力-防御力 = ダメージ、暫定式)
     public void getDamage(float damage)
     {
         float sum = damage - this._def;  // Damage Formula
@@ -56,6 +55,7 @@ public class Character_Present_Data : MonoBehaviour
 
     }
     
+    //キャラクターが生きているかどうか
     void Update()
     {
         if (_hp <= 0)

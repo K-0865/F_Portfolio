@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class char_factory : MonoBehaviour
 {
-    // Start is called before the first frame update
+    //プレイヤーデータの読み込み
     [SerializeField]
     private GManager.Player player_data;
 
@@ -14,6 +14,7 @@ public class char_factory : MonoBehaviour
     private GameObject []_character = new GameObject[4];
     private GameObject []_character_clone = new GameObject[4];
 
+    //マップデータのデータテーブルにある分キャラクターの生成
     void Start()
     {
         //player_pos = GameObject.Find("GameManeger").GetComponent<GManager.Player>().character_pos;

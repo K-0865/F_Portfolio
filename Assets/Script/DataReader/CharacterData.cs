@@ -2,13 +2,15 @@
 
 public class CharacterData : MonoBehaviour
 {
-    // Start is called before the first frame update
+    //データテーブルからキャラクターデータを読み込む
     [SerializeField] private DataTable_pre data = null;
 
     //[SerializeField]
     private int id;
 
     [SerializeField] public CharacterTable CharacterStatus;
+    
+    //生成する為にステータスを保管する
     void Awake()
     {
         id = this.gameObject.GetComponentInParent<Character_Present_Data>()._ID;

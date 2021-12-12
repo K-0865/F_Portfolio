@@ -3,9 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//キャラクターの移動処理
 public class Character_Movement : MonoBehaviour
 {
 
+    //キャラクターがどっちの方向を向いているか
     public enum Face_Direction
     {
         LEFT,
@@ -30,6 +32,8 @@ public class Character_Movement : MonoBehaviour
         }
         
     }
+    
+    //歩行アニメーションの呼び出し
     private void C_Walk_Animation()
     {
         // if Enemy not in area this object walk leaf to right to find enemy
@@ -57,6 +61,7 @@ public class Character_Movement : MonoBehaviour
     
     }
 
+    //攻撃ループ
     IEnumerator Attack(float sec)
     {
         _animator.SetTrigger("isAttack");
@@ -66,7 +71,7 @@ public class Character_Movement : MonoBehaviour
         isAttack = false;
     }
 
-  
+  //範囲攻撃(現在不使用)
     void RangeAttack()
     {
         GetComponentInChildren<character_rangeType>().Range_bullet();
@@ -100,6 +105,8 @@ public class Character_Movement : MonoBehaviour
         }
         
     }
+    
+    //アニメーションの呼び出し
     void Update()
     {
         if (!GameObject.Find("BattleManager").GetComponent<BattleManager>().isPause)

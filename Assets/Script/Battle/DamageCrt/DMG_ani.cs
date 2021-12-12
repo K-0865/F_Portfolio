@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
+//ダメージアニメーション
 public class DMG_ani : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -17,7 +18,7 @@ public class DMG_ani : MonoBehaviour
 
     }
 
-    // Update is called once per frame
+    //ダメージエフェクトの色変更と上に登っていく処理
     void Update()
     {
         if (!GameObject.Find("BattleManager").GetComponent<BattleManager>().isPause)

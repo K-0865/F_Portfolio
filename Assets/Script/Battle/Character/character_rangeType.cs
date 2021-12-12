@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//characterの攻撃方法を判定、設定する
 public class character_rangeType : MonoBehaviour
 {
     private Character_Movement _c_move;
@@ -14,6 +15,8 @@ public class character_rangeType : MonoBehaviour
     public float attack;
     public bool _isAttack;
     [SerializeField] private GameObject bullet;
+    
+    //初期化処理
     void Start()
     {
 
@@ -25,6 +28,7 @@ public class character_rangeType : MonoBehaviour
         Debug.Log(data_char_sc);
     }
 
+    //敵のオブジェクトを取得する
     public GameObject FindClosestEnemy(string tag_name)
     {
         GameObject[] gos;
@@ -55,6 +59,8 @@ public class character_rangeType : MonoBehaviour
         
         return closest;
     }
+    
+    //自分からの攻撃なのか敵からの攻撃なのかを判定する
     public void Range_bullet()
     { 
        

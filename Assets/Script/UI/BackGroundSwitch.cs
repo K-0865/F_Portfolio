@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+//背景の切り替え（過去のもの）
 public class BackGroundSwitch : MonoBehaviour
 {
     [SerializeField] GameObject BackGroundImage1;

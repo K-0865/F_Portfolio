@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//データテーブルからマップ情報を読み込む
+//現状は敵とそのID,のみ将来はマップ背景やWave数毎の生成数を読み込めるようにする
 public class MapManager : MonoBehaviour
 {
    [SerializeField] private Quest_List data;
@@ -10,6 +12,8 @@ public class MapManager : MonoBehaviour
    [SerializeField] private StageTable _PreviewData;
    public int []Enemy_Data;
    public int []Enemy_Stage_Count;
+   
+   //MapIDの確認とEnemyの生成
    private void Awake()
    {
       for (int i = 0; i < data.StageList.Count; i++)
@@ -72,6 +76,7 @@ public class MapManager : MonoBehaviour
       }
    }
 
+   //各種データの管理
    public StageTable get_PreviewData()
    {
       return _PreviewData;

@@ -2,17 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//バナー内でスライドする広告を作るための容量確保
 public class banner_Slide : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

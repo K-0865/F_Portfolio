@@ -4,16 +4,19 @@ using System.Collections.Generic;
 using UnityEditor.UIElements;
 using UnityEngine;
 
+//ダメージエフェクトの処理(旧版)
 public class damage_col_range : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField]private float attack;
 
+    //キャラクターの攻撃範囲の取得
     private void Start()
     {
         attack = GetComponentInParent<character_rangeType>().attack;
     }
 
+    //向いている方向にダメージ判定を飛ばす
     private void Update()
     {
         if (!GameObject.Find("BattleManager").GetComponent<BattleManager>().isPause)
@@ -33,6 +36,7 @@ public class damage_col_range : MonoBehaviour
         Destroy(this.gameObject,0.05f);
     }
 
+    //ダメージ判定が当たったときの処理
     private void OnTriggerEnter2D(Collider2D other)
     {
         string main_tag = transform.parent.parent.tag;

@@ -5,19 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoad : MonoBehaviour
 {
+    //inspectorから取得したsceneに移動する
     [SerializeField] private SceneObject Scene;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void OnClickLoadScene()
     {
         SceneManager.LoadScene(Scene);

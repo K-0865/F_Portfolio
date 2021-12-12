@@ -3,6 +3,8 @@
 using UnityEditor;
 #endif
 
+//inspectorでsceneを取り扱えるようにする
+//インターネットより
 [System.Serializable]
 public class SceneObject
 {

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//ダメージの数値をスプライトの順番にする
 public class NumCtrl : MonoBehaviour {
     [SerializeField] private Sprite[] sp = new Sprite[10];
 

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Vector2 = System.Numerics.Vector2;
 
+//キャラクターの攻撃範囲を設定
 public class Character_attack_range : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -54,6 +55,7 @@ public class Character_attack_range : MonoBehaviour
 
     }
 
+    //接敵判定
     private void OnTriggerEnter2D(Collider2D other)
     {
         string main_tag = transform.parent.parent.tag;
@@ -100,6 +102,7 @@ public class Character_attack_range : MonoBehaviour
 
     }
 
+    //接敵判定
     private void OnTriggerStay2D(Collider2D other)
     {
         string main_tag = transform.parent.parent.tag;
@@ -125,6 +128,7 @@ public class Character_attack_range : MonoBehaviour
             }
         }    }
 
+    //攻撃処理の終了
     private void OnTriggerExit2D(Collider2D other)
     {
 //        Debug.Log("not Found Enemy >>");

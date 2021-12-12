@@ -37,7 +37,8 @@ public class GameController : MonoBehaviour {
         }
     }
 
-    public void Play(){	//Playボタンを押した時の動作
+    //Playボタンを押した時の動作
+    public void Play(){
         playbt.interactable = false;
         stopline_len = 0;
         state = State.Playing;
@@ -45,14 +46,14 @@ public class GameController : MonoBehaviour {
             rc [i].Reel_Move ();
             stopbt [i].interactable = true;
         }
-
     }
 
+    //リールがスタートするまでStopボタンを押せないようにする
     public void Stopbt_f(int id){
         stopbt [id].interactable = false;
     }
 
-
+    //リールの生成
     public void SetLineL(int[] line){
         lineL = new int[3];
         lineL = line;
@@ -70,7 +71,7 @@ public class GameController : MonoBehaviour {
     }
 
 
-
+    //リールのラインが揃ったか判定する(動作検証用に残してある)
     public void Chack(){
         for(int i = 0;i<3;i++){
             if (lineL [i] == lineC [i] &&lineC[i] == lineR[i]) {
