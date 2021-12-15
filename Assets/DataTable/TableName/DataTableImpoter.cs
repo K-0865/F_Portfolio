@@ -3,15 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public enum CharacterId
-{
-    
-}
 
 [System.Serializable]
 public class CharacterTable
 {
-    public CharacterId ID;
+    public int ID;
     public string CharacterName;
     public float HP;
     public float Attack;
@@ -26,6 +22,11 @@ public class CharacterTable
     public float Escape;
     public float CriticalDMG;
     public float CriticalHit;
+    public float SkillID1;
+    public float SkillID2;
+    public float SkillID3;
+    public float SkillID4;
+    public float patternID;
 }
 
 // public class StageTable

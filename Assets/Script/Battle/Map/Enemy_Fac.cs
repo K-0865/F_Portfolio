@@ -48,7 +48,7 @@ public class Enemy_Fac : MonoBehaviour
                 {
                     posy = 1.3f;
                 }
-                Vector3 pos_e = new Vector3(pos,posy,0f);
+                Vector3 pos_e = new Vector3(pos,posy-1.3f,0f);
                 _enemy_clone[i] = Instantiate(_enemy[i]);
                 _enemy_clone[i].transform.parent = transform;
                 _enemy_clone[i].transform.position = pos_e;

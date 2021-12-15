@@ -3864,7 +3864,7 @@ MonoBehaviour:
   Charcater1: {fileID: 21300000, guid: 75db9f1e380befa46af41947c07acce0, type: 3}
   Charcater2: {fileID: 21300000, guid: 9572a504ff67cc04caf6f0181d04bb5f, type: 3}
   Charcater3: {fileID: 21300000, guid: bc6c8d953a268e54cb9794ea86a0be35, type: 3}
-  BackImage1: {fileID: 21300000, guid: 7d3fed7903e5b254ebcd0dd9f67fd22d, type: 3}
+  BackImage1: {fileID: 21300000, guid: e1fbf2ded0dcbd1459e40da1a99d9476, type: 3}
   BackImage2: {fileID: 21300000, guid: 2caf0b564418ea64082203534b7fdae6, type: 3}
   BackImage3: {fileID: 21300000, guid: 7048fa431b11bf643ad92fc2887c7316, type: 3}
   TextBox1: {fileID: 1660542780}

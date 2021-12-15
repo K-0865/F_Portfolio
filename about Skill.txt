@@ -1,0 +1,44 @@
+>>> LIST GET SKILL ID and PATTERNID FROM Character Data Table_______
+>>> LIST[0] == Normal Attack of This Character >>| 1 >> in Pattern  |
+>>> LIST[1] == Active Skill 1		       >>| 2                |
+>>> LIST[2] == Active Skill 2		       >>| 3   	            |
+>>> LIST[3] == Ultimate Skill		       >>|_4________________|
+
+
+>>> FIND>>SKILLID FROM Skill_Data
+>>> Get Type of SKILL Attack == 1, BUFF == 2, DEBUFF == 3 
+>>> IF Attack SKILL get Attack % Damage , Range
+>>> IF BUFF get HEAL ,ATK ,DEF ,EVA, Range
+>>> IF DEBUFF get HEAL ,ATK ,DEF ,EVA, Range
+
+
+>>> NEED IN Skill DataTable 
+>>>   Preview
+>>>   TYPE   = | 1 == 攻撃タイプ  | 2 ==　支援タイプ | 3 == 弱体化タイプ |
+>>>   ATTACK = 攻撃ダメージ >>計算 = characterATK * (ATTACK / 100) = ダメージ 
+>>>   HEAL   = 回復力 >>> 計算 = ????
+>>>   ATK    = 攻撃力アップ % >>> = ???
+>>>   DEF    = 防御力アップ % >>> = ???
+>>>   EVA    = 回避率アップ % >>> = ???
+>>>
+>>>   RANGE  = | 1 == 近接  | 2 ==　遠距離 |
+| SKILLID | TYPE | ATTACK | HEAL | ATK | DEF | EVA | RANGE | #COMMENT|
+| 1000    |   0  |   100  |  0   |  0  |  0  |  0  |   1   |         | >>通常攻撃 >> 近接
+| 1002    |   0  |   100  |  0   |  0  |  0  |  0  |   2   |         | >>通常攻撃 >> 近接
+
+>>> AFTER GET SKILL Data NEXT GET SKILL PATTERN 
+>>> Preview
+>>>
+| PATTERNID | LOOPCONTI | LOOP1 | LOOP2 | LOOP3 | LOOP4 | LOOP 5 | LOOP6 |
+| 2001000   |     2     |   2   |   1   |   1   |   3   |   1    |   2   |   
+>>>　結果は  | スキル1 > 通常 > 通常 > スキル2 > 通常 > スキル1 **
+
+>>>  ループ終わった時　LOOPCONTI を読んで　例の場合は「 2 」　
+
+>>>  結果は **> 通常 >　スキル2 > 通常 > スキル1 のループなります。
+
+>>> 完全ループ 
+
+>> | スキル1 > 通常 > 通常 > スキル2 > 通常 > スキル1 >
+
+>> { 通常 >　スキル2 > 通常 > スキル1 > .....} この行をループ。

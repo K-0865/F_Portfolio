@@ -32,6 +32,8 @@ public class Roulette : MonoBehaviour
 
     [SerializeField] private GameObject RouletteManager;
 
+    [SerializeField] private GameObject PauseButton;
+
     //初期化
     private void Initialize()
     {
@@ -66,6 +68,7 @@ public class Roulette : MonoBehaviour
         
         //スロットの表示
         Slot.SetActive(true);
+        PauseButton.GetComponent<UnityEngine.UI.Button>().interactable = false;
 
     }
 
@@ -179,8 +182,8 @@ public class Roulette : MonoBehaviour
         yield return new WaitForSeconds(sec);
         Slot.SetActive(false);
         Debug.Log("Fin");
+        
+        PauseButton.GetComponent<UnityEngine.UI.Button>().interactable = true;
     }
     
-
-
 }

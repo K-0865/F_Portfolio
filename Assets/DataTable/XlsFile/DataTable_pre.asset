@@ -28,6 +28,11 @@ MonoBehaviour:
     Escape: 5
     CriticalDMG: 50
     CriticalHit: 5
+    SkillID1: 1
+    SkillID2: 2
+    SkillID3: 3
+    SkillID4: 4
+    patternID: 5
   - ID: 2000
     CharacterName: "\u9060\u8DDD\u96E2\u30AD\u30E3\u30E9"
     HP: 1000
@@ -43,6 +48,11 @@ MonoBehaviour:
     Escape: 5
     CriticalDMG: 50
     CriticalHit: 5
+    SkillID1: 0
+    SkillID2: 0
+    SkillID3: 0
+    SkillID4: 0
+    patternID: 0
   - ID: 3000
     CharacterName: "\u652F\u63F4\u30AD\u30E3\u30E9"
     HP: 1000
@@ -58,6 +68,11 @@ MonoBehaviour:
     Escape: 5
     CriticalDMG: 50
     CriticalHit: 5
+    SkillID1: 0
+    SkillID2: 0
+    SkillID3: 0
+    SkillID4: 0
+    patternID: 0
   - ID: 101000
     CharacterName: A
     HP: 10000
@@ -73,6 +88,11 @@ MonoBehaviour:
     Escape: 5
     CriticalDMG: 50
     CriticalHit: 5
+    SkillID1: 0
+    SkillID2: 0
+    SkillID3: 0
+    SkillID4: 0
+    patternID: 0
   - ID: 102000
     CharacterName: B
     HP: 10000
@@ -88,6 +108,11 @@ MonoBehaviour:
     Escape: 5
     CriticalDMG: 50
     CriticalHit: 5
+    SkillID1: 0
+    SkillID2: 0
+    SkillID3: 0
+    SkillID4: 0
+    patternID: 0
   - ID: 103000
     CharacterName: C
     HP: 10000
@@ -103,3 +128,8 @@ MonoBehaviour:
     Escape: 5
     CriticalDMG: 50
     CriticalHit: 5
+    SkillID1: 0
+    SkillID2: 0
+    SkillID3: 0
+    SkillID4: 0
+    patternID: 0

@@ -32,7 +32,16 @@ public class char_factory : MonoBehaviour
                 _character_clone[i] = Instantiate(_character[i]);
                 _character_clone[i].transform.parent = this.transform;
                 float pos = (10 + ((i + 1) * 2))*-1;
-                Vector3 pos_e = new Vector3(pos,0f,0f);
+                float posy = 0;
+                if (i % 2 == 0)
+                {
+                    posy = -1.3f;
+                }
+                if (i % 3 == 0)
+                {
+                    posy = 1.3f;
+                }
+                Vector3 pos_e = new Vector3(pos,posy -1.3f,0f);
                 _character_clone[i].transform.position = pos_e;
                 _battleManager.allies_alive_count++;
                 Debug.Log(_battleManager.allies_alive_count);
