@@ -8,19 +8,30 @@ public class Character_Movement : MonoBehaviour
 {
 
     //キャラクターがどっちの方向を向いているか
+    public enum PlayerState
+    {
+        Idle,Attack,isAttack,Run,Dead
+    }
+    
     public enum Face_Direction
     {
         LEFT,
         RIGHT
     }
 
+    public int LoopAt = 0;
+    private int LoopConti;
     public bool isAttack = false;
     // Start is called before the first frame update
     private Animator _animator;
+    public PlayerState _Player;
     public Face_Direction _faceDirection = Face_Direction.LEFT;
     private Character_Present_Data data;
+    private List<int> Loop_Pattern;
     void Start()
     {
+        LoopConti = GetComponentInChildren<CharacterData>().get_LoopConti();
+        Loop_Pattern = GetComponentInChildren<CharacterData>().get_Loop();
         data = GetComponent<Character_Present_Data>();
         _animator = this.gameObject.GetComponent<Animator>();
         if (this.gameObject.tag == "Player")
@@ -42,14 +53,18 @@ public class Character_Movement : MonoBehaviour
         if (!data._found_enemy && data._alive)
         {
             _animator.SetBool("run",true);
-            _animator.SetBool("isAttack",false);
+            _Player = PlayerState.Run;
+            //_animator.SetBool("isAttack",false);
         }
         else if(data._found_enemy && data._alive)
         {
             _animator.SetBool("run", false);
-            if (!isAttack)
+            
+            if (!isAttack && _Player != PlayerState.isAttack)
             {
-                StartCoroutine("Attack", 100/data._attack_speed);
+                _Player = PlayerState.isAttack;
+                //StartCoroutine("Attack", 100/data._attack_speed);
+                StartCoroutine(Attack(Loop_Pattern[LoopAt],100/data._attack_speed));
             }
             
         }
@@ -62,12 +77,33 @@ public class Character_Movement : MonoBehaviour
     }
 
     //攻撃ループ
-    IEnumerator Attack(float sec)
+    IEnumerator Attack(int Loop,float sec)
     {
-        _animator.SetTrigger("isAttack");
+        
+        _Player = PlayerState.isAttack;
+        switch (Loop)
+        {
+            case 1:
+                _animator.SetTrigger("isNormalAttack");
+                break;
+            case 2:
+                _animator.SetTrigger("isSkill1");
+                break;
+            case 3:
+                _animator.SetTrigger("isSkill2");
+                break;
+        }
+
+        
+        if (LoopAt > Loop_Pattern.Count)
+        {
+            LoopAt = LoopConti;
+        }
         isAttack = true;
        
         yield return new WaitForSeconds(sec);
+        LoopAt++;
+        //_Player = PlayerState.Idle;
         isAttack = false;
     }
 
@@ -75,6 +111,11 @@ public class Character_Movement : MonoBehaviour
     void RangeAttack()
     {
         GetComponentInChildren<character_rangeType>().Range_bullet();
+    }
+
+    void set_PlayerState()
+    {
+        _Player = PlayerState.Idle;
     }
     // Update is called once per frame
     void C_Walk_R()

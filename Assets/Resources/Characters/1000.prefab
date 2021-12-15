@@ -518,6 +518,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 7631c129c63fb7846a12afacc91706d2, type: 2}
+  Skill_datas: {fileID: 11400000, guid: ec890c4b51d504e9cbdec74df1daceec, type: 2}
+  PatternData: {fileID: 11400000, guid: 2d33b31653c96439f85a8723429cea72, type: 2}
+  Loop_Pattern: 
+  Loop_Pattern_Conti: 0
+  CharacterSkill: []
   CharacterStatus:
     ID: 0
     CharacterName: 
@@ -534,6 +539,11 @@ MonoBehaviour:
     Escape: 0
     CriticalDMG: 0
     CriticalHit: 0
+    SkillID1: 0
+    SkillID2: 0
+    SkillID3: 0
+    SkillID4: 0
+    patternID: 0
 --- !u!1 &6842390069583837652
 GameObject:
   m_ObjectHideFlags: 0

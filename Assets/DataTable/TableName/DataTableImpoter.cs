@@ -22,11 +22,11 @@ public class CharacterTable
     public float Escape;
     public float CriticalDMG;
     public float CriticalHit;
-    public float SkillID1;
-    public float SkillID2;
-    public float SkillID3;
-    public float SkillID4;
-    public float patternID;
+    public int SkillID1;
+    public int SkillID2;
+    public int SkillID3;
+    public int SkillID4;
+    public int patternID;
 }
 
 // public class StageTable
