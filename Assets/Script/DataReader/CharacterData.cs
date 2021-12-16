@@ -14,12 +14,14 @@ public class CharacterData : MonoBehaviour
     [SerializeField] private int Loop_Pattern_Conti;
      //[SerializeField]
     private int id;
+    [SerializeField] private Character_SkillButton Add_Skill_Button;
     [SerializeField] public List<Skill_Data> CharacterSkill = new List<Skill_Data>();
     [SerializeField] public CharacterTable CharacterStatus;
     
     //生成する為にステータスを保管する
     void Awake()
     {
+        Add_Skill_Button = GameObject.Find("SkillButton").GetComponent<Character_SkillButton>();
         id = this.gameObject.GetComponentInParent<Character_Present_Data>()._ID;
         for (int i = 0; i < data.Character.Count; i++)
         {
@@ -41,10 +43,14 @@ public class CharacterData : MonoBehaviour
                 if (Skill_get[i] == Skill_datas.SkillIDs[j].SkillID)
                 {
                     CharacterSkill.Add(Skill_datas.SkillIDs[j]);
+                    
                 }
             }
         }
-
+        if (this.transform.parent.tag == "Player")
+        {
+            Add_Skill_Button.set_Pos(CharacterSkill[3]);
+        }
 
         for (int i = 0; i < PatternData.PatternTables.Count; i++)
         {
@@ -71,6 +77,10 @@ public class CharacterData : MonoBehaviour
         }
     }
 
+    public List<Skill_Data >get_Skill()
+    {
+        return CharacterSkill;
+    }
     public List<int> get_Loop()
     {
         return Loop_Pattern;

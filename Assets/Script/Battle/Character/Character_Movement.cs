@@ -28,6 +28,8 @@ public class Character_Movement : MonoBehaviour
     public Face_Direction _faceDirection = Face_Direction.LEFT;
     private Character_Present_Data data;
     private List<int> Loop_Pattern;
+    private Character_SkillButton _characterSkillButton;
+
     void Start()
     {
         LoopConti = GetComponentInChildren<CharacterData>().get_LoopConti();
@@ -37,11 +39,14 @@ public class Character_Movement : MonoBehaviour
         if (this.gameObject.tag == "Player")
         {
             _faceDirection = Face_Direction.LEFT;
+            _characterSkillButton = GameObject.Find("SkillButton").GetComponent<Character_SkillButton>();
+            _characterSkillButton.set_Animator_Character(_animator);
+            _characterSkillButton.set_Movement_Character(this);
         }else if(this.gameObject.tag == "enemy")
         {
             _faceDirection = Face_Direction.RIGHT;
         }
-        
+
     }
     
     //歩行アニメーションの呼び出し
@@ -50,7 +55,7 @@ public class Character_Movement : MonoBehaviour
         // if Enemy not in area this object walk leaf to right to find enemy
        
          // it's mean if not have enemy in stage object will walk unit far of right
-        if (!data._found_enemy && data._alive)
+        if (!data._found_enemy && data._alive && _Player != PlayerState.isAttack)
         {
             _animator.SetBool("run",true);
             _Player = PlayerState.Run;
@@ -122,7 +127,7 @@ public class Character_Movement : MonoBehaviour
     {
         if (_faceDirection == Face_Direction.LEFT)
         {
-            if (_animator.GetBool("run") == true)
+            if (_animator.GetBool("run") == true && _Player != PlayerState.isAttack)
             {
                 this.gameObject.transform.position += new Vector3(1, 0) * Time.deltaTime;
             }
@@ -161,5 +166,9 @@ public class Character_Movement : MonoBehaviour
         }
     }
 
+    public void set_Player_State(PlayerState state)
+    {
+        _Player = state;
+    }
     
 }
