@@ -100,10 +100,7 @@ public class Character_Movement : MonoBehaviour
         }
 
         
-        if (LoopAt > Loop_Pattern.Count)
-        {
-            LoopAt = LoopConti;
-        }
+        
         isAttack = true;
        
         yield return new WaitForSeconds(sec);
@@ -155,6 +152,10 @@ public class Character_Movement : MonoBehaviour
     //アニメーションの呼び出し
     void Update()
     {
+        if (LoopAt >= Loop_Pattern.Count)
+        {
+            LoopAt = LoopConti;
+        }
         if (!GameObject.Find("BattleManager").GetComponent<BattleManager>().isPause)
         {
             _animator.enabled = true;
