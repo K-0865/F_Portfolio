@@ -1045,7 +1045,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 611326219}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1284464236}
+        m_TargetAssemblyTypeName: Character_SkillButton, Assembly-CSharp
+        m_MethodName: Use_Skill
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &611326219
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1165,7 +1177,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 628408929}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1284464236}
+        m_TargetAssemblyTypeName: Character_SkillButton, Assembly-CSharp
+        m_MethodName: Use_Skill
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &628408929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1285,7 +1309,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 652501188}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1284464236}
+        m_TargetAssemblyTypeName: Character_SkillButton, Assembly-CSharp
+        m_MethodName: Use_Skill
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &652501188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2430,7 +2466,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1357342253}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1284464236}
+        m_TargetAssemblyTypeName: Character_SkillButton, Assembly-CSharp
+        m_MethodName: Use_Skill
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1357342253
 MonoBehaviour:
   m_ObjectHideFlags: 0
