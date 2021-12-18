@@ -145,14 +145,19 @@ public class Roulette : MonoBehaviour
        StartCoroutine("ReelStopL", 7);
        StartCoroutine("ReelStopC", 7.5);
        StartCoroutine("ReelStopR", 8);
-       StartCoroutine("ReelFin", 11);
+       StartCoroutine("ReelFin", 15);
 
     }
 
     //遅延を入れてリールスタート
     IEnumerator DisplaySlot(float sec)
     {
+        
         yield return new WaitForSeconds(sec);
+
+        Reel_l.GetComponent<ReelController>().first = false;
+        Reel_C.GetComponent<ReelController>().first = false;
+        Reel_R.GetComponent<ReelController>().first = false;
         RouletteManager.GetComponent<GameController>().Play();
     }
 
@@ -180,7 +185,12 @@ public class Roulette : MonoBehaviour
     IEnumerator ReelFin(float sec)
     {
         yield return new WaitForSeconds(sec);
+        Reel_l.GetComponent<ReelController>().first = true;
+        Reel_C.GetComponent<ReelController>().first = true;
+        Reel_R.GetComponent<ReelController>().first = true;
+
         Slot.SetActive(false);
+
         Debug.Log("Fin");
         
         PauseButton.GetComponent<UnityEngine.UI.Button>().interactable = true;

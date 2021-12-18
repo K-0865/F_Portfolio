@@ -15,7 +15,7 @@ public class ReelController : MonoBehaviour {
 
 	Transform pos;	//リールのTransform
 	Vector3 initpos; //リールの初期位置
-
+	public bool first = true;
 	public int speed; //リールの回転速度
 	bool turn = false; //回転させるか否か
 	int flg = 0;
@@ -48,37 +48,87 @@ public class ReelController : MonoBehaviour {
 	}
 
 	// Update is called once per frame
-	void Update () {
-		if (pos.localPosition.y < -8.1) {
+	void Update()
+	{
+		if (pos.localPosition.y < -8.1)
+		{
 			pos.localPosition = initpos;
-		} 
-
-		if (turn) {	
-			pos.localPosition = new Vector3 (pos.localPosition.x, pos.localPosition.y - (speed * Time.deltaTime), pos.localPosition.z);
-		} else {
-			if (pos.localPosition.y % 0.9f < -0.06f) {	//絵柄をマスで固定するために回転スピードを弱める
+		}
+		
+		if (turn)
+		{
+			pos.localPosition = new Vector3(pos.localPosition.x, pos.localPosition.y - (speed * Time.deltaTime),
+				pos.localPosition.z);
+		}
+		else
+		{
+			if (pos.localPosition.y % 0.9f < -0.06f)
+			{
+				//絵柄をマスで固定するために回転スピードを弱める
 				flg = 0;
-				pos.localPosition = new Vector3 (pos.localPosition.x, pos.localPosition.y - 0.03f, pos.localPosition.z); 
-			} else {	//固定完了
-				if (flg == 0) {	//トリガー
-					flg = 1;
-					int under = -1 * (int)(pos.localPosition.y / 0.9);	//何マス回転（移動）したか
+				pos.localPosition = new Vector3(pos.localPosition.x, pos.localPosition.y - 0.03f, pos.localPosition.z);
 
-					for (int i = 0; i < 3; i++) {
-						lines [i] = current [(under) + i];	//絵柄を特定
-					}
-					//値送り、絵柄配列を送る[0]が一番下の絵柄[1]が真ん中[2]が一番上
-					if (line_ID == 0) {
-						gc.SetLineR (lines);
-					} else if (line_ID == 1) {
-						gc.SetLineC (lines);
-					} else {
-						gc.SetLineL (lines);
-					}
-
-				}
 			}
+			else
+			{
+				int c = -1 * (int) (pos.localPosition.y / 0.9); //何マス回転（移動）したか
 
+				if (current[(c + 1)] != 0 && !first )
+				{
+					pos.localPosition = new Vector3(pos.localPosition.x, pos.localPosition.y - 0.03f, pos.localPosition.z);
+				}
+				else
+				{
+					if (flg == 0)
+					{
+						//トリガー
+						flg = 1;
+						int under = -1 * (int) (pos.localPosition.y / 0.9); //何マス回転（移動）したか
+
+						for (int i = 0; i < 3; i++)
+						{
+							lines[i] = current[(under) + i]; //絵柄を特定
+						}
+
+						//値送り、絵柄配列を送る[0]が一番下の絵柄[1]が真ん中[2]が一番上
+						if (line_ID == 0)
+						{
+							gc.SetLineR(lines);
+						}
+						else if (line_ID == 1)
+						{
+							gc.SetLineC(lines);
+						}
+						else
+						{
+							gc.SetLineL(lines);
+						}
+					}
+				}
+				// if (pos.localPosition.y % 0.9f < -0.06f) {	//絵柄をマスで固定するために回転スピードを弱める
+				// 	flg = 0;
+				// 	pos.localPosition = new Vector3 (pos.localPosition.x, pos.localPosition.y - 0.03f, pos.localPosition.z); 
+				// } else {	//固定完了
+				// 	if (flg == 0) {	//トリガー
+				// 		flg = 1;
+				// 		int under = -1 * (int)(pos.localPosition.y / 0.9);	//何マス回転（移動）したか
+				//
+				// 		for (int i = 0; i < 3; i++) {
+				// 			lines [i] = current [(under) + i];	//絵柄を特定
+				// 		}
+				// 		//値送り、絵柄配列を送る[0]が一番下の絵柄[1]が真ん中[2]が一番上
+				// 		if (line_ID == 0) {
+				// 			gc.SetLineR (lines);
+				// 		} else if (line_ID == 1) {
+				// 			gc.SetLineC (lines);
+				// 		} else {
+				// 			gc.SetLineL (lines);
+				// 		}
+				//
+				// 	}
+				// }
+
+			}
 		}
 	}
 
