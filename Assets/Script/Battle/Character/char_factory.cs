@@ -21,7 +21,7 @@ public class char_factory : MonoBehaviour
         player_pos = player_data.get_char_pos();
         
         _battleManager = GetComponentInParent<BattleManager>();
-        Debug.Log(player_pos.Length);
+        //Debug.Log(player_pos.Length);
         for (int i = 0; i < player_data.character_pos.Length; i++)
         {
             
@@ -44,7 +44,7 @@ public class char_factory : MonoBehaviour
                 Vector3 pos_e = new Vector3(pos,posy -1.3f,0f);
                 _character_clone[i].transform.position = pos_e;
                 _battleManager.allies_alive_count++;
-                Debug.Log(_battleManager.allies_alive_count);
+                //Debug.Log(_battleManager.allies_alive_count);
             }
             
         }

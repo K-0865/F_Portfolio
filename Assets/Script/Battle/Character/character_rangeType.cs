@@ -25,7 +25,7 @@ public class character_rangeType : MonoBehaviour
         data_move = this.gameObject.GetComponentInParent<Character_Movement>();
         attack = data_char_sc.CharacterStatus.Attack;
 
-        Debug.Log(data_char_sc);
+        //Debug.Log(data_char_sc);
     }
 
     //敵のオブジェクトを取得する
@@ -44,7 +44,7 @@ public class character_rangeType : MonoBehaviour
                 list_obj.Add(go);
             }
         }
-        Debug.Log(list_obj.Count);
+        //Debug.Log(list_obj.Count);
         foreach (GameObject go in list_obj)
         {
             Vector3 diff = go.transform.position - position;
