@@ -145,7 +145,7 @@ public class Roulette : MonoBehaviour
        StartCoroutine("ReelStopL", 7);
        StartCoroutine("ReelStopC", 7.5);
        StartCoroutine("ReelStopR", 8);
-       StartCoroutine("ReelFin", 15);
+       StartCoroutine("ReelFin", 11);
 
     }
 

@@ -29,7 +29,7 @@ public class BattleManager : MonoBehaviour
         //一定回数敵＋味方キャラの攻撃が当たったらRouletteを呼び出す
         if (hit_count > _GageMax)
         {
-            StartCoroutine("callRoulette",10f) ;
+            StartCoroutine("callRoulette",16f) ;
         }
 
         //敵か味方のキャラの残数がゼロになったらテキストを表示してクエスト選択に戻る（暫定的な処理）

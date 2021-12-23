@@ -77,6 +77,18 @@ public class ReelController : MonoBehaviour {
 				{
 					pos.localPosition = new Vector3(pos.localPosition.x, pos.localPosition.y - 0.03f, pos.localPosition.z);
 				}
+				else if (current[(c + 1)] != 2 && !first)
+				{
+					
+				}
+				else if (current[(c + 1)] != 3 && !first)
+				{
+					
+				}
+				else if (current[(c + 1)] != 4 && !first)
+				{
+					
+				}
 				else
 				{
 					if (flg == 0)
