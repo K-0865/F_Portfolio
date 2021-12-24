@@ -31,3 +31,12 @@ MonoBehaviour:
     Eva: 0
     Range: 2
     Comment: AttackRange
+  - SkillID: 9102000
+    Type: 1
+    Attack: 200
+    Heal: 0
+    Atk: 0
+    Def: 0
+    Eva: 0
+    Range: 1
+    Comment: "\u30B5\u30D5\u30A1\u30A4\u30A2SP"

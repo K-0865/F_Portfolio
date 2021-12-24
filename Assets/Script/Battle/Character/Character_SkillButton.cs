@@ -28,8 +28,16 @@ public class Character_SkillButton : MonoBehaviour
 
         public void Use_Skill(int num)
         {
-            All_Character[num].SetTrigger("isSPSkill");
-            All_Character_Movement[num].set_Player_State(Character_Movement.PlayerState.isAttack);
+                if (!All_Character_Movement[num].isUseSP)
+                {
+                        All_Character_Movement[num].isUseSP = true;
+                }
+                else
+                {
+                        All_Character_Movement[num].isUseSP = false;
+                }
+                // All_Character[num].SetTrigger("isSPSkill");
+                // All_Character_Movement[num].set_Player_State(Character_Movement.PlayerState.isAttack);
         }
 
        

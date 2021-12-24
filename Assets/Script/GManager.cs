@@ -36,7 +36,7 @@ public class GManager : MonoBehaviour
         public float coin;
         public float jewel;
 
-        public int[] character_pos { get; private set; } = new[] {1000,1000 };
+        public int[] character_pos { get; private set; } = new[] {102000,1000 };
         public int []get_char_pos()
         {
             return character_pos;

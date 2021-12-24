@@ -13,7 +13,7 @@ public class damage_col_range : MonoBehaviour
     //キャラクターの攻撃範囲の取得
     private void Start()
     {
-        attack = GetComponentInParent<character_rangeType>().attack;
+        attack = GetComponentInParent<character_rangeType>().total_attack;
     }
 
     //向いている方向にダメージ判定を飛ばす

@@ -28,10 +28,14 @@ public class Character_Movement : MonoBehaviour
     public Face_Direction _faceDirection = Face_Direction.LEFT;
     private Character_Present_Data data;
     private List<int> Loop_Pattern;
+    [SerializeField] List<Skill_Data> _skillData;
     private Character_SkillButton _characterSkillButton;
+    [SerializeField]private Character_attack_range _attackRange;
 
+    [SerializeField]public bool isUseSP = false;
     void Start()
     {
+        
         LoopConti = GetComponentInChildren<CharacterData>().get_LoopConti();
         Loop_Pattern = GetComponentInChildren<CharacterData>().get_Loop();
         data = GetComponent<Character_Present_Data>();
@@ -86,18 +90,26 @@ public class Character_Movement : MonoBehaviour
     {
         
         _Player = PlayerState.isAttack;
-        switch (Loop)
+        if (!isUseSP)
         {
-            case 1:
-                _animator.SetTrigger("isNormalAttack");
-                break;
-            case 2:
-                _animator.SetTrigger("isSkill1");
-                break;
-            case 3:
-                _animator.SetTrigger("isSkill2");
-                break;
+            switch (Loop)
+            {
+                case 1:
+                    _animator.SetTrigger("isNormalAttack");
+                    break;
+                case 2:
+                    _animator.SetTrigger("isSkill1");
+                    break;
+                case 3:
+                    _animator.SetTrigger("isSkill2");
+                    break;
+            }
         }
+        else
+        {
+            _animator.SetTrigger("isSPSkill");
+        }
+        
 
         
         
@@ -112,7 +124,7 @@ public class Character_Movement : MonoBehaviour
   //範囲攻撃(現在不使用)
     void RangeAttack()
     {
-        GetComponentInChildren<character_rangeType>().Range_bullet();
+        GetComponentInChildren<character_rangeType>().Range_bullet(_skillData[Loop_Pattern[LoopAt]-1].Attack);
     }
 
     void set_PlayerState()
@@ -156,20 +168,40 @@ public class Character_Movement : MonoBehaviour
         {
             LoopAt = LoopConti;
         }
+
         if (!GameObject.Find("BattleManager").GetComponent<BattleManager>().isPause)
         {
             _animator.enabled = true;
             C_Walk_Animation();
             C_Walk_R();
+            if (!isUseSP)
+            {
+                _attackRange.set_Skill_range_Now(_skillData[Loop_Pattern[LoopAt]-1].Range);
+                
+            }
+            else
+            {
+                _attackRange.set_Skill_range_Now(_skillData[3].Range);
+
+            }
         }    else if (GameObject.Find("BattleManager").GetComponent<BattleManager>().isPause)
         {
             _animator.enabled = false;
         }
     }
 
+
+    public void set_Skill_data(List<Skill_Data> info)
+    {
+        _skillData = info;
+    }
     public void set_Player_State(PlayerState state)
     {
         _Player = state;
     }
-    
+
+    public void set_isSP()
+    {
+        isUseSP = false;
+    }
 }

@@ -94,13 +94,13 @@ MonoBehaviour:
     SkillID4: 0
     patternID: 0
   - ID: 102000
-    CharacterName: B
+    CharacterName: "\u30B5\u30D5\u30A1\u30A4\u30A2"
     HP: 10000
-    Attack: 1600
+    Attack: 500
     Defence: 1000
     Speed: 100
     AttackSpeed: 100
-    AttackRange: 2000
+    AttackRange: 100
     skillGauge: 1000
     GaugeHealing: 100
     Rare: 3
@@ -108,11 +108,11 @@ MonoBehaviour:
     Escape: 5
     CriticalDMG: 50
     CriticalHit: 5
-    SkillID1: 0
-    SkillID2: 0
-    SkillID3: 0
-    SkillID4: 0
-    patternID: 0
+    SkillID1: 9001000
+    SkillID2: 9001000
+    SkillID3: 9001000
+    SkillID4: 9102000
+    patternID: 8102000
   - ID: 103000
     CharacterName: C
     HP: 10000

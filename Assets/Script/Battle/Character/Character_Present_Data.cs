@@ -47,8 +47,11 @@ public class Character_Present_Data : MonoBehaviour
     public void getDamage(float damage)
     {
         float sum = damage - this._def;  // Damage Formula
+        if (sum <= 0)
+        {
+            sum = 1;
+        }
         _hp -= sum;
-        
         
         _sdmg.Init((int)sum,new Vector3(this.transform.position.x,this.transform.position.y+0.5f,0));
         GameObject.Find("BattleManager").GetComponent<BattleManager>().hit_count++;

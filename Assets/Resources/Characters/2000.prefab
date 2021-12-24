@@ -350,7 +350,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 90}
+  m_AnchoredPosition: {x: 0, y: 200}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8565833433922018515
@@ -576,7 +576,7 @@ Transform:
   m_GameObject: {fileID: 7492388183719858551}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.86, y: 0, z: 0}
-  m_LocalScale: {x: -2, y: 2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2512844943024689539}
   - {fileID: 3277612049255589049}
@@ -643,8 +643,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.0009775, y: 1}
-    newSize: {x: 2, y: 2}
+    oldSize: {x: 4, y: 4.0013027}
+    newSize: {x: 4, y: 4.0013027}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -692,13 +692,13 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 9186536756531254007, guid: e24763f398853854eb69b610a0532681,
+  m_Sprite: {fileID: 6102018387030355833, guid: 4a32610eb00c3441aae1e081608b7488,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2, y: 2}
+  m_Size: {x: 4, y: 4.0013027}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -751,6 +751,9 @@ MonoBehaviour:
   isAttack: 0
   _Player: 0
   _faceDirection: 0
+  _skillData: []
+  _attackRange: {fileID: 7655241364574367115}
+  isUseSP: 0
 --- !u!1 &7834994973454975847
 GameObject:
   m_ObjectHideFlags: 0
@@ -796,6 +799,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _data: {fileID: 7265920853823072109}
   attack: 0
+  total_attack: 0
   _isAttack: 0
   bullet: {fileID: 3896038062646857811, guid: b3b50445883674aa788010de456c9338, type: 3}
 --- !u!1 &7984209190687534711

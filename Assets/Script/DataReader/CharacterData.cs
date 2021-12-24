@@ -18,6 +18,7 @@ public class CharacterData : MonoBehaviour
     [SerializeField] public List<Skill_Data> CharacterSkill = new List<Skill_Data>();
     [SerializeField] public CharacterTable CharacterStatus;
     
+    
     //生成する為にステータスを保管する
     void Awake()
     {
@@ -75,6 +76,7 @@ public class CharacterData : MonoBehaviour
                 }
             }
         }
+        gameObject.GetComponentInParent<Character_Movement>().set_Skill_data(CharacterSkill);
     }
 
     public List<Skill_Data >get_Skill()
