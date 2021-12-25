@@ -24,19 +24,39 @@ public class CharacterData : MonoBehaviour
     {
         Add_Skill_Button = GameObject.Find("SkillButton").GetComponent<Character_SkillButton>();
         id = this.gameObject.GetComponentInParent<Character_Present_Data>()._ID;
-        for (int i = 0; i < data.Character.Count; i++)
+        if (this.transform.parent.tag == "Player")
         {
-            if ((int)data.Character[i].ID == id)
+            for (int i = 0; i < data.Character.Count; i++)
             {
-                CharacterStatus = data.Character[i];
-                Skill_get.Add(CharacterStatus.SkillID1);
-                Skill_get.Add(CharacterStatus.SkillID2);
-                Skill_get.Add(CharacterStatus.SkillID3);
-                Skill_get.Add(CharacterStatus.SkillID4);
-                PatternID = CharacterStatus.patternID;
-                break;
+                if ((int)data.Character[i].ID == id)
+                {
+                    CharacterStatus = data.Character[i];
+                    Skill_get.Add(CharacterStatus.SkillID1);
+                    Skill_get.Add(CharacterStatus.SkillID2);
+                    Skill_get.Add(CharacterStatus.SkillID3);
+                    Skill_get.Add(CharacterStatus.SkillID4);
+                    PatternID = CharacterStatus.patternID;
+                    break;
+                }
             }
         }
+        else
+        {
+            for (int i = 0; i < data.Enemy.Count; i++)
+            {
+                if ((int)data.Enemy[i].ID == id)
+                {
+                    CharacterStatus = data.Enemy[i];
+                    Skill_get.Add(CharacterStatus.SkillID1);
+                    Skill_get.Add(CharacterStatus.SkillID2);
+                    Skill_get.Add(CharacterStatus.SkillID3);
+                    Skill_get.Add(CharacterStatus.SkillID4);
+                    PatternID = CharacterStatus.patternID;
+                    break;
+                }
+            }
+        }
+        
         for (int i = 0; i < 4; i++)
         {
             for (int j = 0; j < Skill_datas.SkillIDs.Count; j++)

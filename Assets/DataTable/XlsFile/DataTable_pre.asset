@@ -133,3 +133,64 @@ MonoBehaviour:
     SkillID3: 0
     SkillID4: 0
     patternID: 0
+  Enemy:
+  - ID: 4000
+    CharacterName: "\u30A8\u30CD\u30DF\u30FCMelee"
+    HP: 3000
+    Attack: 500
+    Defence: 250
+    Speed: 1000
+    AttackSpeed: 100
+    AttackRange: 100
+    skillGauge: 1000
+    GaugeHealing: 100
+    Rare: 1
+    Level: 1
+    Escape: 5
+    CriticalDMG: 50
+    CriticalHit: 5
+    SkillID1: 9001000
+    SkillID2: 9001000
+    SkillID3: 9001000
+    SkillID4: 9001000
+    patternID: 8001000
+  - ID: 5000
+    CharacterName: "\u30A8\u30CD\u30DF\u30FCRange"
+    HP: 3000
+    Attack: 400
+    Defence: 250
+    Speed: 100
+    AttackSpeed: 100
+    AttackRange: 2000
+    skillGauge: 1000
+    GaugeHealing: 100
+    Rare: 1
+    Level: 1
+    Escape: 5
+    CriticalDMG: 50
+    CriticalHit: 5
+    SkillID1: 9002000
+    SkillID2: 9002000
+    SkillID3: 9002000
+    SkillID4: 9002000
+    patternID: 8001000
+  - ID: 104000
+    CharacterName: D
+    HP: 50000
+    Attack: 2000
+    Defence: 500
+    Speed: 100
+    AttackSpeed: 100
+    AttackRange: 100
+    skillGauge: 1000
+    GaugeHealing: 100
+    Rare: 1
+    Level: 80
+    Escape: 5
+    CriticalDMG: 50
+    CriticalHit: 5
+    SkillID1: 0
+    SkillID2: 0
+    SkillID3: 0
+    SkillID4: 0
+    patternID: 0
