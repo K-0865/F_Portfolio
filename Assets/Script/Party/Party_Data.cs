@@ -15,7 +15,15 @@ public class Party_Data : MonoBehaviour
     private int _TryChange;
     void Start()
     {
-        
+        for (int i = 0; i < _Party_POS_IMG.Count; i++)
+        {
+            if (GManager.instance.character_pos[i] != 0)
+            {
+                _Party_POS_IMG[i].sprite = Resources.Load<Sprite>("Party_UI/" + GManager.instance.character_pos[i]);
+
+            }
+            
+        }
     }
 
     // Update is called once per frame

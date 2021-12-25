@@ -11,8 +11,8 @@ public class char_factory : MonoBehaviour
     private int [] player_pos;
     private BattleManager _battleManager;
     //[SerializeField]
-    private GameObject []_character = new GameObject[4];
-    private GameObject []_character_clone = new GameObject[4];
+    private GameObject []_character = new GameObject[5];
+    private GameObject []_character_clone = new GameObject[5];
 
     //マップデータのデータテーブルにある分キャラクターの生成
     void Start()
