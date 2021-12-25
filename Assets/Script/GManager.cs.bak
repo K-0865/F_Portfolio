@@ -9,20 +9,6 @@ public class GManager : MonoBehaviour
 {
     public static GManager instance = null;
     
-    //public int[] character_pos { get; private set; } = new[] {102000,1000 };
-    public int[] character_pos = new[] {102000,1000,0,0,0 };
-
-
-    public int []get_char_pos()
-    {
-        return character_pos;
-    }
-
-    public void set_char_pos(int [] data)
-    {
-        character_pos = data;
-    }
-
     //全sceneに置くことで次のsceneに移ったときに破棄されずにこのオブジェクトが各シーンを移動できるようにする
     private void Awake()
     {
@@ -36,20 +22,36 @@ public class GManager : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+        
 
     }
     
     //プレイヤーデータの保管（Jsonかplayerprehubで管理予定）
+    [System.Serializable]
+    public class Player
+    {
+        public float Exp;
+        public float Level;
+        public float Stamina;
+        public float coin;
+        public float jewel;
 
-    public float Level;
-    public float Stamina;
-    public float coin;
-    public float jewel;
+        //public int[] character_pos { get; private set; } = new[] {102000,1000 };
+        public int[] character_pos = new[] {102000,1000 };
+        public int []get_char_pos()
+        {
+            return character_pos;
+        }
 
-    public float Exp;
+        public void set_char_pos(int [] data)
+        {
+            character_pos = data;
+        }
+        
+    }
 
-        //Json書き出し用のテスト
-    public void savePlayerData(GManager player)
+    //Json書き出し用のテスト
+    public void savePlayerData(Player player)
     {
         StreamWriter writer;
 
@@ -62,7 +64,7 @@ public class GManager : MonoBehaviour
     }
 
     //Json読み込み用のテスト
-    public GManager loadPlayerData()
+    public Player loadPlayerData()
     {
         string datastr = "";
         StreamReader reader;
@@ -70,7 +72,7 @@ public class GManager : MonoBehaviour
         datastr = reader.ReadToEnd();
         reader.Close();
 
-        return JsonUtility.FromJson<GManager>(datastr);
+        return JsonUtility.FromJson<Player>(datastr);
     }
 
 }

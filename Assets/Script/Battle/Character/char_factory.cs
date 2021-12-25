@@ -6,8 +6,8 @@ public class char_factory : MonoBehaviour
 {
     //プレイヤーデータの読み込み
     [SerializeField]
-    private GManager.Player player_data;
-
+    private GManager player_data;
+    [SerializeField]
     private int [] player_pos;
     private BattleManager _battleManager;
     //[SerializeField]
@@ -17,8 +17,10 @@ public class char_factory : MonoBehaviour
     //マップデータのデータテーブルにある分キャラクターの生成
     void Start()
     {
+        player_data = GManager.instance;
         //player_pos = GameObject.Find("GameManeger").GetComponent<GManager.Player>().character_pos;
-        player_pos = player_data.get_char_pos();
+        player_pos = GManager.instance.get_char_pos();
+        
         
         _battleManager = GetComponentInParent<BattleManager>();
         //Debug.Log(player_pos.Length);
