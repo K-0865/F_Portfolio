@@ -11,8 +11,7 @@ public class GManager : MonoBehaviour
     
     //public int[] character_pos { get; private set; } = new[] {102000,1000 };
     public int[] character_pos = new[] {102000,1000,0,0,0 };
-
-
+    
     public int []get_char_pos()
     {
         return character_pos;
@@ -31,6 +30,7 @@ public class GManager : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(this.gameObject);
+            Initialize_PlyerData();
         }
         else
         {
@@ -39,17 +39,37 @@ public class GManager : MonoBehaviour
 
     }
     
-    //プレイヤーデータの保管（Jsonかplayerprehubで管理予定）
+    //プレイヤーデータの保管（Jsonかplayerprefsで管理予定）
 
-    public float Level;
-    public float Stamina;
-    public float coin;
-    public float jewel;
+    public int Level = 1;
+    public int Stamina = 0;
+    public int Exp = 0;
+    public int Coin = 0;
+    public int Jewel = 0;
 
-    public float Exp;
+    private void Initialize_PlyerData()
+    {
+        Level = PlayerPrefs.GetInt("level", 1);
+        Stamina = PlayerPrefs.GetInt("stamina", 0);
+        Exp = PlayerPrefs.GetInt("exp", 0);
+        Coin = PlayerPrefs.GetInt("coin", 0);
+        Jewel = PlayerPrefs.GetInt("jewel", 0);
+    }
 
-        //Json書き出し用のテスト
-    public void savePlayerData(GManager player)
+    public void Set_PlayerData(string Lavel,int num)
+    {
+        PlayerPrefs.SetInt(Lavel,num);
+        PlayerPrefs.Save ();
+    }
+
+    public void Init_PlayerData(string Lavel)
+    {
+        PlayerPrefs.DeleteKey(Lavel);
+    }
+
+
+    //Json書き出し用のテスト
+    /*public void savePlayerData(GManager player)
     {
         StreamWriter writer;
 
@@ -71,6 +91,6 @@ public class GManager : MonoBehaviour
         reader.Close();
 
         return JsonUtility.FromJson<GManager>(datastr);
-    }
+    }*/
 
 }
