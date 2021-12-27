@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 
-
 public class GManager : MonoBehaviour
 {
     public static GManager instance = null;
