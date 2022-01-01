@@ -55,6 +55,13 @@ public class GManager : MonoBehaviour
         Jewel = PlayerPrefs.GetInt("jewel", 0);
     }
 
+    public int get_PlayerData(string Lavel)
+    {
+        int status;
+        status = PlayerPrefs.GetInt("Lavel");
+        return status;
+    }
+
     public void Set_PlayerData(string Lavel,int num)
     {
         PlayerPrefs.SetInt(Lavel,num);

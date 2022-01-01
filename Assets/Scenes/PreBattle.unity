@@ -1877,7 +1877,7 @@ MonoBehaviour:
   enemies_alive_count: 0
   totals_mobs: 0
   isPause: 0
-  _GageMax: 100
+  _GageMax: 25
   Roulette: {fileID: 1161845926}
   Clear: {fileID: 2128298025}
 --- !u!4 &843994335
@@ -3720,7 +3720,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Scene:
-    m_SceneName: Result
+    m_SceneName: PreQuest
 --- !u!1001 &5375444572423495401
 PrefabInstance:
   m_ObjectHideFlags: 0
