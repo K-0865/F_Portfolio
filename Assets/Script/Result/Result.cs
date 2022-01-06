@@ -48,11 +48,6 @@ public class Result : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        ResultDisp();
-    }
-
     private void ResultDisp()
     {
         if (LevelUp)

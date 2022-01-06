@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.Networking;
 
 public class BattleManager : MonoBehaviour
 {
@@ -11,6 +13,7 @@ public class BattleManager : MonoBehaviour
     public int enemies_alive_count;
     public int totals_mobs;
     public bool isPause;
+    public bool battleFin = false;
     [SerializeField] private int _GageMax;
 
     [SerializeField] private GameObject Roulette;
@@ -55,6 +58,15 @@ public class BattleManager : MonoBehaviour
         Clear.SetActive(true);
         yield return new WaitForSeconds(sec);
         Clear.GetComponent<SceneLoad>().OnClickLoadScene();
+        battleFin = true;
+    }
+
+    public void BattleFinish()
+    {
+        if (battleFin)
+        {
+            //Result.
+        }
     }
     
     //ポーズ処理
