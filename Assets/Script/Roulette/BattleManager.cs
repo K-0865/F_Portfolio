@@ -11,11 +11,12 @@ public class BattleManager : MonoBehaviour
     public int hit_count;
     public int allies_alive_count;
     public int enemies_alive_count;
+    public List<int> _AliveID;
     public int totals_mobs;
     public bool isPause;
     public bool battleFin = false;
     [SerializeField] private int _GageMax;
-
+    public bool boss = true;
     [SerializeField] private GameObject Roulette;
     [SerializeField] private GameObject Clear;
     void Start()

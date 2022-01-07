@@ -8,7 +8,8 @@ public class ReelController : MonoBehaviour {
 	private Roulette Rl;
 
 	public int line_ID = 0;	//リールのid
-	public GameObject[] imgobj; //絵柄のプレハブを格納
+	//private GameObject[] imgobj; //絵柄のプレハブを格納
+	public List<GameObject> imgobj; //絵柄のプレハブを格納
 	int[] lines = new int[3];	//リール停止時に見えている絵柄のid(imgobjの番号)を格納
 	int[] current = {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1};	//配列に全体の絵柄idを格納
 	GameObject[] tmp_obj = new GameObject[12];
@@ -21,17 +22,28 @@ public class ReelController : MonoBehaviour {
 	bool turn = false; //回転させるか否か
 	int flg = 0;
 	private int Target_Num = 0;
-
+	private BattleManager _battleManager;
 	void Awake(){
+		_battleManager = GameObject.Find("BattleManager").GetComponent<BattleManager>();
+		for (int i = 0; i < _battleManager._AliveID.Count; i++)
+		{
+			imgobj.Add((GameObject)Resources.Load("Emblem/"+_battleManager._AliveID[i]));
+		}
+
+		if (_battleManager.boss)
+		{
+			imgobj.Add((GameObject)Resources.Load("Emblem/"+104000));
+
+		}
 		pos = GetComponent<Transform> ();
 		initpos = pos.localPosition;
 		for (int i = 0; i < 12; i++) {
 			Vector3 pos = new Vector3 (0.0f,-0.9f + (0.9f*i),0.0f);
-			int tmp = Random.Range (0, imgobj.Length);//絵柄をランダムで生成
+			int tmp = Random.Range (0, imgobj.Count);//絵柄をランダムで生成
 
 			if (i != 0 && i < 9) {
 				while (current [i - 1] == tmp) { //前の絵柄と同じにならないように再抽選
-					tmp = Random.Range (0, imgobj.Length);
+					tmp = Random.Range (0, imgobj.Count);
 				}
 			} else if (i == 9) {
 				tmp = current [0];
@@ -77,7 +89,10 @@ public class ReelController : MonoBehaviour {
 			else
 			{
 				int c = -1 * (int) (pos.localPosition.y / 0.9); //何マス回転（移動）したか
+				
 				Target_Num = Rl.ReturnTarget(line_ID);
+				//Debug.Log(Target_Num);
+				//Target_Num = 1;
 
 				if (current[(c + 1)] != Target_Num && !first )
 				{

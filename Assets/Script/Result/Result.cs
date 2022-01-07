@@ -57,9 +57,11 @@ public class Result : MonoBehaviour
         ResultDisp();
     }
 
+    
     private void ResultDisp()
     {
-
+        // _ExpNow = _ExpTable.ExpTable[_LevelNow].Exp;
+        // _ExpNext = _ExpTable.ExpTable[_LevelNow+1].PlayerLevel;
         _Level.text = "Level:" + _LevelNow;
         _Coin.text = "Coin:" + Gmanager.GetComponent<GManager>().get_PlayerData("coin");
         for (int i = 0; i < _ExpPlus; i++)
@@ -79,11 +81,12 @@ public class Result : MonoBehaviour
             _Level.text = "Level:" + _LevelNow;
         }
 
-        StartCoroutine("HomeBack", "10");
+        StartCoroutine("HomeBack", 10);
     }
     
     IEnumerator CalcExp(float sec)
     {
+        
         yield return new WaitForSeconds(sec);
         _ExpNow++;
         _ExpPlus--;
@@ -92,15 +95,23 @@ public class Result : MonoBehaviour
     IEnumerator HomeBack(float sec)
     {
         yield return new WaitForSeconds(sec);
+        
         Loader.OnClickLoadScene();
     }
     
     private void LevelCalc()
     {
-        while (_ExpNow <= _ExpNext && _ExpPlus != 0)
+        while (_ExpNow >= _ExpNext)
         {
             _LevelNow++;
             LevelUp = true;
+            //_ExpNow = _ExpTable.ExpTable[_LevelNow].Exp;
+            _ExpNext = _ExpTable.ExpTable[_LevelNow+1].PlayerLevel;
         }
+        // while (_ExpNow <= _ExpNext && _ExpPlus != 0)
+        // {
+        //     _LevelNow++;
+        //     LevelUp = true;
+        // }
     }
 }

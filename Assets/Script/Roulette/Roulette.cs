@@ -8,6 +8,8 @@ using Random = UnityEngine.Random;
 public class Roulette : MonoBehaviour
 {
     private int Rcount = 0;
+    private BattleManager _battleManager;
+
     private List<int> DiaIDList = new List<int>(200);
     private List<int> DiaLine = new List<int>(200);
     private List<int> DiaCon = new List<int>(200);
@@ -23,6 +25,9 @@ public class Roulette : MonoBehaviour
     [SerializeField] private int _AliveCharacterID1;
     [SerializeField] private int _AliveCharacterID2;
     [SerializeField] private int _AliveCharacterID3;
+    
+    [SerializeField] private int _AliveBoss;
+
 
     [SerializeField] private GameObject Reel_l;
     [SerializeField] private GameObject Reel_C;
@@ -37,6 +42,23 @@ public class Roulette : MonoBehaviour
     //初期化
     private void Initialize()
     {
+        _battleManager = GameObject.Find("BattleManager").GetComponent<BattleManager>();
+        for (int i = 0; i < _battleManager._AliveID.Count; i++)
+        {
+            switch (i)
+            {
+                case 0:
+                    _AliveCharacterID1 = _battleManager._AliveID[i];
+                    break;
+                case 1:
+                    _AliveCharacterID2 = _battleManager._AliveID[i];
+                    break;
+                case 2:
+                    _AliveCharacterID3 = _battleManager._AliveID[i];
+                    break;
+            }
+        }
+
         Rcount = 0;
         for (int i = 0; i < data.Dialogue.Count; i++)
         {
@@ -64,6 +86,15 @@ public class Roulette : MonoBehaviour
                 DiaDisplay.Add(data.Dialogue[i].Dialogue);
                 Rcount++;
             }
+            if (_AliveBoss == data.Dialogue[i].CharacterID1)
+            {
+                DiaLine.Add(i);
+                DiaIDList.Add(data.Dialogue[i].DialogueID);
+                DiaCon.Add(data.Dialogue[i].Continue);
+                DiaDisplay.Add(data.Dialogue[i].Dialogue);
+                Rcount++;
+            }
+            
         }
         
         //スロットの表示
@@ -142,10 +173,10 @@ public class Roulette : MonoBehaviour
        //リールの操作に関するコルーチン
        StartCoroutine("DisplaySlot", 2);
        Debug.Log("スタート");
-       StartCoroutine("ReelStopL", 7);
-       StartCoroutine("ReelStopC", 7.5);
-       StartCoroutine("ReelStopR", 8);
-       StartCoroutine("ReelFin", 11);
+       StartCoroutine("ReelStopL", 4);
+       StartCoroutine("ReelStopC", 5);
+       StartCoroutine("ReelStopR", 6);
+       StartCoroutine("ReelFin", 15);
 
     }
 
@@ -202,16 +233,83 @@ public class Roulette : MonoBehaviour
         switch (num)
         {
             case 0:
-                value = (target1 / 1000) - 1;
+                if (data.Dialogue[target1].Continue == 1 || data.Dialogue[target1].Continue == 0)
+                {
+                    for (int i = 0; i < _battleManager._AliveID.Count; i++)
+                    {
+                        if (data.Dialogue[target1].CharacterID1 == _battleManager._AliveID[i])
+                        {
+                            value = i;
+                            break;
+                        }
+                    }
+                   
+                }
+                //value = (target1 / 1000) - 1;
                 break;
             case 1:
-                value = (target2 / 1000) - 1;
+                if (data.Dialogue[target2].Continue == 2)
+                {
+                    for (int i = 0; i < _battleManager._AliveID.Count; i++)
+                    {
+                        if (data.Dialogue[target2].CharacterID2 == _battleManager._AliveID[i])
+                        {
+                            value = i;
+                            break;
+                        }
+                    }
+                   
+                }
+                else
+                {
+                    for (int i = 0; i < _battleManager._AliveID.Count; i++)
+                    {
+                        if (data.Dialogue[target2].CharacterID1 == _battleManager._AliveID[i])
+                        {
+                            value = i;
+                            break;
+                        }
+                    }
+                }
+                //value = (target2 / 1000) - 1;
                 break;
             case 2:
-                value = (target3 / 1000) - 1;
+                if (data.Dialogue[target3].Continue == 3)
+                {
+                    for (int i = 0; i < _battleManager._AliveID.Count; i++)
+                    {
+                        if (data.Dialogue[target3].CharacterID3 == _battleManager._AliveID[i])
+                        {
+                            value = i;
+                            break;
+                        }
+                    }
+                   
+                }
+                else if (data.Dialogue[target3].Continue == 2)
+                {
+                    for (int i = 0; i < _battleManager._AliveID.Count; i++)
+                    {
+                        if (data.Dialogue[target3].CharacterID2 == _battleManager._AliveID[i])
+                        {
+                            value = i;
+                            break;
+                        }
+                    }
+                }else {
+                    for (int i = 0; i < _battleManager._AliveID.Count; i++)
+                    {
+                        if (data.Dialogue[target3].CharacterID1 == _battleManager._AliveID[i])
+                        {
+                            value = i;
+                            break;
+                        }
+                    }
+                }
+                //value = (target3 / 1000) - 1;
                 break;
         }
-        Debug.Log(target1);
+        
         return value;
     }
     

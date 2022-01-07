@@ -74,6 +74,13 @@ public class Character_Present_Data : MonoBehaviour
 
         if (_dead && this.gameObject.GetComponent<Collider2D>())
         {
+            for (int i = 0; i < _battleManager._AliveID.Count; i++)
+            {
+                if (_ID == _battleManager._AliveID[i])
+                {
+                    _battleManager._AliveID.RemoveAt(i);
+                }
+            }
             Destroy(this.gameObject.GetComponent<Collider2D>());
             Destroy(this.gameObject.GetComponentInChildren<Collider2D>());
             _found_enemy = false;
