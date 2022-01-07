@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Net.Mime;
 using System.Xml.Serialization;
 using UnityEngine;
+using UnityEngine.Networking;
 using UnityEngine.UI;
 
 public class Result : MonoBehaviour
@@ -35,29 +36,29 @@ public class Result : MonoBehaviour
         _Exp = Exp.GetComponent<Text>();
 
         LevelUp = false;
+
+        _LevelNow = Gmanager.GetComponent<GManager>().get_PlayerData("level");
         
         for (int i = 0; i < _ExpTable.ExpTable.Count; i++)
         {
-            if (_ExpTable.ExpTable[i].PlayerLevel == Gmanager.GetComponent<GManager>().get_PlayerData("level"))
+            if (_ExpTable.ExpTable[i].PlayerLevel == _LevelNow)
             {
-                _LevelNow = _ExpTable.ExpTable[i].PlayerLevel;
                 _ExpNow = _ExpTable.ExpTable[i].Exp;
                 _LevelNext = _ExpTable.ExpTable[i + 1].PlayerLevel;
                 _ExpNext = _ExpTable.ExpTable[i + 1].Exp;
             }
         }
+                    
+        Debug.Log(Gmanager.GetComponent<GManager>().get_PlayerData("level") + "Now");
+        Debug.Log(_LevelNext + "LevelNext");
+        Debug.Log(_ExpNow + "ExpNow");
+        Debug.Log(_ExpNext + "ExpNext");
+        
+        ResultDisp();
     }
 
     private void ResultDisp()
     {
-        if (LevelUp)
-        {
-            _Level.text = "Level:" + _LevelNow + "+" + _LevelNext;
-        }
-        else
-        {
-            _Level.text = "Level:" + _LevelNow;
-        }
 
         _Level.text = "Level:" + _LevelNow;
         _Coin.text = "Coin:" + Gmanager.GetComponent<GManager>().get_PlayerData("coin");
@@ -68,6 +69,15 @@ public class Result : MonoBehaviour
 
         _Exp.text = "Exp:" + _ExpNow + " + " + _ExpPlus;  
         LevelCalc();
+        
+        if (LevelUp)
+        {
+            _Level.text = "Level:" + _LevelNow + "+" + _LevelNext;
+        }
+        else
+        {
+            _Level.text = "Level:" + _LevelNow;
+        }
 
         StartCoroutine("HomeBack", "10");
     }
@@ -87,9 +97,9 @@ public class Result : MonoBehaviour
     
     private void LevelCalc()
     {
-        while (_ExpNow >= _ExpNext)
+        while (_ExpNow <= _ExpNext && _ExpPlus != 0)
         {
-            _LevelNow = _LevelNext;
+            _LevelNow++;
             LevelUp = true;
         }
     }

@@ -30,6 +30,7 @@ public class GManager : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(this.gameObject);
             Initialize_PlyerData();
+            //Set_PlayerData("level",Level);
         }
         else
         {
@@ -58,7 +59,8 @@ public class GManager : MonoBehaviour
     public int get_PlayerData(string Lavel)
     {
         int status;
-        status = PlayerPrefs.GetInt("Lavel");
+        status = PlayerPrefs.GetInt(Lavel);
+        //Debug.Log(status + "Leveltest");
         return status;
     }
 

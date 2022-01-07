@@ -195,5 +195,24 @@ public class Roulette : MonoBehaviour
         
         PauseButton.GetComponent<UnityEngine.UI.Button>().interactable = true;
     }
+
+    public int ReturnTarget(int num)
+    {
+        int value = 0;
+        switch (num)
+        {
+            case 0:
+                value = (target1 / 1000) - 1;
+                break;
+            case 1:
+                value = (target2 / 1000) - 1;
+                break;
+            case 2:
+                value = (target3 / 1000) - 1;
+                break;
+        }
+        Debug.Log(target1);
+        return value;
+    }
     
 }

@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ReelController : MonoBehaviour {
-	public GameController gc;
-
+	public GameObject GM;
+	private GameController gc;
+	private Roulette Rl;
 
 	public int line_ID = 0;	//リールのid
 	public GameObject[] imgobj; //絵柄のプレハブを格納
@@ -19,6 +20,7 @@ public class ReelController : MonoBehaviour {
 	public int speed; //リールの回転速度
 	bool turn = false; //回転させるか否か
 	int flg = 0;
+	private int Target_Num = 0;
 
 	void Awake(){
 		pos = GetComponent<Transform> ();
@@ -45,11 +47,14 @@ public class ReelController : MonoBehaviour {
 			img_pos [i] = tmp_obj[i].GetComponent<Transform>();
 			img_pos [i].localPosition = pos;
 		}
+		gc = GM.GetComponent<GameController>();
+		Rl = GM.GetComponent<Roulette>();
 	}
 
 	// Update is called once per frame
 	void Update()
 	{
+
 		if (pos.localPosition.y < -8.1)
 		{
 			pos.localPosition = initpos;
@@ -72,22 +77,11 @@ public class ReelController : MonoBehaviour {
 			else
 			{
 				int c = -1 * (int) (pos.localPosition.y / 0.9); //何マス回転（移動）したか
+				Target_Num = Rl.ReturnTarget(line_ID);
 
-				if (current[(c + 1)] != 0 && !first )
+				if (current[(c + 1)] != Target_Num && !first )
 				{
 					pos.localPosition = new Vector3(pos.localPosition.x, pos.localPosition.y - 0.03f, pos.localPosition.z);
-				}
-				else if (current[(c + 1)] != 2 && !first)
-				{
-					
-				}
-				else if (current[(c + 1)] != 3 && !first)
-				{
-					
-				}
-				else if (current[(c + 1)] != 4 && !first)
-				{
-					
 				}
 				else
 				{
@@ -145,9 +139,10 @@ public class ReelController : MonoBehaviour {
 	}
 
 	//リールを止める
-	public void Reel_Stop(){
+	public int Reel_Stop(){
 		turn = false;
 		gc.Stopbt_f (line_ID);
+		return line_ID;
 	}
 
 	//リールが動いているかどうか

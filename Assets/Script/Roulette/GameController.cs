@@ -25,7 +25,6 @@ public class GameController : MonoBehaviour {
         for (int i = 0; i < 3; i++) {
             rc[i] = reels [i].GetComponent<ReelController> ();
         }
-
     }
 	
     // Update is called once per frame
