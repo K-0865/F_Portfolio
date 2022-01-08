@@ -6,7 +6,7 @@ using UnityEngine;
 //キャラクターの移動処理
 public class Character_Movement : MonoBehaviour
 {
-
+    
     private float speed = 2.0f;
     //キャラクターがどっちの方向を向いているか
     public enum PlayerState
@@ -34,8 +34,10 @@ public class Character_Movement : MonoBehaviour
     [SerializeField]private Character_attack_range _attackRange;
     private Character_Present_Data _characterPresentData;
     [SerializeField]public bool isUseSP = false;
+    private BattleManager _battleManager;
     void Start()
     {
+        _battleManager = GameObject.Find("BattleManager").GetComponent<BattleManager>();
         _characterPresentData = GetComponent<Character_Present_Data>();
         LoopConti = GetComponentInChildren<CharacterData>().get_LoopConti();
         Loop_Pattern = GetComponentInChildren<CharacterData>().get_Loop();
@@ -168,30 +170,60 @@ public class Character_Movement : MonoBehaviour
     //アニメーションの呼び出し
     void Update()
     {
-        if (LoopAt >= Loop_Pattern.Count)
+        if (_battleManager._start_player)
         {
-            LoopAt = LoopConti;
-        }
+            
+            if (LoopAt >= Loop_Pattern.Count)
+            {
+                LoopAt = LoopConti;
+            }
 
-        if (!GameObject.Find("BattleManager").GetComponent<BattleManager>().isPause)
+            if (_battleManager._ready_player && this.transform.tag == "Player" && !_battleManager._gamestart)
+            {
+                _animator.SetBool("Force_Stand", true);
+            }
+            else if (_battleManager._ready_enemy && this.transform.tag == "enemy" && !_battleManager._gamestart)
+            {
+                _animator.SetBool("Force_Stand", true);
+
+            }
+            else if(_battleManager._gamestart)
+            {
+                _animator.SetBool("Force_Stand", false);
+            }
+            
+            if (!_battleManager.isPause && _battleManager._gamestart)
+            {
+                _animator.enabled = true;
+                C_Walk_Animation();
+                C_Walk_R();
+                if (!isUseSP)
+                {
+                    _attackRange.set_Skill_range_Now(_skillData[Loop_Pattern[LoopAt] - 1].Range);
+
+                }
+                else
+                {
+                    _attackRange.set_Skill_range_Now(_skillData[3].Range);
+
+                }
+            }
+            else if (_battleManager.isPause)
+            {
+                _animator.enabled = false;
+            }
+        }else if (!_battleManager._start_player && this.transform.tag == "Player")
         {
             _animator.enabled = true;
             C_Walk_Animation();
             C_Walk_R();
-            if (!isUseSP)
-            {
-                _attackRange.set_Skill_range_Now(_skillData[Loop_Pattern[LoopAt]-1].Range);
-                
-            }
-            else
-            {
-                _attackRange.set_Skill_range_Now(_skillData[3].Range);
-
-            }
-        }    else if (GameObject.Find("BattleManager").GetComponent<BattleManager>().isPause)
+        }else if (!_battleManager._start_enemy && this.transform.tag == "enemy")
         {
-            _animator.enabled = false;
+            _animator.enabled = true;
+            C_Walk_Animation();
+            C_Walk_R();
         }
+        
     }
 
 

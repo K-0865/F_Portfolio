@@ -52,6 +52,7 @@ public class Party_Data : MonoBehaviour
                 {
                     if (GManager.instance.character_pos[i] == data.Character[j].ID)
                     {
+
                         switch (data.Character[j].Rare)
                         {
                             case 1:

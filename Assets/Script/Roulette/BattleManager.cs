@@ -1,12 +1,20 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Networking;
 
+
 public class BattleManager : MonoBehaviour
 {
     // Start is called before the first frame update
+    public enum GameState{
+        WAIT,READY, BATTLE
+    }
+
+    [SerializeField] private GameObject battle_start_text; 
+    public GameState State = GameState.WAIT;
     public int stage_count = 0;
     public int hit_count;
     public int allies_alive_count;
@@ -14,6 +22,11 @@ public class BattleManager : MonoBehaviour
     public List<int> _AliveID;
     public int totals_mobs;
     public bool isPause;
+    public bool _start_player;
+    public bool _ready_player;
+    public bool _ready_enemy;
+    public bool _start_enemy;
+    public bool _gamestart;
     public bool battleFin = false;
     [SerializeField] private int _GageMax;
     public bool boss = true;
@@ -41,8 +54,29 @@ public class BattleManager : MonoBehaviour
         {
             StartCoroutine("StageClear", 4f);
         }
+
+        if (_start_player && _start_player && State == GameState.WAIT)
+        {
+            State = GameState.READY;
+        }
+
+        if (State == GameState.READY)
+        {
+            StartCoroutine("_BattleStart");
+            
+            
+        }
     }
 
+    IEnumerator _BattleStart()
+    {
+        State = GameState.BATTLE;
+        yield return new WaitForSeconds(3f);
+        GameObject battleStartText = Instantiate(battle_start_text);
+        battleStartText.transform.position = Vector3.zero;
+        State = GameState.BATTLE;
+        _gamestart = true;
+    }
     //スロット呼び出し部
     public IEnumerator callRoulette(float sec)
     {
