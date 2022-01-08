@@ -29,25 +29,6 @@ public class Party_Data : MonoBehaviour
             if (GManager.instance.character_pos[i] != 0)
             {
                 _Party_POS_IMG[i].sprite = Resources.Load<Sprite>("Party_UI/Character/" + GManager.instance.character_pos[i]);
-                // switch (GManager.instance.character_pos[i])
-                // {
-                //     case 101000:
-                //         _Party_Pos_Frame[i].sprite = Resources.Load<Sprite>("Party_UI/" + "RainbowFrame");
-                //         _Party_Pos_backGround[i].sprite = Resources.Load<Sprite>("Party_UI/" + "Rainbow");
-                //         break;
-                //     case 102000:
-                //         _Party_Pos_Frame[i].sprite = Resources.Load<Sprite>("Party_UI/" + "GoldFrame");
-                //         _Party_Pos_backGround[i].sprite = Resources.Load<Sprite>("Party_UI/" + "Rainbow");
-                //         break;
-                //     case 103000:
-                //         _Party_Pos_Frame[i].sprite = Resources.Load<Sprite>("Party_UI/" + "SilverFrame");
-                //         _Party_Pos_backGround[i].sprite = Resources.Load<Sprite>("Party_UI/" + "Rainbow");
-                //         break;
-                //     default:
-                //         _Party_Pos_Frame[i].sprite = Resources.Load<Sprite>("Party_UI/" + "EmptyFrame");
-                //         _Party_Pos_backGround[i].sprite = Resources.Load<Sprite>("Party_UI/" + "Rainbow");
-                //         break;
-                // }
                 for (int j = 0; j < data.Character.Count; j++)
                 {
                     if (GManager.instance.character_pos[i] == data.Character[j].ID)
@@ -66,6 +47,9 @@ public class Party_Data : MonoBehaviour
                             case 3:
                                 _Party_Pos_Frame[i].sprite = Resources.Load<Sprite>("Party_UI/RainbowFrame");
                                 _Party_Pos_backGround[i].sprite = Resources.Load<Sprite>("Party_UI/Rainbow");
+                                break;
+                            default:
+                                _Party_POS_IMG[i].sprite = Resources.Load<Sprite>("Party_UI/EmptyFrame");
                                 break;
                         }
                     }
