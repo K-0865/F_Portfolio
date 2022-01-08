@@ -61,6 +61,7 @@ public class ReelController : MonoBehaviour {
 		}
 		gc = GM.GetComponent<GameController>();
 		Rl = GM.GetComponent<Roulette>();
+		
 	}
 
 	// Update is called once per frame
@@ -79,24 +80,39 @@ public class ReelController : MonoBehaviour {
 		}
 		else
 		{
-			if (pos.localPosition.y % 0.9f < -0.06f)
-			{
-				//絵柄をマスで固定するために回転スピードを弱める
-				flg = 0;
-				pos.localPosition = new Vector3(pos.localPosition.x, pos.localPosition.y - 0.03f, pos.localPosition.z);
-
-			}
-			else
-			{
+			// if (pos.localPosition.y % 0.9f < -0.06f)
+			// {
+			// 	//絵柄をマスで固定するために回転スピードを弱める
+			// 	flg = 0;
+			// 	pos.localPosition = new Vector3(pos.localPosition.x, pos.localPosition.y - 0.03f, pos.localPosition.z);
+			//
+			// }
+			// else
+			// {
 				int c = -1 * (int) (pos.localPosition.y / 0.9); //何マス回転（移動）したか
-				
 				Target_Num = Rl.ReturnTarget(line_ID);
-				//Debug.Log(Target_Num);
+				float speed_f = 1f;
+				for (int i = 0; i < current.Length; i++)
+				{
+					if (current[i] == Target_Num)
+					{
+						speed_f = i - c;
+						if (speed_f < 0)
+						{
+							speed_f = (current.Length - c) + i;
+						}
+
+						break;
+					}
+				}
+
+				
+				Debug.Log(speed_f + ": Speed_f : L:"+ line_ID);
 				//Target_Num = 1;
 
 				if (current[(c + 1)] != Target_Num && !first )
 				{
-					pos.localPosition = new Vector3(pos.localPosition.x, pos.localPosition.y - 0.03f, pos.localPosition.z);
+					pos.localPosition = new Vector3(pos.localPosition.x, pos.localPosition.y - (0.03f*speed_f), pos.localPosition.z);
 				}
 				else
 				{
@@ -108,6 +124,7 @@ public class ReelController : MonoBehaviour {
 
 						for (int i = 0; i < 3; i++)
 						{
+							Debug.Log(under + "under");
 							lines[i] = current[(under) + i]; //絵柄を特定
 						}
 
@@ -125,7 +142,7 @@ public class ReelController : MonoBehaviour {
 							gc.SetLineL(lines);
 						}
 					}
-				}
+				//}
 				// if (pos.localPosition.y % 0.9f < -0.06f) {	//絵柄をマスで固定するために回転スピードを弱める
 				// 	flg = 0;
 				// 	pos.localPosition = new Vector3 (pos.localPosition.x, pos.localPosition.y - 0.03f, pos.localPosition.z); 

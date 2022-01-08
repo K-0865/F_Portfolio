@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class char_factory : MonoBehaviour
 {
@@ -13,10 +14,12 @@ public class char_factory : MonoBehaviour
     //[SerializeField]
     private GameObject []_character = new GameObject[5];
     private GameObject []_character_clone = new GameObject[5];
+    private SortingGroup _sortingGroup;
 
     //マップデータのデータテーブルにある分キャラクターの生成
     void Start()
     {
+        
         player_data = GManager.instance;
         //player_pos = GameObject.Find("GameManeger").GetComponent<GManager.Player>().character_pos;
         player_pos = GManager.instance.get_char_pos();
@@ -33,17 +36,39 @@ public class char_factory : MonoBehaviour
                 _character[i] = (GameObject)Resources.Load ("Characters/"+player_data.character_pos[i]);
                 _character_clone[i] = Instantiate(_character[i]);
                 _character_clone[i].transform.parent = this.transform;
-                float pos = (10 + ((i + 1) * 2))*-1;
-                float posy = 0;
-                if (i % 2 == 0)
+                _sortingGroup = _character_clone[i].GetComponent<SortingGroup>();
+                float posx = -12f;
+                float posy = 0f;
+                switch (i)
                 {
-                    posy = -1.3f;
+                    case 0:
+                        posy = 0.75f;
+                        posx = -12f;
+                        _sortingGroup.sortingOrder = 2;
+                        break;
+                    case 1:
+                        posy = -1f;
+                        posx = -12f;
+                        _sortingGroup.sortingOrder = 4;
+                        break;
+                    case 2:
+                        posy = 1.75f;
+                        posx = -14f;
+                        _sortingGroup.sortingOrder = 1;
+                        break;
+                    case 3:
+                        posy = 0.25f;
+                        posx = -14f;
+                        _sortingGroup.sortingOrder = 4;
+                        break;
+                    case 4:
+                        posy = -1.75f;
+                        posx = -14f;
+                        _sortingGroup.sortingOrder = 5;
+                        break;
+                    
                 }
-                if (i % 3 == 0)
-                {
-                    posy = 1.3f;
-                }
-                Vector3 pos_e = new Vector3(pos,posy -1.3f,0f);
+                Vector3 pos_e = new Vector3(posx,posy -1.3f,0f);
                 _character_clone[i].transform.position = pos_e;
                 _battleManager.allies_alive_count++;
                 _battleManager._AliveID.Add(player_data.character_pos[i]);
