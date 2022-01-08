@@ -9,7 +9,7 @@ public class GManager : MonoBehaviour
     public static GManager instance = null;
     
     //public int[] character_pos { get; private set; } = new[] {102000,1000 };
-    public int[] character_pos = new[] {102000,1000,0,0,0 };
+    public int[] character_pos = new[] {102000,101000,0,0,0 };
     
     public int []get_char_pos()
     {

@@ -17,8 +17,8 @@ public class CharacterTable
     public float AttackRange;
     public float skillGauge;
     public float GaugeHealing;
-    public float Rare;
-    public float Level;
+    public int Rare;
+    public int Level;
     public float Escape;
     public float CriticalDMG;
     public float CriticalHit;
