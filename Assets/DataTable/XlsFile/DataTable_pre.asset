@@ -76,8 +76,8 @@ MonoBehaviour:
   - ID: 101000
     CharacterName: "\u30EB\u30D3"
     HP: 10000
-    Attack: 1000
-    Defence: 2000
+    Attack: 3000
+    Defence: 1000
     Speed: 100
     AttackSpeed: 100
     AttackRange: 100
@@ -96,7 +96,7 @@ MonoBehaviour:
   - ID: 102000
     CharacterName: "\u30B5\u30D5\u30A1\u30A4\u30A2"
     HP: 10000
-    Attack: 3000
+    Attack: 500
     Defence: 1000
     Speed: 100
     AttackSpeed: 100
@@ -116,8 +116,8 @@ MonoBehaviour:
   - ID: 103000
     CharacterName: "\u30A8\u30E1"
     HP: 10000
-    Attack: 500
-    Defence: 1000
+    Attack: 1000
+    Defence: 2000
     Speed: 100
     AttackSpeed: 100
     AttackRange: 2000
@@ -193,4 +193,4 @@ MonoBehaviour:
     SkillID2: 9002000
     SkillID3: 9002000
     SkillID4: 9002000
-    patternID: 8001000
+    patternID: 8104000
