@@ -53,7 +53,7 @@ public class Character_Present_Data : MonoBehaviour
         }
         _hp -= sum;
         
-        _sdmg.Init((int)sum,new Vector3(this.transform.position.x,this.transform.position.y+0.5f,0));
+        _sdmg.Init((int)sum,new Vector3(this.transform.position.x,this.transform.position.y+2f,0));
         GameObject.Find("BattleManager").GetComponent<BattleManager>().hit_count++;
 
     }
