@@ -18,38 +18,8 @@ public class Character_attack_range : MonoBehaviour
     void Start()
     {
         this.gameObject.tag = "attack";
-        //_circle2d = GetComponent<CircleCollider2D>();
         _box_range = this.gameObject.GetComponent<BoxCollider2D>();
-        //attack_range = this.gameObject.GetComponentInParent<CharacterData>().CharacterStatus.AttackRange;
-        // _c_move = this.gameObject.GetComponentInParent<Character_Movement>();
-
-        //CIRCLE COLLIDER
-        // if (attack_range == 100f)
-        // {
-        //     _circle2d.offset = new UnityEngine.Vector2(0.4f, 0f);
-        //     _circle2d.radius = 1f;
-        //
-        //
-        // }
-        // else if (attack_range == 2000f)
-        // {
-        //     _circle2d.offset = new UnityEngine.Vector2(4.5f, 0f);
-        //     _circle2d.radius = 5f; 
-        // }
-        // if (attack_range == 100f)
-        // {
-        //     _box_range.size = new UnityEngine.Vector2(1.5f, 8f);
-        //     _box_range.offset = new UnityEngine.Vector2(_box_range.size.x/2, 0f);
-        //
-        //
-        // }
-        // else if (attack_range == 2000f)
-        // {
-        //     _box_range.size = new UnityEngine.Vector2(10f, 8f);
-        //     _box_range.offset = new UnityEngine.Vector2(_box_range.size.x/2, 0f); 
-        // }
-        //
-
+        
 
     }
 
@@ -59,24 +29,6 @@ public class Character_attack_range : MonoBehaviour
     {
         string main_tag = transform.parent.parent.tag;
 
-        // Debug.Log(other.tag);
-        // Character_Present_Data other_data = other.GetComponent<Character_Present_Data>();
-        // Debug.Log(other_data._alive);
-        // if (other_data._alive == true)
-        // {
-        //     if (other.gameObject.tag == "enemy" || other.gameObject.tag == "Player")
-        //     {
-        //         Debug.Log("Found Enemy >>");
-        //         _c_move._found_enemy = true;
-        //     }
-        // }
-        // else
-        // {
-        //     _c_move._found_enemy = false;
-        //
-        // }
-        //
-        //
         if ((other.gameObject.tag == "enemy" && main_tag == "Player") || (other.gameObject.tag == "Player" && main_tag == "enemy"))
         {
            // Debug.Log(other.tag);
@@ -135,7 +87,7 @@ public class Character_attack_range : MonoBehaviour
 
         if (other.tag == "enemy" || other.tag == "Player")
         {
-            Character_Present_Data user_data =
+            Character_Present_Data user_data = 
                 GetComponentInParent<Transform>().GetComponentInParent<Character_Present_Data>();
             user_data._found_enemy = false;
 

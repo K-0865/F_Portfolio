@@ -7,6 +7,7 @@ using UnityEngine;
 public class Character_Movement : MonoBehaviour
 {
 
+    private float speed = 2.0f;
     //キャラクターがどっちの方向を向いているか
     public enum PlayerState
     {
@@ -31,11 +32,11 @@ public class Character_Movement : MonoBehaviour
     [SerializeField] List<Skill_Data> _skillData;
     private Character_SkillButton _characterSkillButton;
     [SerializeField]private Character_attack_range _attackRange;
-
+    private Character_Present_Data _characterPresentData;
     [SerializeField]public bool isUseSP = false;
     void Start()
     {
-        
+        _characterPresentData = GetComponent<Character_Present_Data>();
         LoopConti = GetComponentInChildren<CharacterData>().get_LoopConti();
         Loop_Pattern = GetComponentInChildren<CharacterData>().get_Loop();
         data = GetComponent<Character_Present_Data>();
@@ -124,7 +125,10 @@ public class Character_Movement : MonoBehaviour
   //範囲攻撃(現在不使用)
     void RangeAttack()
     {
-        GetComponentInChildren<character_rangeType>().Range_bullet(_skillData[Loop_Pattern[LoopAt]-1].Attack);
+        if (_characterPresentData._found_enemy)
+        {
+            GetComponentInChildren<character_rangeType>().Range_bullet(_skillData[Loop_Pattern[LoopAt]-1].Attack);
+        }
     }
 
     void set_PlayerState()
@@ -138,7 +142,7 @@ public class Character_Movement : MonoBehaviour
         {
             if (_animator.GetBool("run") == true && _Player != PlayerState.isAttack)
             {
-                this.gameObject.transform.position += new Vector3(1, 0) * Time.deltaTime;
+                this.gameObject.transform.position += new Vector3(speed, 0) * Time.deltaTime;
             }
             else
             {
@@ -150,7 +154,7 @@ public class Character_Movement : MonoBehaviour
         {
             if (_animator.GetBool("run") == true)
             {
-                this.gameObject.transform.position -= new Vector3(1, 0) * Time.deltaTime;
+                this.gameObject.transform.position -= new Vector3(speed, 0) * Time.deltaTime;
             }
             else
             {

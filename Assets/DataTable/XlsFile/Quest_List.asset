@@ -49,3 +49,15 @@ MonoBehaviour:
     EnemyID3: 104000
     EnemyID4: 104000
     EnemyID5: 104000
+  - MapID: 104
+    MapName: "\u3042\u308C\u306F\u30FB\u30FB\uFF1F"
+    StageCount: 1
+    EnemyStage1: 1
+    EnemyStage2: 0
+    EnemyStage3: 0
+    BossFlag: 1
+    EnemyID1: 104000
+    EnemyID2: 0
+    EnemyID3: 0
+    EnemyID4: 0
+    EnemyID5: 0

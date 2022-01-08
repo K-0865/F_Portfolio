@@ -46,3 +46,9 @@ TagManager:
   - name: Damage
     uniqueID: 2135742229
     locked: 0
+  - name: Character
+    uniqueID: 4022103061
+    locked: 0
+  - name: Slot
+    uniqueID: 915642095
+    locked: 0

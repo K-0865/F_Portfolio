@@ -14,7 +14,7 @@ public class Character_SkillButton : MonoBehaviour
         public void set_Animator_Character(Animator a)
         {
                 All_Character.Add(a);
-                Button[All_Character.Count-1].SetActive(true);
+                //Button[All_Character.Count-1].SetActive(true);
         }
         public void set_Movement_Character(Character_Movement a)
         {

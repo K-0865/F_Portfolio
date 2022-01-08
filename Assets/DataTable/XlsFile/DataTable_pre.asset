@@ -74,7 +74,7 @@ MonoBehaviour:
     SkillID4: 0
     patternID: 0
   - ID: 101000
-    CharacterName: A
+    CharacterName: "\u30EB\u30D3"
     HP: 10000
     Attack: 3000
     Defence: 1000
@@ -91,8 +91,8 @@ MonoBehaviour:
     SkillID1: 9001000
     SkillID2: 9001000
     SkillID3: 9001000
-    SkillID4: 9001000
-    patternID: 8001000
+    SkillID4: 9101000
+    patternID: 8101000
   - ID: 102000
     CharacterName: "\u30B5\u30D5\u30A1\u30A4\u30A2"
     HP: 10000
@@ -114,13 +114,13 @@ MonoBehaviour:
     SkillID4: 9102000
     patternID: 8102000
   - ID: 103000
-    CharacterName: C
+    CharacterName: "\u30A8\u30E1"
     HP: 10000
     Attack: 1000
     Defence: 2000
     Speed: 100
     AttackSpeed: 100
-    AttackRange: 100
+    AttackRange: 2000
     skillGauge: 1000
     GaugeHealing: 100
     Rare: 3
@@ -128,11 +128,11 @@ MonoBehaviour:
     Escape: 5
     CriticalDMG: 50
     CriticalHit: 5
-    SkillID1: 0
-    SkillID2: 0
-    SkillID3: 0
-    SkillID4: 0
-    patternID: 0
+    SkillID1: 9002000
+    SkillID2: 9002000
+    SkillID3: 9002000
+    SkillID4: 9002000
+    patternID: 8103000
   Enemy:
   - ID: 4000
     CharacterName: "\u30A8\u30CD\u30DF\u30FCMelee"
@@ -189,8 +189,8 @@ MonoBehaviour:
     Escape: 5
     CriticalDMG: 50
     CriticalHit: 5
-    SkillID1: 0
-    SkillID2: 0
-    SkillID3: 0
-    SkillID4: 0
-    patternID: 0
+    SkillID1: 9002000
+    SkillID2: 9002000
+    SkillID3: 9002000
+    SkillID4: 9002000
+    patternID: 8001000

@@ -74,9 +74,8 @@ public class character_rangeType : MonoBehaviour
             {
                 return;
             }
-            GameObject obj = Instantiate(bullet);
-            obj.transform.parent = this.transform;
-            obj.transform.position = find_enemy.transform.position;
+
+            find_enemy.gameObject.GetComponent<Character_Present_Data>().getDamage(total_attack);
         }
         else if(me_tag == "enemy")
         {
@@ -86,12 +85,40 @@ public class character_rangeType : MonoBehaviour
             {
                 return;
             }
-            GameObject obj = Instantiate(bullet);
-            obj.transform.parent = this.transform;
-            obj.transform.position = find_enemy.transform.position;
+            find_enemy.gameObject.GetComponent<Character_Present_Data>().getDamage(total_attack);
         }
         
     }
+    // public void Range_bullet(float p_att)
+    // {
+    //     total_attack = attack * (p_att / 100f);
+    //     string me_tag = this.gameObject.transform.parent.tag;
+    //     
+    //     if (me_tag == "Player")
+    //     {
+    //         var find_enemy = FindClosestEnemy("enemy");
+    //         if (find_enemy == null)
+    //         {
+    //             return;
+    //         }
+    //         GameObject obj = Instantiate(bullet);
+    //         obj.transform.parent = this.transform;
+    //         obj.transform.position = find_enemy.transform.position;
+    //     }
+    //     else if(me_tag == "enemy")
+    //     {
+    //         
+    //         var find_enemy = FindClosestEnemy("Player");
+    //         if (find_enemy == null)
+    //         {
+    //             return;
+    //         }
+    //         GameObject obj = Instantiate(bullet);
+    //         obj.transform.parent = this.transform;
+    //         obj.transform.position = find_enemy.transform.position;
+    //     }
+    //     
+    // }
     private void Update()
     {
         //Debug.Log(data_move.isAttack);
