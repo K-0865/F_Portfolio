@@ -36,15 +36,9 @@ public class Party_Data : MonoBehaviour
                 {
                     if (GManager.instance.character_pos[i] == data.Character[j].ID)
                     {
-<<<<<<< Updated upstream
 
-=======
-<<<<<<< HEAD
                         _Party_Pos_Frame[i].sprite = Resources.Load<Sprite>("Party_UI/EmptyFrame");
-=======
 
->>>>>>> b2e79ceff1d48649715bdd27cbb2513273ee3243
->>>>>>> Stashed changes
                         switch (data.Character[j].Rare)
                         {
                             case 1:
