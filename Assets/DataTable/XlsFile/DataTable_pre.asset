@@ -33,6 +33,7 @@ MonoBehaviour:
     SkillID3: 9001000
     SkillID4: 9001000
     patternID: 8001000
+    BossFlag: 0
   - ID: 2000
     CharacterName: "\u9060\u8DDD\u96E2\u30AD\u30E3\u30E9"
     HP: 1000
@@ -53,6 +54,7 @@ MonoBehaviour:
     SkillID3: 9002000
     SkillID4: 9002000
     patternID: 8001000
+    BossFlag: 0
   - ID: 3000
     CharacterName: "\u652F\u63F4\u30AD\u30E3\u30E9"
     HP: 1000
@@ -73,6 +75,7 @@ MonoBehaviour:
     SkillID3: 0
     SkillID4: 0
     patternID: 0
+    BossFlag: 0
   - ID: 101000
     CharacterName: "\u30EB\u30D3"
     HP: 10000
@@ -93,6 +96,7 @@ MonoBehaviour:
     SkillID3: 9001000
     SkillID4: 9101000
     patternID: 8101000
+    BossFlag: 0
   - ID: 102000
     CharacterName: "\u30B5\u30D5\u30A1\u30A4\u30A2"
     HP: 10000
@@ -113,6 +117,7 @@ MonoBehaviour:
     SkillID3: 9001000
     SkillID4: 9102000
     patternID: 8102000
+    BossFlag: 0
   - ID: 103000
     CharacterName: "\u30A8\u30E1"
     HP: 10000
@@ -133,6 +138,7 @@ MonoBehaviour:
     SkillID3: 9002000
     SkillID4: 9002000
     patternID: 8103000
+    BossFlag: 0
   Enemy:
   - ID: 4000
     CharacterName: "\u30A8\u30CD\u30DF\u30FCMelee"
@@ -154,6 +160,7 @@ MonoBehaviour:
     SkillID3: 9001000
     SkillID4: 9001000
     patternID: 8001000
+    BossFlag: 0
   - ID: 5000
     CharacterName: "\u30A8\u30CD\u30DF\u30FCRange"
     HP: 3000
@@ -174,6 +181,7 @@ MonoBehaviour:
     SkillID3: 9002000
     SkillID4: 9002000
     patternID: 8001000
+    BossFlag: 0
   - ID: 104000
     CharacterName: D
     HP: 50000
@@ -194,3 +202,4 @@ MonoBehaviour:
     SkillID3: 9002000
     SkillID4: 9002000
     patternID: 8104000
+    BossFlag: 1

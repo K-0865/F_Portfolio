@@ -7,6 +7,7 @@ using UnityEngine;
 //現状は敵とそのID,のみ将来はマップ背景やWave数毎の生成数を読み込めるようにする
 public class MapManager : MonoBehaviour
 {
+   private BattleManager _battleManager;
    [SerializeField] private Quest_List data;
    [SerializeField] private int _mapID;
    [SerializeField] private StageTable _PreviewData;
@@ -16,16 +17,18 @@ public class MapManager : MonoBehaviour
    //MapIDの確認とEnemyの生成
    private void Awake()
    {
+      _battleManager = GameObject.Find("BattleManager").GetComponent<BattleManager>();
       for (int i = 0; i < data.StageList.Count; i++)
       {
          //Debug.Log(data.StageList[i].MapID);
          if (data.StageList[i].MapID == _mapID)
          {
             _PreviewData = data.StageList[i];
+            _battleManager.boss = data.StageList[i].BossFlag;
             break;
          }
       }
-
+      
       for (int i = 0; i < 3; i++)
       {
          switch (i)

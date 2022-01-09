@@ -27,6 +27,7 @@ public class CharacterTable
     public int SkillID3;
     public int SkillID4;
     public int patternID;
+    public bool BossFlag;
 }
 
 // public class StageTable

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 //Enemyの生成
 public class Enemy_Fac : MonoBehaviour
@@ -18,6 +19,7 @@ public class Enemy_Fac : MonoBehaviour
     private GameObject []_enemy_clone = new GameObject[4];
     private BattleManager _battleManager;
 
+    private SortingGroup _sortingGroup;
     //マップデータから敵の生成数とIDを確認
     private void Awake()
     {
@@ -38,19 +40,42 @@ public class Enemy_Fac : MonoBehaviour
             {
                 //Enemyのprefab生成
                 _enemy[i] = (GameObject)Resources.Load ("Enemy/"+Enemy_data[i]);
-                float pos = 10 + ((i + 1) * 2);
-                float posy = 0;
-                if (i % 2 == 0)
-                {
-                    posy = -1.3f;
-                }
-                if (i % 3 == 0)
-                {
-                    posy = 1.3f;
-                }
-                Vector3 pos_e = new Vector3(pos,posy-1.3f,0f);
                 _enemy_clone[i] = Instantiate(_enemy[i]);
                 _enemy_clone[i].transform.parent = transform;
+                _sortingGroup = _enemy_clone[i].GetComponent<SortingGroup>();
+                float posx = 6f;
+                float posy = 0f;
+                switch (i)
+                {
+                    case 0:
+                        posy = 0.75f;
+                        posx = 6f;
+                        _sortingGroup.sortingOrder = 2;
+                        break;
+                    case 1:
+                        posy = -1f;
+                        posx = 6f;
+                        _sortingGroup.sortingOrder = 4;
+                        break;
+                    case 2:
+                        posy = 1.75f;
+                        posx = 8f;
+                        _sortingGroup.sortingOrder = 1;
+                        break;
+                    case 3:
+                        posy = 0.25f;
+                        posx = 8f;
+                        _sortingGroup.sortingOrder = 4;
+                        break;
+                    case 4:
+                        posy = -1.75f;
+                        posx = 8f;
+                        _sortingGroup.sortingOrder = 5;
+                        break;
+                    
+                }
+                Vector3 pos_e = new Vector3(posx,posy,0f);
+                
                 _enemy_clone[i].transform.position = pos_e;
                 _battleManager.enemies_alive_count++;
             }

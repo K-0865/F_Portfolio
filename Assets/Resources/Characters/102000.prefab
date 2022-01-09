@@ -196,6 +196,8 @@ MonoBehaviour:
     SkillID3: 0
     SkillID4: 0
     patternID: 0
+    BossFlag: 0
+  _hp: {fileID: 5000012496861733272}
 --- !u!1 &1013514641971278575
 GameObject:
   m_ObjectHideFlags: 0
@@ -726,6 +728,8 @@ MonoBehaviour:
   _data2: {fileID: 1013514641971278575}
   _hp: 0
   _Maxhp: 0
+  boss: 0
+  Boss_S: {fileID: 3235873351846937106, guid: ca9898b807cbd4f108ba00e85d0adf92, type: 3}
 --- !u!1 &5383742135813501996
 GameObject:
   m_ObjectHideFlags: 0

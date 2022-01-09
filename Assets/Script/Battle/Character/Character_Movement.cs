@@ -170,7 +170,7 @@ public class Character_Movement : MonoBehaviour
     //アニメーションの呼び出し
     void Update()
     {
-        if (_battleManager._start_player)
+        if (_battleManager._start_player || _battleManager._start_enemy)
         {
             
             if (LoopAt >= Loop_Pattern.Count)
@@ -182,12 +182,12 @@ public class Character_Movement : MonoBehaviour
             {
                 _animator.SetBool("Force_Stand", true);
             }
-            else if (_battleManager._ready_enemy && this.transform.tag == "enemy" && !_battleManager._gamestart)
+            if (_battleManager._ready_enemy && this.transform.tag == "enemy" && !_battleManager._gamestart)
             {
                 _animator.SetBool("Force_Stand", true);
 
             }
-            else if(_battleManager._gamestart)
+            if(_battleManager._gamestart)
             {
                 _animator.SetBool("Force_Stand", false);
             }
@@ -212,12 +212,14 @@ public class Character_Movement : MonoBehaviour
             {
                 _animator.enabled = false;
             }
-        }else if (!_battleManager._start_player && this.transform.tag == "Player")
+        }
+        if (!_battleManager._start_player && this.transform.tag == "Player")
         {
             _animator.enabled = true;
             C_Walk_Animation();
             C_Walk_R();
-        }else if (!_battleManager._start_enemy && this.transform.tag == "enemy")
+        }
+        if (!_battleManager._start_enemy && this.transform.tag == "enemy")
         {
             _animator.enabled = true;
             C_Walk_Animation();

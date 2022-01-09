@@ -116,4 +116,6 @@ public class BattleManager : MonoBehaviour
             isPause = true;
         }
     }
+
+    
 }

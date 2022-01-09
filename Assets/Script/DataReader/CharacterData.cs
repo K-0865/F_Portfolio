@@ -17,13 +17,14 @@ public class CharacterData : MonoBehaviour
     [SerializeField] private Character_SkillButton Add_Skill_Button;
     [SerializeField] public List<Skill_Data> CharacterSkill = new List<Skill_Data>();
     [SerializeField] public CharacterTable CharacterStatus;
-    
+    [SerializeField] private GameObject _hp;
     
     //生成する為にステータスを保管する
     void Awake()
     {
         Add_Skill_Button = GameObject.Find("SkillButton").GetComponent<Character_SkillButton>();
         id = this.gameObject.GetComponentInParent<Character_Present_Data>()._ID;
+        
         if (this.transform.parent.tag == "Player")
         {
             for (int i = 0; i < data.Character.Count; i++)
@@ -36,6 +37,7 @@ public class CharacterData : MonoBehaviour
                     Skill_get.Add(CharacterStatus.SkillID3);
                     Skill_get.Add(CharacterStatus.SkillID4);
                     PatternID = CharacterStatus.patternID;
+                    
                     break;
                 }
             }
@@ -52,6 +54,10 @@ public class CharacterData : MonoBehaviour
                     Skill_get.Add(CharacterStatus.SkillID3);
                     Skill_get.Add(CharacterStatus.SkillID4);
                     PatternID = CharacterStatus.patternID;
+                    if (data.Enemy[i].BossFlag)
+                    {
+                        _hp.GetComponent<HP>().boss = true;
+                    }
                     break;
                 }
             }
@@ -97,6 +103,7 @@ public class CharacterData : MonoBehaviour
             }
         }
         gameObject.GetComponentInParent<Character_Movement>().set_Skill_data(CharacterSkill);
+        
     }
 
     public List<Skill_Data >get_Skill()

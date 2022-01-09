@@ -68,7 +68,7 @@ public class char_factory : MonoBehaviour
                         break;
                     
                 }
-                Vector3 pos_e = new Vector3(posx,posy -1.3f,0f);
+                Vector3 pos_e = new Vector3(posx,posy,0f);
                 _character_clone[i].transform.position = pos_e;
                 _battleManager.allies_alive_count++;
                 _battleManager._AliveID.Add(player_data.character_pos[i]);

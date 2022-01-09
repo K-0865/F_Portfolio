@@ -107,7 +107,7 @@ public class ReelController : MonoBehaviour {
 				}
 
 				
-				Debug.Log(speed_f + ": Speed_f : L:"+ line_ID);
+				//Debug.Log(speed_f + ": Speed_f : L:"+ line_ID);
 				//Target_Num = 1;
 
 				if (current[(c + 1)] != Target_Num && !first )
