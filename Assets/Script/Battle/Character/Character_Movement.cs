@@ -34,6 +34,7 @@ public class Character_Movement : MonoBehaviour
     [SerializeField]private Character_attack_range _attackRange;
     private Character_Present_Data _characterPresentData;
     [SerializeField]public bool isUseSP = false;
+    [SerializeField]private GameObject[] Factory;
     private BattleManager _battleManager;
     void Start()
     {
@@ -43,6 +44,7 @@ public class Character_Movement : MonoBehaviour
         Loop_Pattern = GetComponentInChildren<CharacterData>().get_Loop();
         data = GetComponent<Character_Present_Data>();
         _animator = this.gameObject.GetComponent<Animator>();
+        Factory = GameObject.Find("Character_Factory").GetComponent<char_factory>()._character_clone;
         if (this.gameObject.tag == "Player")
         {
             _faceDirection = Face_Direction.LEFT;
@@ -88,6 +90,28 @@ public class Character_Movement : MonoBehaviour
     
     }
 
+    IEnumerator useBuff(int skill_num)
+    {
+        
+        
+        if (this.tag == "Player")
+        {
+            //GameObject []Factory = GameObject.Find("Character_Factory").GetComponent<char_factory>()._character_clone;
+            Skill_Data skill = _skillData[skill_num];
+            float sec_skill = _skillData[skill_num].Sec;
+            for (int i = 0; i < Factory.Length; i++)
+            {
+                if (Factory[i] != null)
+                {
+//                    Debug.Log(Factory.Length);
+                    Factory[i].GetComponent<Character_Present_Data>().setBuff(skill,sec_skill);
+                }
+               
+            }
+        }
+
+        yield return 0;
+    }
     //攻撃ループ
     IEnumerator Attack(int Loop,float sec)
     {
@@ -232,6 +256,7 @@ public class Character_Movement : MonoBehaviour
     public void set_Skill_data(List<Skill_Data> info)
     {
         _skillData = info;
+        
     }
     public void set_Player_State(PlayerState state)
     {

@@ -13,7 +13,8 @@ public class char_factory : MonoBehaviour
     private BattleManager _battleManager;
     //[SerializeField]
     private GameObject []_character = new GameObject[5];
-    private GameObject []_character_clone = new GameObject[5];
+    [SerializeField]
+    public GameObject []_character_clone = new GameObject[5];
     private SortingGroup _sortingGroup;
 
     //マップデータのデータテーブルにある分キャラクターの生成

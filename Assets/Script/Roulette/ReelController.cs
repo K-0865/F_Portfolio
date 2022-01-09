@@ -124,7 +124,7 @@ public class ReelController : MonoBehaviour {
 
 						for (int i = 0; i < 3; i++)
 						{
-							Debug.Log(under + "under");
+							//Debug.Log(under + "under");
 							lines[i] = current[(under) + i]; //絵柄を特定
 						}
 

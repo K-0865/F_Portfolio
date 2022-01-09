@@ -92,9 +92,9 @@ MonoBehaviour:
     CriticalDMG: 50
     CriticalHit: 5
     SkillID1: 9001000
-    SkillID2: 9001000
+    SkillID2: 9101100
     SkillID3: 9001000
-    SkillID4: 9101000
+    SkillID4: 9101100
     patternID: 8101000
     BossFlag: 0
   - ID: 102000
@@ -113,9 +113,9 @@ MonoBehaviour:
     CriticalDMG: 50
     CriticalHit: 5
     SkillID1: 9001000
-    SkillID2: 9001000
+    SkillID2: 9102100
     SkillID3: 9001000
-    SkillID4: 9102000
+    SkillID4: 9102100
     patternID: 8102000
     BossFlag: 0
   - ID: 103000
@@ -134,7 +134,7 @@ MonoBehaviour:
     CriticalDMG: 50
     CriticalHit: 5
     SkillID1: 9002000
-    SkillID2: 9002000
+    SkillID2: 9103100
     SkillID3: 9002000
     SkillID4: 9002000
     patternID: 8103000

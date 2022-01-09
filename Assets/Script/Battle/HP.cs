@@ -13,6 +13,8 @@ public class HP : MonoBehaviour
     private GameObject _data2;
     public float _hp;
     public float _Maxhp;
+    public string _name;
+    public int _lvl;
     public bool boss;
     private GameObject Boss_S;
     private Boss_HP _Boss_HP;
@@ -22,7 +24,8 @@ public class HP : MonoBehaviour
         _data = _data2.GetComponent<Character_Present_Data>();
         Boss_S = GameObject.Find("Boss");
         _Boss_HP = Boss_S.GetComponent<Boss_HP>();
-
+        _name = _data._name;
+        _lvl = _data._lvl;
 
     }
     
@@ -52,6 +55,10 @@ public class HP : MonoBehaviour
             _Boss_HP.boss = true;
             //Debug.Log(_Boss_HP.boss);
             _Boss_HP._slider.value = _hp / _Maxhp * 1;
+            _Boss_HP._hp = _hp;
+            _Boss_HP._maxHp = _Maxhp;
+            _Boss_HP._name = _name;
+            _Boss_HP._lvl = _lvl;
             //Boss_S.GetComponent<Boss_HP>()._slider.value = _hp / _Maxhp * 1;
             // Boss_S.GetComponent<Boss_HP>()._hp = _hp;
             // Boss_S.GetComponent<Boss_HP>()._maxHp = _Maxhp;

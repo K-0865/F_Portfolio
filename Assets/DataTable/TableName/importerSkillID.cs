@@ -16,6 +16,7 @@ public class Skill_Data
     public int Atk;
     public int Def;
     public int Eva;
+    public float Sec;
     public int Range;
     public string Comment;
     

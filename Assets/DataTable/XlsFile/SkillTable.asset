@@ -20,6 +20,7 @@ MonoBehaviour:
     Atk: 0
     Def: 0
     Eva: 0
+    Sec: 0
     Range: 1
     Comment: AttackMelee
   - SkillID: 9002000
@@ -29,23 +30,36 @@ MonoBehaviour:
     Atk: 0
     Def: 0
     Eva: 0
+    Sec: 0
     Range: 2
     Comment: AttackRange
-  - SkillID: 9101000
+  - SkillID: 9101100
     Type: 1
     Attack: 100
     Heal: 0
     Atk: 0
     Def: 0
     Eva: 0
+    Sec: 0
     Range: 1
     Comment: "\u30EB\u30D3SP"
-  - SkillID: 9102000
+  - SkillID: 9102100
     Type: 1
     Attack: 200
     Heal: 0
     Atk: 0
     Def: 0
     Eva: 0
+    Sec: 0
     Range: 1
     Comment: "\u30B5\u30D5\u30A1\u30A4\u30A2SP"
+  - SkillID: 9103100
+    Type: 2
+    Attack: 0
+    Heal: 0
+    Atk: 100
+    Def: 0
+    Eva: 0
+    Sec: 30
+    Range: 2
+    Comment: BuffTest

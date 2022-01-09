@@ -19,6 +19,7 @@ public class Character_Present_Data : MonoBehaviour
     public float _maxHp;
     [SerializeField]
     public float _hp;
+    public int _lvl;
     private float _attack;
     private float _def;
     [SerializeField]
@@ -28,11 +29,16 @@ public class Character_Present_Data : MonoBehaviour
     public int attack_step;
     private dmg_ct _sdmg;
     public float _attack_speed;
+    public string _name;
+    public List<Buff_list> _buffs;
+    [SerializeField] private GameObject effect_buff;
     private void Start()
     {
         _battleManager = GameObject.Find("BattleManager").GetComponent<BattleManager>();
         sn = this.gameObject.GetComponentInChildren<CharacterData>();
         _sdmg = this.gameObject.GetComponentInChildren<dmg_ct>();
+        _name = sn.CharacterStatus.CharacterName;
+        _lvl = sn.CharacterStatus.Level;
         _maxHp = sn.CharacterStatus.HP;
         _hp = sn.CharacterStatus.HP;
         _attack = sn.CharacterStatus.Attack;
@@ -44,8 +50,29 @@ public class Character_Present_Data : MonoBehaviour
     }
 
     //ダメージ計算(攻撃力-防御力 = ダメージ、暫定式)
+    public void setBuff(Skill_Data skill,float sec)
+    {
+        
+        Buff_list buff = new Buff_list();
+        buff.Atk = skill.Atk;
+        buff.Def = skill.Def;
+        buff.Eva = skill.Eva;
+        _buffs.Add(buff);
+        //StartCoroutine(Buff_Time(sec,_buffs.Count));
+    }
+
+    IEnumerator Buff_Time(float sec,int buff_nums)
+    {
+        yield return new WaitForSeconds(sec);
+        _buffs.RemoveAt(buff_nums);
+    }
     public void getDamage(float damage)
     {
+        float total_def = 0;
+        for (int i = 0; i < _buffs.Count; i++)
+        {
+            total_def += _buffs[i].Def;
+        }
         float sum = damage - this._def;  // Damage Formula
         if (sum <= 0)
         {
@@ -61,6 +88,14 @@ public class Character_Present_Data : MonoBehaviour
     //キャラクターが生きているかどうか
     void Update()
     {
+        if (_buffs.Count > 0)
+        {
+            effect_buff.SetActive(true);
+        }
+        else
+        {
+            effect_buff.SetActive(false);
+        }
         if (_hp <= 0)
         {
             _dead = true;

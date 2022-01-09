@@ -16,6 +16,7 @@ public class character_rangeType : MonoBehaviour
     public float total_attack;
     public bool _isAttack;
     [SerializeField] private GameObject bullet;
+    private Character_Present_Data data_buff;
     
     //初期化処理
     void Start()
@@ -24,6 +25,7 @@ public class character_rangeType : MonoBehaviour
         data_char_sc = _data.GetComponent<CharacterData>();
         _c_move = this.gameObject.GetComponentInParent<Character_Movement>();
         data_move = this.gameObject.GetComponentInParent<Character_Movement>();
+        data_buff = this.gameObject.GetComponentInParent<Character_Present_Data>();
         attack = data_char_sc.CharacterStatus.Attack;
         
         //Debug.Log(data_char_sc);
@@ -64,7 +66,13 @@ public class character_rangeType : MonoBehaviour
     //自分からの攻撃なのか敵からの攻撃なのかを判定する
     public void Range_bullet(float p_att)
     {
-        total_attack = attack * (p_att / 100f);
+        float buff_atk = 0;
+        for (int i = 0; i < data_buff._buffs.Count; i++)
+        {
+            buff_atk += data_buff._buffs[i].Atk;
+        }
+        Debug.Log(buff_atk);
+        total_attack = (attack*(buff_atk/100)) * (p_att / 100f);
         string me_tag = this.gameObject.transform.parent.tag;
         
         if (me_tag == "Player")
