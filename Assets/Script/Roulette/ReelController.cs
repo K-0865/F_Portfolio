@@ -11,9 +11,10 @@ public class ReelController : MonoBehaviour {
 	//private GameObject[] imgobj; //絵柄のプレハブを格納
 	public List<GameObject> imgobj; //絵柄のプレハブを格納
 	int[] lines = new int[3];	//リール停止時に見えている絵柄のid(imgobjの番号)を格納
-	int[] current = {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1};	//配列に全体の絵柄idを格納
-	GameObject[] tmp_obj = new GameObject[12];
-	Transform[] img_pos = new Transform[12]; 
+	int[] current = {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1};	//配列に全体の絵柄idを格納
+	[SerializeField]
+	GameObject[] tmp_obj = new GameObject[18];
+	Transform[] img_pos = new Transform[18]; 
 
 	Transform pos;	//リールのTransform
 	Vector3 initpos; //リールの初期位置
@@ -37,7 +38,7 @@ public class ReelController : MonoBehaviour {
 		}
 		pos = GetComponent<Transform> ();
 		initpos = pos.localPosition;
-		for (int i = 0; i < 12; i++) {
+		for (int i = 0; i < 18; i++) {
 			Vector3 pos = new Vector3 (0.0f,-0.9f + (0.9f*i),0.0f);
 			int tmp = Random.Range (0, imgobj.Count);//絵柄をランダムで生成
 
@@ -45,11 +46,54 @@ public class ReelController : MonoBehaviour {
 				while (current [i - 1] == tmp) { //前の絵柄と同じにならないように再抽選
 					tmp = Random.Range (0, imgobj.Count);
 				}
-			} else if (i == 9) {
+				Debug.Log(tmp);
+			} else if (i == 9)
+			{
+				tmp = 0;
+			}else if (i == 10)
+			{
+				tmp = 1;
+			}else if (i == 11)
+			{
+				tmp = 2;
+				if (tmp > imgobj.Count-1)
+				{
+					while (current [i - 1] == tmp || tmp > imgobj.Count-1) { //前の絵柄と同じにならないように再抽選
+						tmp = Random.Range (0, imgobj.Count);
+					}
+				}
+			}else if (i == 12)
+			{
+				tmp = 3;
+				if (tmp > imgobj.Count-1)
+				{
+					while (current [i - 1] == tmp||tmp > imgobj.Count-1) { //前の絵柄と同じにならないように再抽選
+						tmp = Random.Range (0, imgobj.Count);
+					}
+				}
+			}else if (i == 13)
+			{
+				tmp = 4;
+				if (tmp > imgobj.Count-1)
+				{
+					while (current [i - 1] == tmp ||tmp > imgobj.Count-1) { //前の絵柄と同じにならないように再抽選
+						tmp = Random.Range (0, imgobj.Count);
+					}
+				}
+			}else if (i == 14)
+			{
+				tmp = 5;
+				if (tmp > imgobj.Count-1)
+				{
+					while (current [i - 1] == tmp || tmp > imgobj.Count-1) { //前の絵柄と同じにならないように再抽選
+						tmp = Random.Range (0, imgobj.Count);
+					}
+				}
+			}else if (i == 15) {
 				tmp = current [0];
-			} else if (i == 10) {
+			} else if (i == 16) {
 				tmp = current [1];
-			} else if (i == 11) {
+			} else if (i == 17) {
 				tmp = current [2];
 			}
 
@@ -68,7 +112,7 @@ public class ReelController : MonoBehaviour {
 	void Update()
 	{
 
-		if (pos.localPosition.y < -8.1)
+		if (pos.localPosition.y < -13.5)
 		{
 			pos.localPosition = initpos;
 		}
@@ -109,15 +153,23 @@ public class ReelController : MonoBehaviour {
 				
 				//Debug.Log(speed_f + ": Speed_f : L:"+ line_ID);
 				//Target_Num = 1;
-
-				if (current[(c + 1)] != Target_Num && !first )
+				if (pos.localPosition.y % 0.9f < -0.06f)
 				{
-					pos.localPosition = new Vector3(pos.localPosition.x, pos.localPosition.y - (0.03f*speed_f), pos.localPosition.z);
+					flg = 0;
+					pos.localPosition = new Vector3(pos.localPosition.x, pos.localPosition.y - 0.03f,
+						pos.localPosition.z);
+				}else{
+
+				if (current[(c + 1)] != Target_Num && !first)
+				{
+					pos.localPosition = new Vector3(pos.localPosition.x, pos.localPosition.y - (0.03f),
+						pos.localPosition.z);
 				}
 				else
 				{
 					if (flg == 0)
 					{
+
 						//トリガー
 						flg = 1;
 						int under = -1 * (int) (pos.localPosition.y / 0.9); //何マス回転（移動）したか
@@ -142,6 +194,7 @@ public class ReelController : MonoBehaviour {
 							gc.SetLineL(lines);
 						}
 					}
+				}
 				//}
 				// if (pos.localPosition.y % 0.9f < -0.06f) {	//絵柄をマスで固定するために回転スピードを弱める
 				// 	flg = 0;

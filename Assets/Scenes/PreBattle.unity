@@ -388,8 +388,27 @@ MonoBehaviour:
   GM: {fileID: 1161845926}
   line_ID: 1
   imgobj: []
+  tmp_obj:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   first: 1
-  speed: 10
+  speed: 12
 --- !u!1 &236055921
 GameObject:
   m_ObjectHideFlags: 0
@@ -791,6 +810,25 @@ MonoBehaviour:
   GM: {fileID: 1161845926}
   line_ID: 2
   imgobj: []
+  tmp_obj:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   first: 1
   speed: 12
 --- !u!1 &517612102
@@ -3974,6 +4012,25 @@ MonoBehaviour:
   GM: {fileID: 1161845926}
   line_ID: 0
   imgobj: []
+  tmp_obj:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   first: 1
   speed: 12
 --- !u!1 &2128298025
