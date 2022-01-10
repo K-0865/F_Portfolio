@@ -1,70 +1,70 @@
 fileFormatVersion: 2
-guid: 727e726de598f480fa5be944c00f40b1
+guid: b69542f21af2547df8e864667693bf0c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8571727316308366682
-    second: ract_stop_sprite_800px_0
+      213: 4709052512668332108
+    second: eid_stop_sprite_800px_0
   - first:
-      213: 2051417059175081880
-    second: ract_stop_sprite_800px_1
+      213: 425236278671653783
+    second: eid_stop_sprite_800px_1
   - first:
-      213: -1349634058088896060
-    second: ract_stop_sprite_800px_2
+      213: -6863441994380748470
+    second: eid_stop_sprite_800px_2
   - first:
-      213: -2750450157585320180
-    second: ract_stop_sprite_800px_3
+      213: -4611987250628649639
+    second: eid_stop_sprite_800px_3
   - first:
-      213: 44543898618935348
-    second: ract_stop_sprite_800px_4
+      213: 3960331168611978817
+    second: eid_stop_sprite_800px_4
   - first:
-      213: 7462010217693550157
-    second: ract_stop_sprite_800px_5
+      213: -5079346184426395520
+    second: eid_stop_sprite_800px_5
   - first:
-      213: 5982586676543552519
-    second: ract_stop_sprite_800px_6
+      213: 6867587054902927912
+    second: eid_stop_sprite_800px_6
   - first:
-      213: 2985535698026502793
-    second: ract_stop_sprite_800px_7
+      213: 4517584833423000204
+    second: eid_stop_sprite_800px_7
   - first:
-      213: 7189372529143227224
-    second: ract_stop_sprite_800px_8
+      213: -5355463413321834008
+    second: eid_stop_sprite_800px_8
   - first:
-      213: 711247763056633643
-    second: ract_stop_sprite_800px_9
+      213: 368306309373898618
+    second: eid_stop_sprite_800px_9
   - first:
-      213: 5514328377130434730
-    second: ract_stop_sprite_800px_10
+      213: -5014658230740830935
+    second: eid_stop_sprite_800px_10
   - first:
-      213: -4852957120378453728
-    second: ract_stop_sprite_800px_11
+      213: -5834667350660149531
+    second: eid_stop_sprite_800px_11
   - first:
-      213: 7084910539902181249
-    second: ract_stop_sprite_800px_12
+      213: -7960432657000228005
+    second: eid_stop_sprite_800px_12
   - first:
-      213: 6693734849030510592
-    second: ract_stop_sprite_800px_13
+      213: 1978695052728912725
+    second: eid_stop_sprite_800px_13
   - first:
-      213: 4487251299200563307
-    second: ract_stop_sprite_800px_14
+      213: -4587345428450237768
+    second: eid_stop_sprite_800px_14
   - first:
-      213: -9042451105138791628
-    second: ract_stop_sprite_800px_15
+      213: -8736292932611398532
+    second: eid_stop_sprite_800px_15
   - first:
-      213: 7382966693627328723
-    second: ract_stop_sprite_800px_16
+      213: 2089453207162975557
+    second: eid_stop_sprite_800px_16
   - first:
-      213: 8694249123187344761
-    second: ract_stop_sprite_800px_17
+      213: 524666112258565620
+    second: eid_stop_sprite_800px_17
   - first:
-      213: -5686202155281545720
-    second: ract_stop_sprite_800px_18
+      213: -6794939488623173158
+    second: eid_stop_sprite_800px_18
   - first:
-      213: 6745236920031134717
-    second: ract_stop_sprite_800px_19
+      213: -1010538937851280081
+    second: eid_stop_sprite_800px_19
   - first:
-      213: -4795387212813268436
-    second: ract_stop_sprite_800px_20
+      213: 533979110219153254
+    second: eid_stop_sprite_800px_20
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -190,7 +190,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ract_stop_sprite_800px_0
+      name: eid_stop_sprite_800px_0
       rect:
         serializedVersion: 2
         x: 0
@@ -204,14 +204,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6aa6de7bb6b1b0980800000000000000
-      internalID: -8571727316308366682
+      spriteID: c40b1468f4ae95140800000000000000
+      internalID: 4709052512668332108
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ract_stop_sprite_800px_1
+      name: eid_stop_sprite_800px_1
       rect:
         serializedVersion: 2
         x: 800
@@ -225,14 +225,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 897ae4a42f8187c10800000000000000
-      internalID: 2051417059175081880
+      spriteID: 79b35d7742eb6e500800000000000000
+      internalID: 425236278671653783
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ract_stop_sprite_800px_2
+      name: eid_stop_sprite_800px_2
       rect:
         serializedVersion: 2
         x: 1600
@@ -246,14 +246,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4c9a7de89f2254de0800000000000000
-      internalID: -1349634058088896060
+      spriteID: a49df64ced720c0a0800000000000000
+      internalID: -6863441994380748470
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ract_stop_sprite_800px_3
+      name: eid_stop_sprite_800px_3
       rect:
         serializedVersion: 2
         x: 2400
@@ -267,14 +267,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c07b5b8772074d9d0800000000000000
-      internalID: -2750450157585320180
+      spriteID: 95d16a9e70eeeffb0800000000000000
+      internalID: -4611987250628649639
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ract_stop_sprite_800px_4
+      name: eid_stop_sprite_800px_4
       rect:
         serializedVersion: 2
         x: 3200
@@ -288,14 +288,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 438b71690704e9000800000000000000
-      internalID: 44543898618935348
+      spriteID: 14e4602173ce5f630800000000000000
+      internalID: 3960331168611978817
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ract_stop_sprite_800px_5
+      name: eid_stop_sprite_800px_5
       rect:
         serializedVersion: 2
         x: 4000
@@ -309,14 +309,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d4695ffe1c26e8760800000000000000
-      internalID: 7462010217693550157
+      spriteID: 088670a8e898289b0800000000000000
+      internalID: -5079346184426395520
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ract_stop_sprite_800px_6
+      name: eid_stop_sprite_800px_6
       rect:
         serializedVersion: 2
         x: 4800
@@ -330,14 +330,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 70cfc5d92ea660350800000000000000
-      internalID: 5982586676543552519
+      spriteID: 8226f875a029e4f50800000000000000
+      internalID: 6867587054902927912
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ract_stop_sprite_800px_7
+      name: eid_stop_sprite_800px_7
       rect:
         serializedVersion: 2
         x: 0
@@ -351,14 +351,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 98a1e1936e0ce6920800000000000000
-      internalID: 2985535698026502793
+      spriteID: c82ced6887fa1be30800000000000000
+      internalID: 4517584833423000204
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ract_stop_sprite_800px_8
+      name: eid_stop_sprite_800px_8
       rect:
         serializedVersion: 2
         x: 800
@@ -372,14 +372,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 853a88d6938c5c360800000000000000
-      internalID: 7189372529143227224
+      spriteID: 8e1e95966629da5b0800000000000000
+      internalID: -5355463413321834008
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ract_stop_sprite_800px_9
+      name: eid_stop_sprite_800px_9
       rect:
         serializedVersion: 2
         x: 1600
@@ -393,14 +393,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b272848721cded900800000000000000
-      internalID: 711247763056633643
+      spriteID: a7f24c213ac7c1500800000000000000
+      internalID: 368306309373898618
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ract_stop_sprite_800px_10
+      name: eid_stop_sprite_800px_10
       rect:
         serializedVersion: 2
         x: 2400
@@ -414,14 +414,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aa047bd5174d68c40800000000000000
-      internalID: 5514328377130434730
+      spriteID: 92534be68ea586ab0800000000000000
+      internalID: -5014658230740830935
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ract_stop_sprite_800px_11
+      name: eid_stop_sprite_800px_11
       rect:
         serializedVersion: 2
         x: 3200
@@ -435,14 +435,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 021c3a90635d6acb0800000000000000
-      internalID: -4852957120378453728
+      spriteID: 5ee055d35f8170fa0800000000000000
+      internalID: -5834667350660149531
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ract_stop_sprite_800px_12
+      name: eid_stop_sprite_800px_12
       rect:
         serializedVersion: 2
         x: 4000
@@ -456,14 +456,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 18f5a4c3998a25260800000000000000
-      internalID: 7084910539902181249
+      spriteID: b5b1515bcacd68190800000000000000
+      internalID: -7960432657000228005
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ract_stop_sprite_800px_13
+      name: eid_stop_sprite_800px_13
       rect:
         serializedVersion: 2
         x: 4800
@@ -477,14 +477,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 008dd19516ce4ec50800000000000000
-      internalID: 6693734849030510592
+      spriteID: 55bcab8baacb57b10800000000000000
+      internalID: 1978695052728912725
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ract_stop_sprite_800px_14
+      name: eid_stop_sprite_800px_14
       rect:
         serializedVersion: 2
         x: 0
@@ -498,14 +498,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b6872ca384be54e30800000000000000
-      internalID: 4487251299200563307
+      spriteID: 8b2263b33a97650c0800000000000000
+      internalID: -4587345428450237768
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ract_stop_sprite_800px_15
+      name: eid_stop_sprite_800px_15
       rect:
         serializedVersion: 2
         x: 800
@@ -519,14 +519,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 43b2d5bf0a2c28280800000000000000
-      internalID: -9042451105138791628
+      spriteID: c7421f95dd372c680800000000000000
+      internalID: -8736292932611398532
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ract_stop_sprite_800px_16
+      name: eid_stop_sprite_800px_16
       rect:
         serializedVersion: 2
         x: 1600
@@ -540,14 +540,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d8723a5711957660800000000000000
-      internalID: 7382966693627328723
+      spriteID: 545ffbb1f9a3ffc10800000000000000
+      internalID: 2089453207162975557
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ract_stop_sprite_800px_17
+      name: eid_stop_sprite_800px_17
       rect:
         serializedVersion: 2
         x: 2400
@@ -561,14 +561,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9754550738d28a870800000000000000
-      internalID: 8694249123187344761
+      spriteID: 4f56bde9c0df74700800000000000000
+      internalID: 524666112258565620
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ract_stop_sprite_800px_18
+      name: eid_stop_sprite_800px_18
       rect:
         serializedVersion: 2
         x: 3200
@@ -582,14 +582,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 806026d344d8611b0800000000000000
-      internalID: -5686202155281545720
+      spriteID: ad16756498683b1a0800000000000000
+      internalID: -6794939488623173158
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ract_stop_sprite_800px_19
+      name: eid_stop_sprite_800px_19
       rect:
         serializedVersion: 2
         x: 4000
@@ -603,14 +603,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: df34e40bd35eb9d50800000000000000
-      internalID: 6745236920031134717
+      spriteID: f258ca9a038d9f1f0800000000000000
+      internalID: -1010538937851280081
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ract_stop_sprite_800px_20
+      name: eid_stop_sprite_800px_20
       rect:
         serializedVersion: 2
         x: 4800
@@ -624,8 +624,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c2a80dbacbc537db0800000000000000
-      internalID: -4795387212813268436
+      spriteID: 66f771eeb23196700800000000000000
+      internalID: 533979110219153254
       vertices: []
       indices: 
       edges: []

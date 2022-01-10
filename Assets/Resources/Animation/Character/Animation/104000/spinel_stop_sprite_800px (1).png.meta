@@ -1,70 +1,70 @@
 fileFormatVersion: 2
-guid: 7282f3e0269fd4bd698c9bfe511ca792
+guid: c50e5f66473bb4dd999ab5526dcff472
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1989012863072222865
-    second: spinel_stop_sprite_800px_0
+      213: 283827333575855143
+    second: spinel_stop_sprite_800px (1)_0
   - first:
-      213: 3026070339764731975
-    second: spinel_stop_sprite_800px_1
+      213: -7428724405316496263
+    second: spinel_stop_sprite_800px (1)_1
   - first:
-      213: -5074656571846323314
-    second: spinel_stop_sprite_800px_2
+      213: -7472060659532662584
+    second: spinel_stop_sprite_800px (1)_2
   - first:
-      213: 3644158056718033216
-    second: spinel_stop_sprite_800px_3
+      213: -4889332057058674399
+    second: spinel_stop_sprite_800px (1)_3
   - first:
-      213: -7866617637524161439
-    second: spinel_stop_sprite_800px_4
+      213: -4517509654628336735
+    second: spinel_stop_sprite_800px (1)_4
   - first:
-      213: 941941399857799139
-    second: spinel_stop_sprite_800px_5
+      213: 2734712172123649811
+    second: spinel_stop_sprite_800px (1)_5
   - first:
-      213: 357410142437425425
-    second: spinel_stop_sprite_800px_6
+      213: -5789630648205650464
+    second: spinel_stop_sprite_800px (1)_6
   - first:
-      213: 7854146665688332723
-    second: spinel_stop_sprite_800px_7
+      213: -1596729946072121069
+    second: spinel_stop_sprite_800px (1)_7
   - first:
-      213: -5484881474623080031
-    second: spinel_stop_sprite_800px_8
+      213: -2985640410340143126
+    second: spinel_stop_sprite_800px (1)_8
   - first:
-      213: 6619095237005477659
-    second: spinel_stop_sprite_800px_9
+      213: -2439504143570498494
+    second: spinel_stop_sprite_800px (1)_9
   - first:
-      213: -5877536232977225111
-    second: spinel_stop_sprite_800px_10
+      213: 6142213916684655671
+    second: spinel_stop_sprite_800px (1)_10
   - first:
-      213: 6647157224814204586
-    second: spinel_stop_sprite_800px_11
+      213: -5222941819267597146
+    second: spinel_stop_sprite_800px (1)_11
   - first:
-      213: 1006410501795556059
-    second: spinel_stop_sprite_800px_12
+      213: 1055185290401068832
+    second: spinel_stop_sprite_800px (1)_12
   - first:
-      213: -5186793077830946454
-    second: spinel_stop_sprite_800px_13
+      213: 301244525900369988
+    second: spinel_stop_sprite_800px (1)_13
   - first:
-      213: 3546512767482750554
-    second: spinel_stop_sprite_800px_14
+      213: -8683270752381798710
+    second: spinel_stop_sprite_800px (1)_14
   - first:
-      213: -3923304341862686318
-    second: spinel_stop_sprite_800px_15
+      213: 4788573381259932816
+    second: spinel_stop_sprite_800px (1)_15
   - first:
-      213: -420311590426004022
-    second: spinel_stop_sprite_800px_16
+      213: 5131058471910530316
+    second: spinel_stop_sprite_800px (1)_16
   - first:
-      213: 7031076485812069687
-    second: spinel_stop_sprite_800px_17
+      213: -4565809334743225123
+    second: spinel_stop_sprite_800px (1)_17
   - first:
-      213: -3285056254103495875
-    second: spinel_stop_sprite_800px_18
+      213: 5903729679853968346
+    second: spinel_stop_sprite_800px (1)_18
   - first:
-      213: 4944558633856190422
-    second: spinel_stop_sprite_800px_19
+      213: -8879019186600072420
+    second: spinel_stop_sprite_800px (1)_19
   - first:
-      213: 1807094730610415243
-    second: spinel_stop_sprite_800px_20
+      213: -8623016193815457342
+    second: spinel_stop_sprite_800px (1)_20
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -190,7 +190,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spinel_stop_sprite_800px_0
+      name: spinel_stop_sprite_800px (1)_0
       rect:
         serializedVersion: 2
         x: 0
@@ -204,14 +204,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f61c5ead65b9564e0800000000000000
-      internalID: -1989012863072222865
+      spriteID: 72cc553c47b50f300800000000000000
+      internalID: 283827333575855143
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spinel_stop_sprite_800px_1
+      name: spinel_stop_sprite_800px (1)_1
       rect:
         serializedVersion: 2
         x: 800
@@ -225,14 +225,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 740c503f0f2cef920800000000000000
-      internalID: 3026070339764731975
+      spriteID: 974d5de238ed7e890800000000000000
+      internalID: -7428724405316496263
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spinel_stop_sprite_800px_2
+      name: spinel_stop_sprite_800px (1)_2
       rect:
         serializedVersion: 2
         x: 1600
@@ -246,14 +246,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e839ffd0cb23399b0800000000000000
-      internalID: -5074656571846323314
+      spriteID: 8c872683b68ed4890800000000000000
+      internalID: -7472060659532662584
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spinel_stop_sprite_800px_3
+      name: spinel_stop_sprite_800px (1)_3
       rect:
         serializedVersion: 2
         x: 2400
@@ -267,14 +267,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0416e0ce176a29230800000000000000
-      internalID: 3644158056718033216
+      spriteID: 129761e166a952cb0800000000000000
+      internalID: -4889332057058674399
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spinel_stop_sprite_800px_4
+      name: spinel_stop_sprite_800px (1)_4
       rect:
         serializedVersion: 2
         x: 3200
@@ -288,14 +288,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 16cbc8310f824d290800000000000000
-      internalID: -7866617637524161439
+      spriteID: 1abfa7667e49e41c0800000000000000
+      internalID: -4517509654628336735
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spinel_stop_sprite_800px_5
+      name: spinel_stop_sprite_800px (1)_5
       rect:
         serializedVersion: 2
         x: 4000
@@ -309,14 +309,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3ef12c966b2721d00800000000000000
-      internalID: 941941399857799139
+      spriteID: 317fd5e3b36a3f520800000000000000
+      internalID: 2734712172123649811
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spinel_stop_sprite_800px_6
+      name: spinel_stop_sprite_800px (1)_6
       rect:
         serializedVersion: 2
         x: 4800
@@ -330,14 +330,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 111ca1381a6c5f400800000000000000
-      internalID: 357410142437425425
+      spriteID: 0e5dcf8a99917afa0800000000000000
+      internalID: -5789630648205650464
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spinel_stop_sprite_800px_7
+      name: spinel_stop_sprite_800px (1)_7
       rect:
         serializedVersion: 2
         x: 0
@@ -351,14 +351,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3b9fb2687c88ffc60800000000000000
-      internalID: 7854146665688332723
+      spriteID: 311842ae29647d9e0800000000000000
+      internalID: -1596729946072121069
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spinel_stop_sprite_800px_8
+      name: spinel_stop_sprite_800px (1)_8
       rect:
         serializedVersion: 2
         x: 800
@@ -372,14 +372,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1a978f5eb59c1e3b0800000000000000
-      internalID: -5484881474623080031
+      spriteID: aefcf9a8ddfd096d0800000000000000
+      internalID: -2985640410340143126
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spinel_stop_sprite_800px_9
+      name: spinel_stop_sprite_800px (1)_9
       rect:
         serializedVersion: 2
         x: 1600
@@ -393,14 +393,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b1701307c00cbdb50800000000000000
-      internalID: 6619095237005477659
+      spriteID: 24c036e08e3252ed0800000000000000
+      internalID: -2439504143570498494
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spinel_stop_sprite_800px_10
+      name: spinel_stop_sprite_800px (1)_10
       rect:
         serializedVersion: 2
         x: 2400
@@ -414,14 +414,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 96aa7e6cfebce6ea0800000000000000
-      internalID: -5877536232977225111
+      spriteID: 73c137ea3078d3550800000000000000
+      internalID: 6142213916684655671
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spinel_stop_sprite_800px_11
+      name: spinel_stop_sprite_800px (1)_11
       rect:
         serializedVersion: 2
         x: 3200
@@ -435,14 +435,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aa6d83f17427f3c50800000000000000
-      internalID: 6647157224814204586
+      spriteID: 6acb50476126487b0800000000000000
+      internalID: -5222941819267597146
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spinel_stop_sprite_800px_12
+      name: spinel_stop_sprite_800px (1)_12
       rect:
         serializedVersion: 2
         x: 4000
@@ -456,14 +456,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bda2fb9e40d77fd00800000000000000
-      internalID: 1006410501795556059
+      spriteID: 027b2965e65c4ae00800000000000000
+      internalID: 1055185290401068832
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spinel_stop_sprite_800px_13
+      name: spinel_stop_sprite_800px (1)_13
       rect:
         serializedVersion: 2
         x: 4800
@@ -477,14 +477,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a617e603d2fc408b0800000000000000
-      internalID: -5186793077830946454
+      spriteID: 44092dcdc4c3e2400800000000000000
+      internalID: 301244525900369988
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spinel_stop_sprite_800px_14
+      name: spinel_stop_sprite_800px (1)_14
       rect:
         serializedVersion: 2
         x: 0
@@ -498,14 +498,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a566231629eb73130800000000000000
-      internalID: 3546512767482750554
+      spriteID: ac67eb3b143de7780800000000000000
+      internalID: -8683270752381798710
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spinel_stop_sprite_800px_15
+      name: spinel_stop_sprite_800px (1)_15
       rect:
         serializedVersion: 2
         x: 800
@@ -519,14 +519,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 291e685dc7f9d89c0800000000000000
-      internalID: -3923304341862686318
+      spriteID: 094b3ea8e1e647240800000000000000
+      internalID: 4788573381259932816
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spinel_stop_sprite_800px_16
+      name: spinel_stop_sprite_800px (1)_16
       rect:
         serializedVersion: 2
         x: 1600
@@ -540,14 +540,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ac5bdadd5d0ca2af0800000000000000
-      internalID: -420311590426004022
+      spriteID: c0d5cf3ae7e253740800000000000000
+      internalID: 5131058471910530316
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spinel_stop_sprite_800px_17
+      name: spinel_stop_sprite_800px (1)_17
       rect:
         serializedVersion: 2
         x: 2400
@@ -561,14 +561,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7352e65cfc6639160800000000000000
-      internalID: 7031076485812069687
+      spriteID: ddca77ac99cf2a0c0800000000000000
+      internalID: -4565809334743225123
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spinel_stop_sprite_800px_18
+      name: spinel_stop_sprite_800px (1)_18
       rect:
         serializedVersion: 2
         x: 3200
@@ -582,14 +582,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d3b5cfaedb22962d0800000000000000
-      internalID: -3285056254103495875
+      spriteID: adb50a15dd24ee150800000000000000
+      internalID: 5903729679853968346
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spinel_stop_sprite_800px_19
+      name: spinel_stop_sprite_800px (1)_19
       rect:
         serializedVersion: 2
         x: 4000
@@ -603,14 +603,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6d7c61e41e99e9440800000000000000
-      internalID: 4944558633856190422
+      spriteID: c1b23d4c71367c480800000000000000
+      internalID: -8879019186600072420
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spinel_stop_sprite_800px_20
+      name: spinel_stop_sprite_800px (1)_20
       rect:
         serializedVersion: 2
         x: 4800
@@ -624,8 +624,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b8693854517141910800000000000000
-      internalID: 1807094730610415243
+      spriteID: 2c1503b5574e45880800000000000000
+      internalID: -8623016193815457342
       vertices: []
       indices: 
       edges: []
