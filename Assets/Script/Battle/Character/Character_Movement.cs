@@ -219,11 +219,13 @@ public class Character_Movement : MonoBehaviour
             if (_battleManager._ready_player && this.transform.tag == "Player" && !_battleManager._gamestart)
             {
                 _animator.SetBool("Force_Stand", true);
+                _animator.SetBool("run", false);
+                
             }
             if (_battleManager._ready_enemy && this.transform.tag == "enemy" && !_battleManager._gamestart)
             {
                 _animator.SetBool("Force_Stand", true);
-
+                _animator.SetBool("run", false);
             }
             if(_battleManager._gamestart)
             {
