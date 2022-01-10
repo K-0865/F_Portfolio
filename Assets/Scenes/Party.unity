@@ -1117,7 +1117,7 @@ GameObject:
   - component: {fileID: 284070138}
   - component: {fileID: 284070137}
   m_Layer: 5
-  m_Name: Image
+  m_Name: BackGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4634,7 +4634,7 @@ GameObject:
   - component: {fileID: 1352076977}
   - component: {fileID: 1352076976}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: Sort
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5003,8 +5003,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1ba09c98e3f3493999b9cbbe8107dfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _UI_Party: {fileID: 1298544416}
-  _UI_Select: {fileID: 1308995283}
+  _UI: {fileID: 0}
   _PartyScreen: {fileID: 1426571730}
   _CharacterScreen: {fileID: 1427857782}
   _Party_POS_IMG:
@@ -6165,7 +6164,7 @@ GameObject:
   - component: {fileID: 1854422331}
   - component: {fileID: 1854422330}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Filter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
