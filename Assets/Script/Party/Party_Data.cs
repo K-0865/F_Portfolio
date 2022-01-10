@@ -113,12 +113,19 @@ public class Party_Data : MonoBehaviour
                     _Party_Pos_Frame[_TryChange].sprite = Resources.Load<Sprite>("Party_UI/RainbowFrame");
                     _Party_Pos_backGround[_TryChange].sprite = Resources.Load<Sprite>("Party_UI/Rainbow");
                     break;
+<<<<<<< Updated upstream
                 // default:
                 //      _Party_Pos_Frame[i].sprite = Resources.Load<Sprite>("Party_UI/EmptyFrame");
                 //      break;
             }
 
             
+=======
+                default:
+                    _Party_Pos_Frame[_TryChange].sprite = Resources.Load<Sprite>("Party_UI/EmptyFrame");
+                    break;
+            }   
+>>>>>>> Stashed changes
         }
 
         _CharacterScreen.SetActive(false);
