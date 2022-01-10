@@ -32,6 +32,8 @@ public class Party_Data : MonoBehaviour
     {
         for (int i = 0; i < _Party_POS_IMG.Count; i++)
         {
+            _Party_Pos_Frame[i].sprite = Resources.Load<Sprite>("Party_UI/EmptyFrame");
+
             if (GManager.instance.character_pos[i] != 0)
             {
                 _Party_POS_IMG[i].sprite = Resources.Load<Sprite>("Party_UI/Character/" + GManager.instance.character_pos[i]);
@@ -58,6 +60,7 @@ public class Party_Data : MonoBehaviour
                                 _Party_Pos_Frame[i].sprite = Resources.Load<Sprite>("Party_UI/EmptyFrame");
                                 break;
                         }
+                        
                     }
                 }
             }
@@ -110,10 +113,12 @@ public class Party_Data : MonoBehaviour
                     _Party_Pos_Frame[_TryChange].sprite = Resources.Load<Sprite>("Party_UI/RainbowFrame");
                     _Party_Pos_backGround[_TryChange].sprite = Resources.Load<Sprite>("Party_UI/Rainbow");
                     break;
-                default:
-                    _Party_Pos_Frame[i].sprite = Resources.Load<Sprite>("Party_UI/EmptyFrame");
-                    break;
-            }   
+                // default:
+                //      _Party_Pos_Frame[i].sprite = Resources.Load<Sprite>("Party_UI/EmptyFrame");
+                //      break;
+            }
+
+            
         }
 
         _CharacterScreen.SetActive(false);
