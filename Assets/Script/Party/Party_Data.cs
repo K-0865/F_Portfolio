@@ -6,10 +6,7 @@ using UnityEngine.UI;
 public class Party_Data : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField] private GameObject _UI_Party;
-    [SerializeField] private GameObject _UI_Select;
-    [SerializeField] private GameObject _Character_BackGround;
-    [SerializeField] private GameObject _Character_Frame;
+    [SerializeField] private GameObject _UI;
     [SerializeField]
     private GameObject _PartyScreen;
     [SerializeField]
@@ -74,13 +71,8 @@ public class Party_Data : MonoBehaviour
     public void party_change(int num)
     {
         _PartyScreen.SetActive(false);
-        _UI_Party.SetActive(false);
+        _UI.SetActive(false);
         _CharacterScreen.SetActive(true);
-        
-        _UI_Select.SetActive(true);
-        _Character_Frame.SetActive(true);
-        _Character_BackGround.SetActive(true);
-        
         _TryChange = num;
     }
 
@@ -117,11 +109,8 @@ public class Party_Data : MonoBehaviour
         }
 
         _CharacterScreen.SetActive(false);
-        _UI_Party.SetActive(true);
+        _UI.SetActive(true);
         _PartyScreen.SetActive(true);
-        _UI_Select.SetActive(false);
-        _Character_Frame.SetActive(false);
-        _Character_BackGround.SetActive(false);
         _TryChange = 0;
     }
     
