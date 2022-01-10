@@ -40,8 +40,6 @@ public class Party_Data : MonoBehaviour
                     if (GManager.instance.character_pos[i] == data.Character[j].ID)
                     {
 
-                        _Party_Pos_Frame[i].sprite = Resources.Load<Sprite>("Party_UI/EmptyFrame");
-
                         switch (data.Character[j].Rare)
                         {
                             case 1:
@@ -57,6 +55,7 @@ public class Party_Data : MonoBehaviour
                                 _Party_Pos_backGround[i].sprite = Resources.Load<Sprite>("Party_UI/Rainbow");
                                 break;
                             default:
+                                _Party_Pos_Frame[i].sprite = Resources.Load<Sprite>("Party_UI/EmptyFrame");
                                 break;
                         }
                     }
@@ -112,6 +111,7 @@ public class Party_Data : MonoBehaviour
                     _Party_Pos_backGround[_TryChange].sprite = Resources.Load<Sprite>("Party_UI/Rainbow");
                     break;
                 default:
+                    _Party_Pos_Frame[i].sprite = Resources.Load<Sprite>("Party_UI/EmptyFrame");
                     break;
             }   
         }
