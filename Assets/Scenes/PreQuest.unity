@@ -1090,7 +1090,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Scene:
-    m_SceneName: PreBattle
+    m_SceneName: Party
 --- !u!114 &744263927
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1313,7 +1313,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Scene:
-    m_SceneName: PreBattle
+    m_SceneName: Party
 --- !u!114 &908570947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2827,7 +2827,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Scene:
-    m_SceneName: PreBattle
+    m_SceneName: Party
 --- !u!114 &1496550099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2974,7 +2974,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Scene:
-    m_SceneName: PreBattle
+    m_SceneName: Party
 --- !u!114 &1502359195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3907,7 +3907,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Scene:
-    m_SceneName: PreBattle
+    m_SceneName: Party
 --- !u!1 &1947634397
 GameObject:
   m_ObjectHideFlags: 0
