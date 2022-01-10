@@ -6,8 +6,10 @@ using System.IO;
 
 public class GManager : MonoBehaviour
 {
+    
     public static GManager instance = null;
-
+    private int lastWidth = 0;
+    private int lastHeight = 0;
     public int mapid = 101;
     //public int[] character_pos { get; private set; } = new[] {102000,1000 };
     public int[] character_pos = new[] {102000,101000,0,0,0 };
@@ -21,10 +23,36 @@ public class GManager : MonoBehaviour
     {
         character_pos = data;
     }
-
+    void Force_Camera(){
+        float targetaspect = 19.5f / 9.0f;
+        float windowaspect = (float)Screen.width / (float)Screen.height;
+        float scaleheight = windowaspect / targetaspect;
+        Camera camera = GameObject.Find("Main Camera").GetComponent<Camera>();
+        if(scaleheight < 1.0f){
+            Rect rect = camera.rect;
+            rect.width = 1.0f;
+            rect.height = scaleheight;
+            rect.x = 0;
+            rect.y = (1.0f - scaleheight) / 2.0f;
+            camera.rect = rect;
+        }
+        else{
+            float scalewidth = 1.0f / scaleheight;
+            Rect rect = camera.rect;
+            rect.width = scalewidth;
+            rect.height = 1.0f;
+            rect.x = (1.0f - scalewidth) / 2.0f;
+            rect.y = 0;
+            camera.rect = rect;
+        }
+    }
+    
+   
     //全sceneに置くことで次のsceneに移ったときに破棄されずにこのオブジェクトが各シーンを移動できるようにする
     private void Awake()
     {
+        Force_Camera();
+        //Screen.SetResolution(2436,1125,false);
         Application.targetFrameRate = 60; // 60fpsに設定
         if (instance == null)
         {
@@ -39,7 +67,27 @@ public class GManager : MonoBehaviour
         }
 
     }
-    
+    private void Update()
+    {
+
+         var width = Screen.width; var height = Screen.height;
+ 
+         if (lastWidth != width) // if the user is changing the width
+         {
+             // update the height
+             var heightAccordingToWidth = width / 19.5 * 9.0f;
+             Screen.SetResolution(width, (int)Mathf.Round((float)heightAccordingToWidth), false, 0);
+         }
+         else if (lastHeight != height) // if the user is changing the height
+         {
+             // update the width
+             var widthAccordingToHeight = height / 9.0 * 19.5;
+             Screen.SetResolution((int)Mathf.Round((float)widthAccordingToHeight), height, false, 0);
+         }
+         lastWidth = width;
+         lastHeight = height;
+     
+    }
     //プレイヤーデータの保管（Jsonかplayerprefsで管理予定）
 
     public int Level = 1;
