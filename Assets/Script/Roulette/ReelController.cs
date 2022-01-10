@@ -46,7 +46,7 @@ public class ReelController : MonoBehaviour {
 				while (current [i - 1] == tmp) { //前の絵柄と同じにならないように再抽選
 					tmp = Random.Range (0, imgobj.Count);
 				}
-				Debug.Log(tmp);
+				//Debug.Log(tmp);
 			} else if (i == 9)
 			{
 				tmp = 0;
