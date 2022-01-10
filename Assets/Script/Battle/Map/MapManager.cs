@@ -18,6 +18,7 @@ public class MapManager : MonoBehaviour
    //MapIDの確認とEnemyの生成
    private void Awake()
    {
+      _mapID = GManager.instance.mapid;
       _battleManager = GameObject.Find("BattleManager").GetComponent<BattleManager>();
       for (int i = 0; i < data.StageList.Count; i++)
       {

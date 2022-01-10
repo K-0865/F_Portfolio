@@ -7,7 +7,8 @@ using System.IO;
 public class GManager : MonoBehaviour
 {
     public static GManager instance = null;
-    
+
+    public int mapid = 101;
     //public int[] character_pos { get; private set; } = new[] {102000,1000 };
     public int[] character_pos = new[] {102000,101000,0,0,0 };
     

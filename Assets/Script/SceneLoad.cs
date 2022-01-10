@@ -11,4 +11,11 @@ public class SceneLoad : MonoBehaviour
     {
         SceneManager.LoadScene(Scene);
     }
+
+    public void BattleStageLoad(int mapid)
+    {
+        GManager.instance.mapid = mapid;
+        SceneManager.LoadScene(Scene);
+
+    }
 }
