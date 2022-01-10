@@ -1778,10 +1778,10 @@ RectTransform:
   m_Father: {fileID: 1342111509}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -210.5, y: -93.8}
-  m_SizeDelta: {x: 299.5886, y: 97.8002}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 1007.5, y: 499.2}
+  m_SizeDelta: {x: 299.58862, y: 97.8002}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &716219531
 MonoBehaviour:
@@ -3448,7 +3448,7 @@ Canvas:
   m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
