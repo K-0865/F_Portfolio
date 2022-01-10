@@ -11,6 +11,7 @@ public class MapManager : MonoBehaviour
    [SerializeField] private Quest_List data;
    [SerializeField] private int _mapID;
    [SerializeField] private StageTable _PreviewData;
+   [SerializeField] private map_text _mapText;
    public int []Enemy_Data;
    public int []Enemy_Stage_Count;
    
@@ -25,6 +26,7 @@ public class MapManager : MonoBehaviour
          {
             _PreviewData = data.StageList[i];
             _battleManager.boss = data.StageList[i].BossFlag;
+            _mapText.map_name.text = data.StageList[i].MapName;
             break;
          }
       }
