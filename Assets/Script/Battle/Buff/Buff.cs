@@ -12,5 +12,6 @@ public class Buff_list
     public int Atk;
     public int Def;
     public int Eva;
+    public float Sec;
     
 }

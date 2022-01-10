@@ -34,7 +34,8 @@ public class Character_Movement : MonoBehaviour
     [SerializeField]private Character_attack_range _attackRange;
     private Character_Present_Data _characterPresentData;
     [SerializeField]public bool isUseSP = false;
-    [SerializeField]private GameObject[] Factory;
+    [SerializeField]private GameObject[] P_Factory;
+    [SerializeField]private GameObject[] E_Factory;
     private BattleManager _battleManager;
     void Start()
     {
@@ -44,7 +45,8 @@ public class Character_Movement : MonoBehaviour
         Loop_Pattern = GetComponentInChildren<CharacterData>().get_Loop();
         data = GetComponent<Character_Present_Data>();
         _animator = this.gameObject.GetComponent<Animator>();
-        Factory = GameObject.Find("Character_Factory").GetComponent<char_factory>()._character_clone;
+        P_Factory = GameObject.Find("Character_Factory").GetComponent<char_factory>()._character_clone;
+        E_Factory = GameObject.Find("Enemy_Factory").GetComponent<Enemy_Fac>()._enemy_clone;
         if (this.gameObject.tag == "Player")
         {
             _faceDirection = Face_Direction.LEFT;
@@ -90,7 +92,7 @@ public class Character_Movement : MonoBehaviour
     
     }
 
-    IEnumerator useBuff(int skill_num)
+    private void useBuff(int skill_num)
     {
         
         
@@ -98,19 +100,31 @@ public class Character_Movement : MonoBehaviour
         {
             //GameObject []Factory = GameObject.Find("Character_Factory").GetComponent<char_factory>()._character_clone;
             Skill_Data skill = _skillData[skill_num];
-            float sec_skill = _skillData[skill_num].Sec;
-            for (int i = 0; i < Factory.Length; i++)
+            for (int i = 0; i < P_Factory.Length; i++)
             {
-                if (Factory[i] != null)
+                if (P_Factory[i] != null)
                 {
 //                    Debug.Log(Factory.Length);
-                    Factory[i].GetComponent<Character_Present_Data>().setBuff(skill,sec_skill);
+                    P_Factory[i].GetComponent<Character_Present_Data>().setBuff(skill);
+                }
+               
+            }
+        }
+        else if (this.tag == "Enemy")
+        {
+            //GameObject []Factory = GameObject.Find("Character_Factory").GetComponent<char_factory>()._character_clone;
+            Skill_Data skill = _skillData[skill_num];
+            for (int i = 0; i < E_Factory.Length; i++)
+            {
+                if (E_Factory[i] != null)
+                {
+//                    Debug.Log(Factory.Length);
+                    E_Factory[i].GetComponent<Character_Present_Data>().setBuff(skill);
                 }
                
             }
         }
 
-        yield return 0;
     }
     //攻撃ループ
     IEnumerator Attack(int Loop,float sec)

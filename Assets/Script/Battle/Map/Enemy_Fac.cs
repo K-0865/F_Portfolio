@@ -16,7 +16,7 @@ public class Enemy_Fac : MonoBehaviour
     private int now_wave;
     [SerializeField]
     private GameObject []_enemy = new GameObject[4];
-    private GameObject []_enemy_clone = new GameObject[4];
+    public GameObject []_enemy_clone = new GameObject[4];
     private BattleManager _battleManager;
 
     private SortingGroup _sortingGroup;

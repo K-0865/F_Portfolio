@@ -31,6 +31,7 @@ public class Character_Present_Data : MonoBehaviour
     public float _attack_speed;
     public string _name;
     public List<Buff_list> _buffs;
+    public List<Buff_list> _debuffs;
     [SerializeField] private GameObject effect_buff;
     private void Start()
     {
@@ -50,22 +51,18 @@ public class Character_Present_Data : MonoBehaviour
     }
 
     //ダメージ計算(攻撃力-防御力 = ダメージ、暫定式)
-    public void setBuff(Skill_Data skill,float sec)
+    public void setBuff(Skill_Data skill)
     {
         
         Buff_list buff = new Buff_list();
         buff.Atk = skill.Atk;
         buff.Def = skill.Def;
         buff.Eva = skill.Eva;
+        buff.Sec = skill.Sec;
         _buffs.Add(buff);
-        //StartCoroutine(Buff_Time(sec,_buffs.Count));
     }
 
-    IEnumerator Buff_Time(float sec,int buff_nums)
-    {
-        yield return new WaitForSeconds(sec);
-        _buffs.RemoveAt(buff_nums);
-    }
+    
     public void getDamage(float damage)
     {
         float total_def = 0;
