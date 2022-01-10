@@ -23,7 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/dummy.unity
     guid: 171e18a2da880f74788922f4c33c3603
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Party.unity
     guid: 28b3094248a8f42feb486995b50ee18c
   - enabled: 1
