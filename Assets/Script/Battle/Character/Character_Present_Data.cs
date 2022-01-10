@@ -60,17 +60,49 @@ public class Character_Present_Data : MonoBehaviour
         buff.Eva = skill.Eva;
         buff.Sec = skill.Sec;
         _buffs.Add(buff);
+    }public void set_deBuff(Skill_Data skill)
+    {
+        
+        Buff_list debuff = new Buff_list();
+        debuff.Atk = skill.Atk;
+        debuff.Def = skill.Def;
+        debuff.Eva = skill.Eva;
+        debuff.Sec = skill.Sec;
+        _debuffs.Add(debuff);
     }
 
-    
+    void removeBuff_debuff()
+    {
+        for (int i = 0; i < _buffs.Count; i++)
+        {
+            if (_buffs[i].Sec < 0)
+            {
+                _buffs.RemoveAt(i);
+            }
+        } 
+        for (int i = 0; i < _debuffs.Count; i++)
+        {
+            if (_debuffs[i].Sec < 0)
+            {
+                _debuffs.RemoveAt(i);
+            }
+        }   
+    }
     public void getDamage(float damage)
     {
         float total_def = 0;
+        float total_buff = 0;
         for (int i = 0; i < _buffs.Count; i++)
         {
-            total_def += _buffs[i].Def;
+            total_buff += _buffs[i].Def;
         }
-        float sum = damage - this._def;  // Damage Formula
+        for (int i = 0; i < _debuffs.Count; i++)
+        {
+            total_buff -= _debuffs[i].Def;
+        }
+
+        total_def = _def * (total_buff / 100);
+        float sum = damage - total_def;  // Damage Formula
         if (sum <= 0)
         {
             sum = 1;

@@ -71,7 +71,11 @@ public class character_rangeType : MonoBehaviour
         {
             buff_atk += data_buff._buffs[i].Atk;
         }
-        Debug.Log(buff_atk);
+        for (int i = 0; i < data_buff._debuffs.Count; i++)
+        {
+            buff_atk -= data_buff._debuffs[i].Atk;
+        }
+        //Debug.Log(buff_atk);
         total_attack = (attack*(buff_atk/100)) * (p_att / 100f);
         string me_tag = this.gameObject.transform.parent.tag;
         

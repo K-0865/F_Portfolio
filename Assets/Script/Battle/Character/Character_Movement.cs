@@ -126,6 +126,40 @@ public class Character_Movement : MonoBehaviour
         }
 
     }
+    private void useDebuff(int skill_num)
+    {
+        
+        
+        if (this.tag == "Player")
+        {
+            //GameObject []Factory = GameObject.Find("Character_Factory").GetComponent<char_factory>()._character_clone;
+            Skill_Data skill = _skillData[skill_num];
+            for (int i = 0; i < P_Factory.Length; i++)
+            {
+                if (P_Factory[i] != null)
+                {
+//                    Debug.Log(Factory.Length);
+                    P_Factory[i].GetComponent<Character_Present_Data>().set_deBuff(skill);
+                }
+               
+            }
+        }
+        else if (this.tag == "Enemy")
+        {
+            //GameObject []Factory = GameObject.Find("Character_Factory").GetComponent<char_factory>()._character_clone;
+            Skill_Data skill = _skillData[skill_num];
+            for (int i = 0; i < E_Factory.Length; i++)
+            {
+                if (E_Factory[i] != null)
+                {
+//                    Debug.Log(Factory.Length);
+                    E_Factory[i].GetComponent<Character_Present_Data>().set_deBuff(skill);
+                }
+               
+            }
+        }
+
+    }
     //攻撃ループ
     IEnumerator Attack(int Loop,float sec)
     {
@@ -237,6 +271,7 @@ public class Character_Movement : MonoBehaviour
                 _animator.enabled = true;
                 C_Walk_Animation();
                 C_Walk_R();
+                buff_debuff_timer();
                 if (!isUseSP)
                 {
                     _attackRange.set_Skill_range_Now(_skillData[Loop_Pattern[LoopAt] - 1].Range);
@@ -266,6 +301,18 @@ public class Character_Movement : MonoBehaviour
             C_Walk_R();
         }
         
+    }
+
+    void buff_debuff_timer()
+    {
+        for (int i = 0; i < _characterPresentData._buffs.Count; i++)
+        {
+            _characterPresentData._buffs[i].Sec -= Time.deltaTime;
+        }
+        for (int i = 0; i < _characterPresentData._debuffs.Count; i++)
+        {
+            _characterPresentData._debuffs[i].Sec -= Time.deltaTime;
+        }
     }
 
 
