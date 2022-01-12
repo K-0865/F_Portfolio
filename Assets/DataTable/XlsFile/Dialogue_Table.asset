@@ -15,119 +15,119 @@ MonoBehaviour:
   Dialogue:
   - DialogueID: 501000
     DialogueName: "\u57FA\u672C1"
-    Dialogue: 1Test
+    Dialogue: "1Test \u8D64"
     CharacterID1: 101000
     CharacterID2: 0
     CharacterID3: 0
     Continue: 0
   - DialogueID: 502000
     DialogueName: "\u57FA\u672C2"
-    Dialogue: "\u305B\u3044\u3084\u3063\uFF01\uFF01\uFF01"
+    Dialogue: "\u305B\u3044\u3084\u3063\uFF01\uFF01\uFF01\u8D64"
     CharacterID1: 101000
     CharacterID2: 0
     CharacterID3: 0
     Continue: 0
   - DialogueID: 503001
     DialogueName: "\u57FA\u672C3-1"
-    Dialogue: "\u884C\u304F\u3088\u3063\uFF011"
+    Dialogue: "\u884C\u304F\u3088\u3063\uFF011\u8D64"
     CharacterID1: 101000
     CharacterID2: 102000
     CharacterID3: 0
     Continue: 1
   - DialogueID: 503002
     DialogueName: "\u57FA\u672C3-2"
-    Dialogue: "\u3046\u3093\uFF01\uFF011-2"
+    Dialogue: "\u3046\u3093\uFF01\uFF011-2\u9752"
     CharacterID1: 101000
     CharacterID2: 102000
     CharacterID3: 0
     Continue: 2
   - DialogueID: 504000
     DialogueName: "\u57FA\u672C4"
-    Dialogue: "\u3053\u308C\u3067\u3063\uFF01\uFF01\uFF01"
+    Dialogue: "\u3053\u308C\u3067\u3063\uFF01\uFF01\uFF01\u8D64"
     CharacterID1: 101000
     CharacterID2: 0
     CharacterID3: 0
     Continue: 0
   - DialogueID: 505000
     DialogueName: "\u57FA\u672C5"
-    Dialogue: "\u306F\u308D\u306F\u308D\uFF5E"
+    Dialogue: "\u306F\u308D\u306F\u308D\uFF5E\u7DD1"
     CharacterID1: 103000
     CharacterID2: 0
     CharacterID3: 0
     Continue: 0
   - DialogueID: 506000
     DialogueName: "\u57FA\u672C6"
-    Dialogue: "\u306A\u3093\u306E\u3088\u3046\uFF1F"
+    Dialogue: "\u306A\u3093\u306E\u3088\u3046\uFF1F\u9752"
     CharacterID1: 102000
     CharacterID2: 0
     CharacterID3: 0
     Continue: 0
   - DialogueID: 507000
     DialogueName: "\u57FA\u672C7"
-    Dialogue: "\u30AD\u30B5\u30DE\u30C3\uFF01"
+    Dialogue: "\u30AD\u30B5\u30DE\u30C3\uFF01\u9ED2"
     CharacterID1: 104000
     CharacterID2: 0
     CharacterID3: 0
     Continue: 0
   - DialogueID: 508001
     DialogueName: "\u57FA\u672C8"
-    Dialogue: 1-Link
+    Dialogue: "1-Link\u8D64"
     CharacterID1: 101000
     CharacterID2: 102000
     CharacterID3: 103000
     Continue: 1
   - DialogueID: 508002
     DialogueName: "\u57FA\u672C9"
-    Dialogue: 2-Link
+    Dialogue: "2-Link\u9752"
     CharacterID1: 101000
     CharacterID2: 102000
     CharacterID3: 103000
     Continue: 2
   - DialogueID: 508003
     DialogueName: "\u57FA\u672C10"
-    Dialogue: 3-Link
+    Dialogue: "3-Link\u7DD1"
     CharacterID1: 101000
     CharacterID2: 102000
     CharacterID3: 103000
     Continue: 3
   - DialogueID: 509001
     DialogueName: "\u57FA\u672C11"
-    Dialogue: 1-2Test
+    Dialogue: "1-2Test\u8D64"
     CharacterID1: 101000
     CharacterID2: 102000
     CharacterID3: 0
     Continue: 1
   - DialogueID: 509002
     DialogueName: "\u57FA\u672C12"
-    Dialogue: 2-2Test
+    Dialogue: "2-2Test\u9752"
     CharacterID1: 101000
     CharacterID2: 102000
     CharacterID3: 0
     Continue: 2
   - DialogueID: 501001
     DialogueName: "\u57FA\u672C13"
-    Dialogue: 1-2(2000-3000)
+    Dialogue: "1-2(2000-3000)\u9752"
     CharacterID1: 102000
     CharacterID2: 103000
     CharacterID3: 0
     Continue: 1
   - DialogueID: 501002
     DialogueName: "\u57FA\u672C14"
-    Dialogue: 2-2(2000-3000)
+    Dialogue: "2-2(2000-3000)\u7DD1"
     CharacterID1: 102000
     CharacterID2: 103000
     CharacterID3: 0
     Continue: 2
   - DialogueID: 501101
     DialogueName: "\u57FA\u672C15"
-    Dialogue: "\u3064\u3044\u3066\u3053\u3044\uFF011-2"
+    Dialogue: "\u3064\u3044\u3066\u3053\u3044\uFF011-2\u8D64"
     CharacterID1: 101000
     CharacterID2: 102000
     CharacterID3: 0
     Continue: 1
   - DialogueID: 501102
     DialogueName: "\u57FA\u672C16"
-    Dialogue: "OK\uFF01\uFF012-2"
+    Dialogue: "OK\uFF01\uFF012-2\u9752"
     CharacterID1: 101000
     CharacterID2: 102000
     CharacterID3: 0
