@@ -235,82 +235,100 @@ public class Roulette : MonoBehaviour
             case 0:
                 if (data.Dialogue[target1].Continue == 1 || data.Dialogue[target1].Continue == 0)
                 {
-                    for (int i = 0; i < _battleManager._AliveID.Count; i++)
+                    /*for (int i = 0; i < _battleManager._AliveID.Count; i++)
                     {
                         if (data.Dialogue[target1].CharacterID1 == _battleManager._AliveID[i])
                         {
                             value = i;
                             break;
                         }
-                    }
-                   
+                    }*/
+
+                    value = TargetID(target1);
                 }
                 //value = (target1 / 1000) - 1;
                 break;
             case 1:
                 if (data.Dialogue[target2].Continue == 2)
                 {
-                    for (int i = 0; i < _battleManager._AliveID.Count; i++)
+                    /*for (int i = 0; i < _battleManager._AliveID.Count; i++)
                     {
                         if (data.Dialogue[target2].CharacterID2 == _battleManager._AliveID[i])
                         {
                             value = i;
                             break;
                         }
-                    }
-                   
+                    }*/
+                    value = TargetID(target2);
                 }
                 else
                 {
-                    for (int i = 0; i < _battleManager._AliveID.Count; i++)
+                    /*for (int i = 0; i < _battleManager._AliveID.Count; i++)
                     {
                         if (data.Dialogue[target2].CharacterID1 == _battleManager._AliveID[i])
                         {
                             value = i;
                             break;
                         }
-                    }
+                    }*/
+                    value = TargetID(target2);
                 }
                 //value = (target2 / 1000) - 1;
                 break;
             case 2:
                 if (data.Dialogue[target3].Continue == 3)
                 {
-                    for (int i = 0; i < _battleManager._AliveID.Count; i++)
+                    /*for (int i = 0; i < _battleManager._AliveID.Count; i++)
                     {
                         if (data.Dialogue[target3].CharacterID3 == _battleManager._AliveID[i])
                         {
                             value = i;
                             break;
                         }
-                    }
-                   
+                    }*/
+                    value = TargetID(target3);
                 }
                 else if (data.Dialogue[target3].Continue == 2)
                 {
-                    for (int i = 0; i < _battleManager._AliveID.Count; i++)
+                    /*for (int i = 0; i < _battleManager._AliveID.Count; i++)
                     {
                         if (data.Dialogue[target3].CharacterID2 == _battleManager._AliveID[i])
                         {
                             value = i;
                             break;
                         }
-                    }
-                }else {
-                    for (int i = 0; i < _battleManager._AliveID.Count; i++)
+                    }*/
+                    value = TargetID(target3);
+                }
+                else {
+                    /*for (int i = 0; i < _battleManager._AliveID.Count; i++)
                     {
                         if (data.Dialogue[target3].CharacterID1 == _battleManager._AliveID[i])
                         {
                             value = i;
                             break;
                         }
-                    }
+                    }*/
+                    value = TargetID(target3);
                 }
                 //value = (target3 / 1000) - 1;
                 break;
         }
         
         return value;
+    }
+
+    int TargetID(int num)
+    {
+        for (int i = 0; i < _battleManager._AliveID.Count; i++)
+        {
+            if (data.Dialogue[num].CharacterID1 == _battleManager._AliveID[i])
+            {
+                num = i;
+                break;
+            }
+        }
+        return num;
     }
     
 }
