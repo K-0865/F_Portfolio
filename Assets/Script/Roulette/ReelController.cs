@@ -133,7 +133,7 @@ public class ReelController : MonoBehaviour {
 			// }
 			// else
 			// {
-				int c = -1 * (int) (pos.localPosition.y / 0.9); //何マス回転（移動）したか
+				int c = -1 * (int) (pos.localPosition.y / 1.8); //何マス回転（移動）したか
 				Target_Num = Rl.ReturnTarget(line_ID);
 				float speed_f = 1f;
 				for (int i = 0; i < current.Length; i++)
