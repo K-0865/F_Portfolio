@@ -134,12 +134,12 @@ public class Character_Movement : MonoBehaviour
         {
             //GameObject []Factory = GameObject.Find("Character_Factory").GetComponent<char_factory>()._character_clone;
             Skill_Data skill = _skillData[skill_num];
-            for (int i = 0; i < P_Factory.Length; i++)
+            for (int i = 0; i < E_Factory.Length; i++)
             {
-                if (P_Factory[i] != null)
+                if (E_Factory[i] != null)
                 {
 //                    Debug.Log(Factory.Length);
-                    P_Factory[i].GetComponent<Character_Present_Data>().set_deBuff(skill);
+                    E_Factory[i].GetComponent<Character_Present_Data>().set_deBuff(skill);
                 }
                
             }
@@ -148,12 +148,12 @@ public class Character_Movement : MonoBehaviour
         {
             //GameObject []Factory = GameObject.Find("Character_Factory").GetComponent<char_factory>()._character_clone;
             Skill_Data skill = _skillData[skill_num];
-            for (int i = 0; i < E_Factory.Length; i++)
+            for (int i = 0; i < P_Factory.Length; i++)
             {
-                if (E_Factory[i] != null)
+                if (P_Factory[i] != null)
                 {
 //                    Debug.Log(Factory.Length);
-                    E_Factory[i].GetComponent<Character_Present_Data>().set_deBuff(skill);
+                    P_Factory[i].GetComponent<Character_Present_Data>().set_deBuff(skill);
                 }
                
             }

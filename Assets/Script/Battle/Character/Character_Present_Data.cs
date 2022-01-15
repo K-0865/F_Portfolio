@@ -53,22 +53,50 @@ public class Character_Present_Data : MonoBehaviour
     //ダメージ計算(攻撃力-防御力 = ダメージ、暫定式)
     public void setBuff(Skill_Data skill)
     {
-        
+        bool same = false;
         Buff_list buff = new Buff_list();
+        buff.ID = skill.SkillID;
         buff.Atk = skill.Atk;
         buff.Def = skill.Def;
         buff.Eva = skill.Eva;
         buff.Sec = skill.Sec;
-        _buffs.Add(buff);
+        for (int i = 0; i < _buffs.Count; i++)
+        {
+            if (_buffs[i].ID == buff.ID)
+            {
+                same = true;
+                _buffs[i].Sec = buff.Sec;
+                break;
+            }
+        }
+
+        if (!same)
+        {
+            _buffs.Add(buff);
+        }
     }public void set_deBuff(Skill_Data skill)
     {
-        
+        bool same = false;
         Buff_list debuff = new Buff_list();
+        debuff.ID = skill.SkillID;
         debuff.Atk = skill.Atk;
         debuff.Def = skill.Def;
         debuff.Eva = skill.Eva;
         debuff.Sec = skill.Sec;
-        _debuffs.Add(debuff);
+        for (int i = 0; i < _debuffs.Count; i++)
+        {
+            if (_debuffs[i].ID == debuff.ID)
+            {
+                same = true;
+                _debuffs[i].Sec = debuff.Sec;
+                break;
+            }
+        }
+
+        if (!same)
+        {
+            _buffs.Add(debuff);
+        }
     }
 
     void removeBuff_debuff()

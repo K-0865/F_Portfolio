@@ -9,6 +9,7 @@ using UnityEngine;
 
 public class Buff_list
 {
+    public int ID;
     public int Atk;
     public int Def;
     public int Eva;
