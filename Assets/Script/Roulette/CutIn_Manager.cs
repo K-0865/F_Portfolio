@@ -131,8 +131,7 @@ public class CutIn_Manager : MonoBehaviour
                     // Frame[num].transform.localPosition = new Vector3(780f,
                     //     Frame[num].transform.localPosition.y, Frame[num].transform.localPosition.z);
                     Dialogue[num].transform.localScale = Frame[num].transform.localScale;
-                    Dialogue[num].transform.localPosition = new Vector3(98, Dialogue[num].transform.localPosition.y,
-                        Dialogue[num].transform.localPosition.z);
+                    
                 }
                 else
                 {
@@ -140,8 +139,7 @@ public class CutIn_Manager : MonoBehaviour
                     // Frame[num].transform.localPosition = new Vector3(740f,
                     //     Frame[num].transform.localPosition.y, Frame[num].transform.localPosition.z);
                     Dialogue[num].transform.localScale = Frame[num].transform.localScale;
-                    Dialogue[num].transform.localPosition = new Vector3(-147, Dialogue[num].transform.localPosition.y,
-                        Dialogue[num].transform.localPosition.z);
+                   
 
                 }
 
@@ -151,16 +149,17 @@ public class CutIn_Manager : MonoBehaviour
             }
             
             Character[num].enabled = true;
-            // if (Frame[num].transform.localScale.x == -1f)
-            // {
-            //     Frame[num].transform.localPosition = new Vector3(780f,
-            //         Frame[num].transform.localPosition.y, Frame[num].transform.localPosition.z);
-            // }
-            // else
-            // {
-            //     Frame[num].transform.localPosition = new Vector3(740f,
-            //         Frame[num].transform.localPosition.y, Frame[num].transform.localPosition.z);
-            // }
+            if (Dialogue[num].transform.localScale.x == -1f)
+            {
+                Dialogue[num].transform.localPosition = new Vector3(98f, Dialogue[num].transform.localPosition.y,
+                    Dialogue[num].transform.localPosition.z);
+            }
+            else if (Dialogue[num].transform.localScale.x == 1f)
+            {
+                Dialogue[num].transform.localPosition = new Vector3(-147f, Dialogue[num].transform.localPosition.y,
+                    Dialogue[num].transform.localPosition.z);
+            }
+            
             
         }
         

@@ -112,7 +112,7 @@ public class ReelController : MonoBehaviour {
 	void Update()
 	{
 
-		if (pos.localPosition.y < -13.5)
+		if (pos.localPosition.y < -13.5*2)
 		{
 			pos.localPosition = initpos;
 		}
