@@ -82,9 +82,9 @@ public class BattleManager : MonoBehaviour
     {
         isPause = true;
         hit_count = 0;
-        Roulette.GetComponent<Roulette>().Roul_main();
-        yield return new WaitForSeconds(sec);
-        isPause = false;
+        Roulette.GetComponent<Roulette>().Roul_main(); 
+        yield return 0;
+        // isPause = false;
     }
 
     //バトル終了処理

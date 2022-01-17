@@ -10,7 +10,7 @@ public class CutIn_Manager : MonoBehaviour
     [SerializeField] private List<Image> Frame;
     [SerializeField] private List<Image> Character;
     [SerializeField] private List<TextMeshProUGUI> Dialogue;
-
+    [SerializeField] private BattleManager _battleManager;
     [SerializeField] private Roulette _roulette;
     [SerializeField] private Canvas Canvas;
 
@@ -237,6 +237,7 @@ public class CutIn_Manager : MonoBehaviour
             Dialogue[i].enabled = false;
             Frame[i].transform.localPosition = new Vector3(pos[Frame.Count-1].x,pos[Frame.Count-1].y);
         }
-        Canvas.enabled = true;
+        //Canvas.enabled = true;
+        _battleManager.isPause = false;
     }
 }
