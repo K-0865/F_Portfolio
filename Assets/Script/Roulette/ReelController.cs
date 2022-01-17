@@ -135,17 +135,13 @@ public class ReelController : MonoBehaviour {
 			// {
 				int c = -1 * (int) (pos.localPosition.y / 1.8); //何マス回転（移動）したか
 				Target_Num = Rl.ReturnTarget(line_ID);
-				float speed_f = 1f;
+				Vector3 target_pos = Vector3.zero;
 				for (int i = 0; i < current.Length; i++)
 				{
-					if (current[i] == Target_Num)
+					if (current[i+1] == Target_Num)
 					{
-						speed_f = i - c;
-						if (speed_f < 0)
-						{
-							speed_f = (current.Length - c) + i;
-						}
-
+						target_pos = img_pos[i + 1].localPosition;
+				
 						break;
 					}
 				}
@@ -153,17 +149,24 @@ public class ReelController : MonoBehaviour {
 				
 				//Debug.Log(speed_f + ": Speed_f : L:"+ line_ID);
 				//Target_Num = 1;
-				if (pos.localPosition.y % 0.09f < -0.06f)
+				if (pos.localPosition.y < -19.8f)
 				{
+					// flg = 0;
+					// pos.localPosition = new Vector3(pos.localPosition.x, pos.localPosition.y - 0.03f,
+					// 	pos.localPosition.z);
 					flg = 0;
-					pos.localPosition = new Vector3(pos.localPosition.x, pos.localPosition.y - 0.03f,
+					pos.localPosition = new Vector3(pos.localPosition.x, pos.localPosition.y - (speed * Time.deltaTime),
 						pos.localPosition.z);
 				}else{
 
 				if (current[(c + 1)] != Target_Num && !first)
 				{
-					pos.localPosition = new Vector3(pos.localPosition.x, pos.localPosition.y - (0.03f),
-						pos.localPosition.z);
+					flg = 0;
+					// Debug.Log(Target_Num + "Line" + line_ID);
+					// Debug.Log(target_pos.y + "POSLine" + line_ID);
+					pos.localPosition = new Vector3(pos.localPosition.x, -1 * (target_pos.y*2), pos.localPosition.z);
+					// pos.localPosition = new Vector3(pos.localPosition.x, pos.localPosition.y - (0.03f),
+					// 	pos.localPosition.z);
 				}
 				else
 				{

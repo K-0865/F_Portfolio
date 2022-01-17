@@ -39,6 +39,7 @@ public class Roulette : MonoBehaviour
     [SerializeField] private CutIn_Manager CutIn;
 
     [SerializeField] private List<int> Character_D_ID = new List<int>(3);
+    private int Dialog_Count;
 
     //初期化
     private void Initialize()
@@ -60,6 +61,7 @@ public class Roulette : MonoBehaviour
             }
         }
 
+        Dialog_Count = data.Dialogue.Count;
         Rcount = 0;
         for (int i = 0; i < data.Dialogue.Count; i++)
         {
@@ -88,14 +90,14 @@ public class Roulette : MonoBehaviour
                 Rcount++;
             }
             
-            if (_AliveBoss == data.Dialogue[i].CharacterID1 && _AliveBoss != 0)
-            {
-                DiaLine.Add(i);
-                DiaIDList.Add(data.Dialogue[i].DialogueID);
-                DiaCon.Add(data.Dialogue[i].Continue);
-                DiaDisplay.Add(data.Dialogue[i].Dialogue);
-                Rcount++;
-            }
+            // if (_AliveBoss == data.Dialogue[i].CharacterID1 && _AliveBoss != 0)
+            // {
+            //     DiaLine.Add(i);
+            //     DiaIDList.Add(data.Dialogue[i].DialogueID);
+            //     DiaCon.Add(data.Dialogue[i].Continue);
+            //     DiaDisplay.Add(data.Dialogue[i].Dialogue);
+            //     Rcount++;
+            // }
 
         }
 
@@ -134,7 +136,7 @@ public class Roulette : MonoBehaviour
 
         //２つ目のセリフを抽出する
         //Continueが１か２なら次のセリフを２つ目のセリフにする
-        if (data.Dialogue[target1].Continue == 1 && data.Dialogue[target1 + 1].Continue == 2)
+        if (target1+1 < Dialog_Count&&data.Dialogue[target1].Continue == 1 && data.Dialogue[target1 + 1].Continue == 2)
         {
             target2 = target1 + 1;
         }
@@ -151,7 +153,7 @@ public class Roulette : MonoBehaviour
 
         //３つ目のセリフを抽出する
         //２つ目のセリフのContinueが1か２ならその続きのセリフを３つ目のセリフにする
-        if ((data.Dialogue[target2].Continue == 2 && data.Dialogue[target2 + 1].Continue == 3) ||
+        if (target2+1 < Dialog_Count&&(data.Dialogue[target2].Continue == 2 && data.Dialogue[target2 + 1].Continue == 3) ||
             (data.Dialogue[target2].Continue == 1 && data.Dialogue[target2 + 1].Continue == 2))
         {
             target3 = target2 + 1;
