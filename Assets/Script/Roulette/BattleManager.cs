@@ -28,7 +28,7 @@ public class BattleManager : MonoBehaviour
     public bool _start_enemy;
     public bool _gamestart;
     public bool battleFin = false;
-    [SerializeField] private int _GageMax;
+    public int _GageMax;
     public bool boss = true;
     [SerializeField] private GameObject Roulette;
     [SerializeField] private GameObject Clear;
@@ -63,8 +63,6 @@ public class BattleManager : MonoBehaviour
         if (State == GameState.READY)
         {
             StartCoroutine("_BattleStart");
-            
-            
         }
     }
 
