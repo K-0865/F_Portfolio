@@ -2075,7 +2075,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 3
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 10
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
@@ -3351,6 +3351,7 @@ MonoBehaviour:
   boss: 0
   Roulette: {fileID: 1161845926}
   Clear: {fileID: 2128298025}
+  Canvas: {fileID: 1342111512}
 --- !u!4 &843994335
 Transform:
   m_ObjectHideFlags: 0
@@ -3879,7 +3880,6 @@ MonoBehaviour:
   - {fileID: 652778595}
   - {fileID: 1578513473}
   - {fileID: 564776388}
-  playbt: {fileID: 725874571}
   reels:
   - {fileID: 2023810178}
   - {fileID: 200037188}
@@ -4128,7 +4128,7 @@ Transform:
   - {fileID: 1717654538}
   - {fileID: 1880342374}
   m_Father: {fileID: 1342111509}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1204634875
 MonoBehaviour:
@@ -4724,6 +4724,7 @@ GameObject:
   - component: {fileID: 1342111512}
   - component: {fileID: 1342111511}
   - component: {fileID: 1342111510}
+  - component: {fileID: 1342111513}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -4750,8 +4751,8 @@ RectTransform:
   - {fileID: 2128298026}
   - {fileID: 1769153666}
   - {fileID: 1284464235}
-  - {fileID: 1860289799}
   - {fileID: 1204634874}
+  - {fileID: 1860289799}
   - {fileID: 1432561286}
   - {fileID: 1531753143}
   m_Father: {fileID: 843994335}
@@ -4823,6 +4824,18 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: -1
   m_TargetDisplay: 0
+--- !u!225 &1342111513
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1342111508}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1343291852
 GameObject:
   m_ObjectHideFlags: 0
@@ -5435,6 +5448,7 @@ MonoBehaviour:
   - {fileID: 1606026817}
   - {fileID: 1249640895}
   _roulette: {fileID: 1161845927}
+  Canvas: {fileID: 1342111512}
   pos: []
 --- !u!1 &1532303818
 GameObject:
@@ -6723,20 +6737,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!4 &1731980408
-Transform:
+--- !u!224 &1731980408
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1731980406}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0132, y: 0.0049, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.1518732, y: 1.1504734, z: 1.1281801}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.0132, y: 0.0049}
+  m_SizeDelta: {x: 18.84, y: 8.7}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1737447522
 GameObject:
   m_ObjectHideFlags: 0
@@ -8738,7 +8757,7 @@ PrefabInstance:
     - target: {fileID: 3235873351846937107, guid: ca9898b807cbd4f108ba00e85d0adf92,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3235873351846937107, guid: ca9898b807cbd4f108ba00e85d0adf92,
         type: 3}
