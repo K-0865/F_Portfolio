@@ -90,14 +90,14 @@ public class Roulette : MonoBehaviour
                 Rcount++;
             }
             
-            // if (_AliveBoss == data.Dialogue[i].CharacterID1 && _AliveBoss != 0)
-            // {
-            //     DiaLine.Add(i);
-            //     DiaIDList.Add(data.Dialogue[i].DialogueID);
-            //     DiaCon.Add(data.Dialogue[i].Continue);
-            //     DiaDisplay.Add(data.Dialogue[i].Dialogue);
-            //     Rcount++;
-            // }
+            if (_AliveBoss == data.Dialogue[i].CharacterID1 && _AliveBoss != 0)
+            {
+                DiaLine.Add(i);
+                DiaIDList.Add(data.Dialogue[i].DialogueID);
+                DiaCon.Add(data.Dialogue[i].Continue);
+                DiaDisplay.Add(data.Dialogue[i].Dialogue);
+                Rcount++;
+            }
 
         }
 
