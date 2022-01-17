@@ -12,8 +12,10 @@ public class CutIn_Manager : MonoBehaviour
     [SerializeField] private List<TextMeshProUGUI> Dialogue;
 
     [SerializeField] private Roulette _roulette;
+    [SerializeField] private Canvas Canvas;
 
     [SerializeField] private List<Vector3> pos;
+
     private bool[] D_Slider = {false, false };
     private bool[] D_Slider_Done = {false, false };
     private void Update()
@@ -235,5 +237,6 @@ public class CutIn_Manager : MonoBehaviour
             Dialogue[i].enabled = false;
             Frame[i].transform.localPosition = new Vector3(pos[Frame.Count-1].x,pos[Frame.Count-1].y);
         }
+        Canvas.enabled = true;
     }
 }

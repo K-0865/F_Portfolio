@@ -28,10 +28,11 @@ public class BattleManager : MonoBehaviour
     public bool _start_enemy;
     public bool _gamestart;
     public bool battleFin = false;
-    [SerializeField] private int _GageMax;
+    public int _GageMax;
     public bool boss = true;
     [SerializeField] private GameObject Roulette;
     [SerializeField] private GameObject Clear;
+    [SerializeField] private Canvas Canvas;
     void Start()
     {
         //GameObject.Find("BattleManger").GetComponent<BattleManager>().isPause = true;
@@ -47,6 +48,7 @@ public class BattleManager : MonoBehaviour
         if (hit_count > _GageMax)
         {
             StartCoroutine("callRoulette",16f) ;
+            Canvas.enabled = false;
         }
 
         //敵か味方のキャラの残数がゼロになったらテキストを表示してクエスト選択に戻る（暫定的な処理）
@@ -63,8 +65,6 @@ public class BattleManager : MonoBehaviour
         if (State == GameState.READY)
         {
             StartCoroutine("_BattleStart");
-            
-            
         }
     }
 

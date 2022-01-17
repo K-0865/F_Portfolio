@@ -11,7 +11,6 @@ enum State{
 
 public class GameController : MonoBehaviour {
     public Button[] stopbt;
-    public Button playbt;
 
     public GameObject[] reels;
     ReelController[] rc = new ReelController[3];
@@ -32,18 +31,15 @@ public class GameController : MonoBehaviour {
         if (stopline_len == 3 && state == State.Playing) {
             state = State.Stay;
             Chack ();
-            playbt.interactable = true;
         }
     }
 
     //Playボタンを押した時の動作
     public void Play(){
-        playbt.interactable = false;
         stopline_len = 0;
         state = State.Playing;
         for (int i = 0; i < 3; i++) {
             rc [i].Reel_Move ();
-            stopbt [i].interactable = true;
         }
     }
 
