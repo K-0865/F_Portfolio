@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,4 +17,8 @@ public class Slot_Charge : MonoBehaviour
         Slot_Gage.value = BattleManager.hit_count;
     }
 
+    private void Update()
+    {
+        Slot_Gage.value = BattleManager.hit_count;
+    }
 }

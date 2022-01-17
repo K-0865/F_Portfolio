@@ -10,7 +10,7 @@ public class ReelController : MonoBehaviour {
 	public int line_ID = 0;	//リールのid
 	//private GameObject[] imgobj; //絵柄のプレハブを格納
 	public List<GameObject> imgobj; //絵柄のプレハブを格納
-	int[] lines = new int[3];	//リール停止時に見えている絵柄のid(imgobjの番号)を格納
+	[SerializeField] int[] lines = new int[3];	//リール停止時に見えている絵柄のid(imgobjの番号)を格納
 	int[] current = {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1};	//配列に全体の絵柄idを格納
 	[SerializeField]
 	GameObject[] tmp_obj = new GameObject[18];
@@ -153,7 +153,7 @@ public class ReelController : MonoBehaviour {
 				
 				//Debug.Log(speed_f + ": Speed_f : L:"+ line_ID);
 				//Target_Num = 1;
-				if (pos.localPosition.y % 0.9f < -0.06f)
+				if (pos.localPosition.y % 0.09f < -0.06f)
 				{
 					flg = 0;
 					pos.localPosition = new Vector3(pos.localPosition.x, pos.localPosition.y - 0.03f,
@@ -172,7 +172,7 @@ public class ReelController : MonoBehaviour {
 
 						//トリガー
 						flg = 1;
-						int under = -1 * (int) (pos.localPosition.y / 0.9); //何マス回転（移動）したか
+						int under = -1 * (int) (pos.localPosition.y / 1.8); //何マス回転（移動）したか
 
 						for (int i = 0; i < 3; i++)
 						{

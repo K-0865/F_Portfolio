@@ -87,7 +87,7 @@ public class Roulette : MonoBehaviour
                 DiaDisplay.Add(data.Dialogue[i].Dialogue);
                 Rcount++;
             }
-
+            
             if (_AliveBoss == data.Dialogue[i].CharacterID1 && _AliveBoss != 0)
             {
                 DiaLine.Add(i);

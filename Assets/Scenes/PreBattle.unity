@@ -540,6 +540,7 @@ MonoBehaviour:
   GM: {fileID: 1161845926}
   line_ID: 1
   imgobj: []
+  lines: 000000000000000000000000
   tmp_obj:
   - {fileID: 0}
   - {fileID: 0}
@@ -1901,6 +1902,7 @@ MonoBehaviour:
   GM: {fileID: 1161845926}
   line_ID: 2
   imgobj: []
+  lines: 000000000000000000000000
   tmp_obj:
   - {fileID: 0}
   - {fileID: 0}
@@ -2049,7 +2051,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -7913,6 +7915,7 @@ MonoBehaviour:
   GM: {fileID: 1161845926}
   line_ID: 0
   imgobj: []
+  lines: 000000000000000000000000
   tmp_obj:
   - {fileID: 0}
   - {fileID: 0}

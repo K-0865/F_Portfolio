@@ -48,7 +48,7 @@ public class BattleManager : MonoBehaviour
         if (hit_count > _GageMax)
         {
             StartCoroutine("callRoulette",16f) ;
-            Canvas.enabled = false;
+            //Canvas.enabled = false;
         }
 
         //敵か味方のキャラの残数がゼロになったらテキストを表示してクエスト選択に戻る（暫定的な処理）
