@@ -10,10 +10,11 @@ public class BattleManager : MonoBehaviour
 {
     // Start is called before the first frame update
     public enum GameState{
-        WAIT,READY, BATTLE
+        WAIT,READY,READY2, BATTLE,WIN
     }
 
     [SerializeField] private GameObject battle_start_text; 
+    [SerializeField] private GameObject win_text; 
     public GameState State = GameState.WAIT;
     public int stage_count = 0;
     public int hit_count;
@@ -70,7 +71,7 @@ public class BattleManager : MonoBehaviour
 
     IEnumerator _BattleStart()
     {
-        State = GameState.BATTLE;
+        State = GameState.READY2;
         yield return new WaitForSeconds(3f);
         GameObject battleStartText = Instantiate(battle_start_text);
         battleStartText.transform.position = Vector3.zero;
@@ -90,7 +91,10 @@ public class BattleManager : MonoBehaviour
     //バトル終了処理
     public IEnumerator StageClear(float sec)
     {
-        Clear.SetActive(true);
+        State = GameState.WIN;
+        win_text.SetActive(true);
+        //GameObject battleStartText = Instantiate(win_text);
+        //Clear.SetActive(true);
         yield return new WaitForSeconds(sec);
         Clear.GetComponent<SceneLoad>().OnClickLoadScene();
         battleFin = true;

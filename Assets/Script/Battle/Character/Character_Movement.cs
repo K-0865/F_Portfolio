@@ -243,64 +243,97 @@ public class Character_Movement : MonoBehaviour
     //アニメーションの呼び出し
     void Update()
     {
-        if (_battleManager._start_player || _battleManager._start_enemy)
+        if (LoopAt >= Loop_Pattern.Count)
         {
-            
-            if (LoopAt >= Loop_Pattern.Count)
-            {
-                LoopAt = LoopConti;
-            }
-
-            if (_battleManager._ready_player && this.transform.tag == "Player" && !_battleManager._gamestart)
-            {
-                _animator.SetBool("Force_Stand", true);
-                _animator.SetBool("run", false);
+            LoopAt = LoopConti;
+        }
+        switch (_battleManager.State)
+        {
+            case BattleManager.GameState.WAIT:
+                if (!_battleManager._start_player && this.transform.tag == "Player")
+                {
+                    _animator.enabled = true;
+                    C_Walk_Animation();
+                    C_Walk_R();
+                }
+                if (!_battleManager._start_enemy && this.transform.tag == "enemy")
+                {
+                    _animator.enabled = true;
+                    C_Walk_Animation();
+                    C_Walk_R();
+                }
+                if (_battleManager._ready_player && this.transform.tag == "Player" && !_battleManager._gamestart)
+                {
+                    _animator.SetBool("Force_Stand", true);
+                    _animator.SetBool("run", false);
                 
-            }
-            if (_battleManager._ready_enemy && this.transform.tag == "enemy" && !_battleManager._gamestart)
-            {
-                _animator.SetBool("Force_Stand", true);
-                _animator.SetBool("run", false);
-            }
-            if(_battleManager._gamestart)
-            {
-                _animator.SetBool("Force_Stand", false);
-            }
+                }
+                if (_battleManager._ready_enemy && this.transform.tag == "enemy" && !_battleManager._gamestart)
+                {
+                    _animator.SetBool("Force_Stand", true);
+                    _animator.SetBool("run", false);
+                }
+                break;
+            case BattleManager.GameState.READY2:
+                if (_battleManager._ready_player && this.transform.tag == "Player" && !_battleManager._gamestart)
+                {
+                    _animator.SetBool("Force_Stand", true);
+                    _animator.SetBool("run", false);
+                
+                }
+                if (_battleManager._ready_enemy && this.transform.tag == "enemy" && !_battleManager._gamestart)
+                {
+                    _animator.SetBool("Force_Stand", true);
+                    _animator.SetBool("run", false);
+                }
+                break;
+            case BattleManager.GameState.BATTLE:
+                if(_battleManager._gamestart)
+                {
+                    _animator.SetBool("Force_Stand", false);
+                }
             
-            if (!_battleManager.isPause && _battleManager._gamestart)
-            {
-                _animator.enabled = true;
-                C_Walk_Animation();
-                C_Walk_R();
-                buff_debuff_timer();
-                if (!isUseSP)
+                if (!_battleManager.isPause && _battleManager._gamestart)
                 {
-                    _attackRange.set_Skill_range_Now(_skillData[Loop_Pattern[LoopAt] - 1].Range);
+                    _animator.enabled = true;
+                    C_Walk_Animation();
+                    C_Walk_R();
+                    buff_debuff_timer();
+                    if (!isUseSP)
+                    {
+                        _attackRange.set_Skill_range_Now(_skillData[Loop_Pattern[LoopAt] - 1].Range);
+
+                    }
+                    else
+                    {
+                        _attackRange.set_Skill_range_Now(_skillData[3].Range);
+
+                    }
+                }
+                else if (_battleManager.isPause)
+                {
+                    _animator.enabled = false;
+                }
+
+                break;
+            case BattleManager.GameState.WIN:
+                if (_characterPresentData._alive)
+                {
+                    _animator.SetBool("Force_Stand", true);
 
                 }
-                else
-                {
-                    _attackRange.set_Skill_range_Now(_skillData[3].Range);
-
-                }
-            }
-            else if (_battleManager.isPause)
-            {
-                _animator.enabled = false;
-            }
+                break;
+            
         }
-        if (!_battleManager._start_player && this.transform.tag == "Player")
-        {
-            _animator.enabled = true;
-            C_Walk_Animation();
-            C_Walk_R();
-        }
-        if (!_battleManager._start_enemy && this.transform.tag == "enemy")
-        {
-            _animator.enabled = true;
-            C_Walk_Animation();
-            C_Walk_R();
-        }
+        // if (_battleManager._start_player || _battleManager._start_enemy)
+        // {
+        //     
+        //     
+        //
+        //     
+        //    
+        // }
+        
         
     }
 
