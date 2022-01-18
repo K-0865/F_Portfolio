@@ -7,14 +7,29 @@ using UnityEngine.UI;
 //キャラクターのアニメーション制御
 public class Character_SkillButton : MonoBehaviour
 {
+        [SerializeField] public List<Character_Present_Data> All_Character_Data;
         [SerializeField] private List<Character_Movement> All_Character_Movement;
         [SerializeField] private List<Animator> All_Character;
         [SerializeField] public List<Skill_Data> C_Position;
         [SerializeField] private List<GameObject> Button;
+        [SerializeField] private List<GameObject> HPBar;
         public void set_Animator_Character(Animator a)
         {
                 All_Character.Add(a);
                 //Button[All_Character.Count-1].SetActive(true);
+                
+                // hp.maxValue = All_Character_Data[All_Character.Count - 1]._maxHp;
+                // hp.value = All_Character_Data[All_Character.Count - 1]._hp;
+        }
+        public void set_Data(Character_Present_Data a)
+        {
+                All_Character_Data.Add(a);
+                HPBar[All_Character_Data.Count-1].SetActive(true);
+                HPBar_value hp = HPBar[All_Character_Data.Count - 1].GetComponentInChildren<HPBar_value>();
+                hp.set_data_C(All_Character_Data[All_Character_Data.Count - 1]);
+                Debug.Log("");
+                hp._slider.maxValue = All_Character_Data[All_Character_Data.Count - 1]._maxHp;
+                hp._slider.value = All_Character_Data[All_Character_Data.Count - 1]._hp;
         }
         public void set_Movement_Character(Character_Movement a)
         {

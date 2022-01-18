@@ -53,6 +53,7 @@ public class Character_Movement : MonoBehaviour
             _characterSkillButton = GameObject.Find("SkillButton").GetComponent<Character_SkillButton>();
             _characterSkillButton.set_Animator_Character(_animator);
             _characterSkillButton.set_Movement_Character(this);
+            _characterSkillButton.set_Data(_characterPresentData);
         }else if(this.gameObject.tag == "enemy")
         {
             _faceDirection = Face_Direction.RIGHT;
