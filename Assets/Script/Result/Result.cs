@@ -38,9 +38,11 @@ public class Result : MonoBehaviour
         LevelUp = false;
 
         _LevelNow = Gmanager.GetComponent<GManager>().get_PlayerData("level");
+        Debug.Log(_ExpTable.ExpTable.Count + "con");
         
         for (int i = 0; i < _ExpTable.ExpTable.Count; i++)
         {
+            Debug.Log(Gmanager.GetComponent<GManager>().get_PlayerData("level") + "GameManager");
             if (_ExpTable.ExpTable[i].PlayerLevel == _LevelNow)
             {
                 _ExpNow = _ExpTable.ExpTable[i].Exp;
