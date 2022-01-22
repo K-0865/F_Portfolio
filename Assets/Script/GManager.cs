@@ -4,16 +4,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 
+[Serializable]　public class SaveData
+{
+    public int Level = 1;
+    public int Stamina = 0;
+    public int Exp = 0;
+    public int Coin = 0;
+    public int Jewel = 0;
+} 
+
 public class GManager : MonoBehaviour
 {
-    
     public static GManager instance = null;
     private int lastWidth = 0;
     private int lastHeight = 0;
     public int mapid = 101;
     //public int[] character_pos { get; private set; } = new[] {102000,1000 };
     public int[] character_pos = new[] {102000,101000,0,0,0 };
-    
+    public SaveData player = new SaveData();
+    private string Savefile;
+
     public int []get_char_pos()
     {
         return character_pos;
@@ -58,7 +68,8 @@ public class GManager : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(this.gameObject);
-            Initialize_PlyerData();
+            InitSaveData();
+            //Initialize_PlyerData();
             //Set_PlayerData("level",Level);
         }
         else
@@ -88,9 +99,10 @@ public class GManager : MonoBehaviour
          lastHeight = height;
      
     }
-    //プレイヤーデータの保管（Jsonかplayerprefsで管理予定）
-
-    public int Level = 1;
+    
+    //プレイヤーデータの保管(Jsonで行う)
+    //（playerprefsでは問題が多そうな為中止）
+    /*public int Level = 1;
     public int Stamina = 0;
     public int Exp = 0;
     public int Coin = 0;
@@ -123,31 +135,47 @@ public class GManager : MonoBehaviour
     {
         PlayerPrefs.DeleteKey(Lavel);
     }
+    */
 
-
-    //Json書き出し用のテスト
-    /*public void savePlayerData(GManager player)
+    //Json処理の初期化
+    private void InitSaveData()
     {
-        StreamWriter writer;
-
-        string jsonstr = JsonUtility.ToJson(player);
-
-        writer = new StreamWriter(Application.dataPath + "./savedata.json", false);
+        Savefile = "/savedata.json";
+    }
+    
+    //Json書き出し用のテスト
+    public void savePlayerData(SaveData saveData)
+    {
+        string jsonstr = JsonUtility.ToJson(saveData,false);
+        StreamWriter writer = new StreamWriter(Application.dataPath + Savefile, false);
+        
         writer.Write(jsonstr);
         writer.Flush();
         writer.Close();
+        
+        Debug.Log(jsonstr);
     }
 
     //Json読み込み用のテスト
-    public GManager loadPlayerData()
+    public SaveData Load()
     {
-        string datastr = "";
-        StreamReader reader;
-        reader = new StreamReader(Application.dataPath + "./savedata.json");
-        datastr = reader.ReadToEnd();
-        reader.Close();
+        if (File.Exists(Application.dataPath + Savefile))
+        {
+            string datastr = "";
+            StreamReader reader;
+            reader = new StreamReader(Application.dataPath + Savefile);
+            datastr = reader.ReadToEnd();
+            reader.Close();
+            
+            return JsonUtility.FromJson<SaveData>(datastr);
+        }
 
-        return JsonUtility.FromJson<GManager>(datastr);
-    }*/
+        player.Level = 1;
+        player.Exp = 0;
+        player.Stamina = 0;
+        player.Coin = 0;
+        player.Jewel = 0;
+        return player;
+    }
 
 }

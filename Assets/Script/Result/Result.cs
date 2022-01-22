@@ -9,8 +9,6 @@ using UnityEngine.UI;
 
 public class Result : MonoBehaviour
 {
-    [SerializeField] private GameObject Gmanager;
-
     [SerializeField] private PlayerExp _ExpTable;
     [SerializeField] private SceneLoad Loader;
     
@@ -37,12 +35,11 @@ public class Result : MonoBehaviour
 
         LevelUp = false;
 
-        _LevelNow = Gmanager.GetComponent<GManager>().get_PlayerData("level");
+        _LevelNow = GManager.instance.player.Level;
         Debug.Log(_ExpTable.ExpTable.Count + "con");
         
         for (int i = 0; i < _ExpTable.ExpTable.Count; i++)
         {
-            Debug.Log(Gmanager.GetComponent<GManager>().get_PlayerData("level") + "GameManager");
             if (_ExpTable.ExpTable[i].PlayerLevel == _LevelNow)
             {
                 _ExpNow = _ExpTable.ExpTable[i].Exp;
@@ -50,8 +47,7 @@ public class Result : MonoBehaviour
                 _ExpNext = _ExpTable.ExpTable[i + 1].Exp;
             }
         }
-                    
-        Debug.Log(Gmanager.GetComponent<GManager>().get_PlayerData("level") + "Now");
+        
         Debug.Log(_LevelNext + "LevelNext");
         Debug.Log(_ExpNow + "ExpNow");
         Debug.Log(_ExpNext + "ExpNext");
@@ -62,10 +58,10 @@ public class Result : MonoBehaviour
     
     private void ResultDisp()
     {
-        // _ExpNow = _ExpTable.ExpTable[_LevelNow].Exp;
-        // _ExpNext = _ExpTable.ExpTable[_LevelNow+1].PlayerLevel;
+        _ExpNow = _ExpTable.ExpTable[_LevelNow].Exp;
+        _ExpNext = _ExpTable.ExpTable[_LevelNow+1].PlayerLevel;
         _Level.text = "Level:" + _LevelNow;
-        _Coin.text = "Coin:" + Gmanager.GetComponent<GManager>().get_PlayerData("coin");
+        _Coin.text = "Coin:" + GManager.instance.player.Coin;
         for (int i = 0; i < _ExpPlus; i++)
         {
             StartCoroutine("CalcExp", 0.1);
@@ -88,7 +84,6 @@ public class Result : MonoBehaviour
     
     IEnumerator CalcExp(float sec)
     {
-        
         yield return new WaitForSeconds(sec);
         _ExpNow++;
         _ExpPlus--;
@@ -97,7 +92,6 @@ public class Result : MonoBehaviour
     IEnumerator HomeBack(float sec)
     {
         yield return new WaitForSeconds(sec);
-        
         Loader.OnClickLoadScene();
     }
     
@@ -107,7 +101,7 @@ public class Result : MonoBehaviour
         {
             _LevelNow++;
             LevelUp = true;
-            //_ExpNow = _ExpTable.ExpTable[_LevelNow].Exp;
+            _ExpNow = _ExpTable.ExpTable[_LevelNow].Exp;
             _ExpNext = _ExpTable.ExpTable[_LevelNow+1].PlayerLevel;
         }
         // while (_ExpNow <= _ExpNext && _ExpPlus != 0)
