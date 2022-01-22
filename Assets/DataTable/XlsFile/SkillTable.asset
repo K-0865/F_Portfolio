@@ -57,9 +57,9 @@ MonoBehaviour:
     Type: 2
     Attack: 0
     Heal: 0
-    Atk: 100
+    Atk: 50
     Def: 0
     Eva: 0
-    Sec: 30
+    Sec: 7
     Range: 2
     Comment: BuffTest

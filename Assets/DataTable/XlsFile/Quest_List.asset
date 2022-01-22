@@ -16,39 +16,39 @@ MonoBehaviour:
   - MapID: 101
     MapName: "\u59CB\u307E\u308A\u306E\u5834\u6240"
     StageCount: 1
-    EnemyStage1: 4
+    EnemyStage1: 1
     EnemyStage2: 0
     EnemyStage3: 0
     BossFlag: 0
-    EnemyID1: 4000
-    EnemyID2: 5000
-    EnemyID3: 5000
-    EnemyID4: 4000
-    EnemyID5: 104000
+    EnemyID1: 105000
+    EnemyID2: 0
+    EnemyID3: 0
+    EnemyID4: 0
+    EnemyID5: 0
   - MapID: 102
-    MapName: "\u65B0\u305F\u306A\u51FA\u4F1A\u3044"
+    MapName: "\u51FA\u9022\u3044"
     StageCount: 1
     EnemyStage1: 2
     EnemyStage2: 0
     EnemyStage3: 0
     BossFlag: 0
-    EnemyID1: 4000
-    EnemyID2: 5000
-    EnemyID3: 5000
-    EnemyID4: 4000
-    EnemyID5: 104000
+    EnemyID1: 106000
+    EnemyID2: 107000
+    EnemyID3: 0
+    EnemyID4: 0
+    EnemyID5: 0
   - MapID: 103
-    MapName: "\u3042\u308C\u306F\u30FB\u30FB\uFF1F"
+    MapName: "\u8B0E\u306E\u8ECD\u52E2"
     StageCount: 1
-    EnemyStage1: 2
+    EnemyStage1: 3
     EnemyStage2: 0
     EnemyStage3: 0
     BossFlag: 0
-    EnemyID1: 4000
-    EnemyID2: 5000
-    EnemyID3: 5000
-    EnemyID4: 4000
-    EnemyID5: 104000
+    EnemyID1: 105000
+    EnemyID2: 106000
+    EnemyID3: 107000
+    EnemyID4: 0
+    EnemyID5: 0
   - MapID: 104
     MapName: "\u3042\u308C\u306F\u30FB\u30FB\uFF1F"
     StageCount: 1
@@ -62,7 +62,7 @@ MonoBehaviour:
     EnemyID4: 0
     EnemyID5: 0
   - MapID: 105
-    MapName: "\u3042\u308C\u306F\u30FB\u30FB\uFF1F"
+    MapName: "VS\u30B9\u30D4\u30CD\u30EB"
     StageCount: 1
     EnemyStage1: 1
     EnemyStage2: 0

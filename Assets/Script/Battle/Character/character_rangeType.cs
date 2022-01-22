@@ -78,11 +78,17 @@ public class character_rangeType : MonoBehaviour
 
         if (buff_atk == 0)
         {
-            total_attack = attack* (p_att / 100f);;
+            total_attack = attack* (p_att / 100f);
+           
         }
         else
         {
-            total_attack = (attack*(buff_atk/100)) * (p_att / 100f);
+            total_attack = attack* (p_att / 100f);
+            total_attack = (total_attack + ((total_attack) * (buff_atk / 100)));
+            
+            
+
+            //total_attack = (attack*(buff_atk/100)) * (p_att / 100f);
 
         }
         //Debug.Log(buff_atk);

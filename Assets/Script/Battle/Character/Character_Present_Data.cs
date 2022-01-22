@@ -128,7 +128,7 @@ public class Character_Present_Data : MonoBehaviour
         {
             total_buff -= _debuffs[i].Def;
         }
-
+        
         if (total_buff == 0)
         {
             total_def = _def;
@@ -138,7 +138,9 @@ public class Character_Present_Data : MonoBehaviour
             total_def = _def * (total_buff / 100);
 
         }
+
         float sum = damage - total_def;  // Damage Formula
+        //Debug.Log(_id +"  :"+ (-1*(total_def - damage)));
         if (sum <= 0)
         {
             sum = 1;
