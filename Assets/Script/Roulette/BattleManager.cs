@@ -15,6 +15,7 @@ public class BattleManager : MonoBehaviour
 
     [SerializeField] private GameObject battle_start_text; 
     [SerializeField] private GameObject win_text; 
+    [SerializeField] private GameObject lose_text; 
     public GameState State = GameState.WAIT;
     public int stage_count = 0;
     public int hit_count;
@@ -53,9 +54,13 @@ public class BattleManager : MonoBehaviour
         }
 
         //敵か味方のキャラの残数がゼロになったらテキストを表示してクエスト選択に戻る（暫定的な処理）
-        if (allies_alive_count == 0 || enemies_alive_count == 0)
+        if (enemies_alive_count == 0)
         {
             StartCoroutine("StageClear", 4f);
+        }else if (allies_alive_count == 0)
+        {
+            StartCoroutine("Failed", 4f);
+
         }
 
         if (_start_player && _start_player && State == GameState.WAIT)
@@ -92,7 +97,9 @@ public class BattleManager : MonoBehaviour
     public IEnumerator StageClear(float sec)
     {
         State = GameState.WIN;
-        //win_text.SetActive(true);
+        win_text.SetActive(true);        
+        lose_text.SetActive(false);
+
         GManager.instance.player.Exp += 5;
         //GameObject battleStartText = Instantiate(win_text);
         Clear.SetActive(true);
@@ -100,7 +107,18 @@ public class BattleManager : MonoBehaviour
         Clear.GetComponent<SceneLoad>().OnClickLoadScene();
         battleFin = true;
     }
-
+    public IEnumerator Failed(float sec)
+    {
+        State = GameState.WIN;
+        win_text.SetActive(false);
+        lose_text.SetActive(true);
+        //GManager.instance.player.Exp += 5;
+        //GameObject battleStartText = Instantiate(win_text);
+        Clear.SetActive(true);
+        yield return new WaitForSeconds(sec);
+        Clear.GetComponent<SceneLoad>().OnClickLoadScene();
+        battleFin = true;
+    }
     public void BattleFinish()
     {
         if (battleFin)
