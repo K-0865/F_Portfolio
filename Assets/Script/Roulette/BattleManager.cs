@@ -92,10 +92,10 @@ public class BattleManager : MonoBehaviour
     public IEnumerator StageClear(float sec)
     {
         State = GameState.WIN;
-        win_text.SetActive(true);
+        //win_text.SetActive(true);
         GManager.instance.player.Exp += 5;
         //GameObject battleStartText = Instantiate(win_text);
-        //Clear.SetActive(true);
+        Clear.SetActive(true);
         yield return new WaitForSeconds(sec);
         Clear.GetComponent<SceneLoad>().OnClickLoadScene();
         battleFin = true;
