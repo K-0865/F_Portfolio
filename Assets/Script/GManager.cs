@@ -19,7 +19,6 @@ public class GManager : MonoBehaviour
     private int lastWidth = 0;
     private int lastHeight = 0;
     public int mapid = 101;
-    //public int[] character_pos { get; private set; } = new[] {102000,1000 };
     public int[] character_pos = new[] {102000,101000,0,0,0 };
     public SaveData player = new SaveData();
     private string Savefile;
@@ -69,8 +68,6 @@ public class GManager : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(this.gameObject);
             InitSaveData();
-            //Initialize_PlyerData();
-            //Set_PlayerData("level",Level);
         }
         else
         {
@@ -80,8 +77,7 @@ public class GManager : MonoBehaviour
     }
     private void Update()
     {
-
-         var width = Screen.width; var height = Screen.height;
+        var width = Screen.width; var height = Screen.height;
  
          if (lastWidth != width) // if the user is changing the width
          {

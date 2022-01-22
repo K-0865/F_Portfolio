@@ -5,7 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoad : MonoBehaviour
 {
-    public AudioClip sound1;
+    [SerializeField] private AudioClip sound;
+
+    [SerializeField] private float Sec;
     AudioSource _audioSource;
     
     void Start () {
@@ -17,20 +19,20 @@ public class SceneLoad : MonoBehaviour
     [SerializeField] private SceneObject Scene;
     public void OnClickLoadScene()
     {
-        StartCoroutine(SceneDelay(2));
+        StartCoroutine(SceneDelay());
     }
 
     public void BattleStageLoad(int mapid)
     {
         GManager.instance.mapid = mapid;
         SceneManager.LoadScene(Scene);
-        _audioSource.PlayOneShot(sound1);
+        _audioSource.PlayOneShot(sound);
     }
     
-    IEnumerator SceneDelay (float sec)
+    IEnumerator SceneDelay ()
     {        
-        _audioSource.PlayOneShot(sound1);
-        yield return new WaitForSeconds(sec);
+        _audioSource.PlayOneShot(sound);
+        yield return new WaitForSeconds(Sec);
         
         SceneManager.LoadScene(Scene);
         Debug.Log("SceneLoad");

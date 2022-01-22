@@ -15,9 +15,9 @@ public class Exp_Charge: MonoBehaviour
     private float GageMax;
     private float GageBefore;
     
-    int PL = GManager.instance.player.Level;
     private void Start()
     {
+        int PL = GManager.instance.player.Level;
         for (int i = 0; i < _ExpTable.ExpTable.Count; i++)
         {
             if (_ExpTable.ExpTable[i].PlayerLevel == PL)
@@ -42,11 +42,8 @@ public class Exp_Charge: MonoBehaviour
             }
         }
         Exp_Gage.value = GManager.instance.player.Exp;
-        //GManager.instance.player.Level;
         PlayerLevel.text = GManager.instance.player.Level.ToString();
-        
-        //GManager.instance.savePlayerData();
-        //GManager.instance.loadPlayerData();
+
     }
     
 }

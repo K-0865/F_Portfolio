@@ -242,7 +242,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c318a5d6e6f4bc343ad83283a88d8d98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sound1: {fileID: 8300000, guid: 0d68232952eeabf4390ac87dff0cea72, type: 3}
+  sound: {fileID: 8300000, guid: 0d68232952eeabf4390ac87dff0cea72, type: 3}
+  Sec: 2
   Scene:
     m_SceneName: PreHome
 --- !u!61 &254954980
