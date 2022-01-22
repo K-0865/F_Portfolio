@@ -2239,8 +2239,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c318a5d6e6f4bc343ad83283a88d8d98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sound: {fileID: 0}
-  Sec: 0
+  sound: {fileID: 8300000, guid: afbd4433d86060a489756fa53f431580, type: 3}
+  Sec: 0.6
   Scene:
     m_SceneName: PreBattle
 --- !u!114 &698703005
