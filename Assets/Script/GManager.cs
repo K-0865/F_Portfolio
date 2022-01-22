@@ -139,7 +139,7 @@ public class GManager : MonoBehaviour
         Savefile = "/savedata.json";
     }
     
-    //Json書き出し用のテスト
+    //Json書き出し用
     public void savePlayerData(SaveData saveData)
     {
         string jsonstr = JsonUtility.ToJson(saveData,false);
@@ -152,9 +152,10 @@ public class GManager : MonoBehaviour
         Debug.Log(jsonstr);
     }
 
-    //Json読み込み用のテスト
+    //Json読み込み用
     public SaveData Load()
     {
+        //ファイルがある場合は書き込む
         if (File.Exists(Application.dataPath + Savefile))
         {
             string datastr = "";
@@ -166,6 +167,7 @@ public class GManager : MonoBehaviour
             return JsonUtility.FromJson<SaveData>(datastr);
         }
 
+        //無かったら初期化
         player.Level = 1;
         player.Exp = 0;
         player.Stamina = 0;

@@ -24,9 +24,16 @@ public class SceneLoad : MonoBehaviour
 
     public void BattleStageLoad(int mapid)
     {
+        StartCoroutine(BattleDelay(mapid));
+    }
+
+    IEnumerator BattleDelay(int mapid)
+    {
+        _audioSource.PlayOneShot(sound);
+        yield return new WaitForSeconds(Sec);
+        
         GManager.instance.mapid = mapid;
         SceneManager.LoadScene(Scene);
-        _audioSource.PlayOneShot(sound);
     }
     
     IEnumerator SceneDelay ()
