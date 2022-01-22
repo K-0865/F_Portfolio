@@ -33,6 +33,11 @@ public class Character_Present_Data : MonoBehaviour
     public List<Buff_list> _buffs;
     public List<Buff_list> _debuffs;
     [SerializeField] private GameObject effect_buff;
+    
+    [SerializeField] private AudioClip sound;
+
+    [SerializeField] private float Sec;
+    AudioSource _audioSource;
     private void Start()
     {
         _battleManager = GameObject.Find("BattleManager").GetComponent<BattleManager>();
@@ -45,6 +50,7 @@ public class Character_Present_Data : MonoBehaviour
         _attack = sn.CharacterStatus.Attack;
         _def = sn.CharacterStatus.Defence;
         _attack_speed = sn.CharacterStatus.AttackSpeed;
+        _audioSource = GetComponent<AudioSource>();
         // damage_get = damagepop.gameObject.GetComponent<TextMeshPro>();
         //_sDMG.Init(123,new Vector3(0,0,0));
         //_sDMG.Init(124,new Vector3(0,0,0));
@@ -189,11 +195,18 @@ public class Character_Present_Data : MonoBehaviour
             if (this.tag == "Player")
             {
                 _battleManager.allies_alive_count--;
+                //DieSound();
             }
             else
             {
                 _battleManager.enemies_alive_count--;
+                //DieSound();
             }
         }
+    }
+    
+    private void DieSound ()
+    {        
+        _audioSource.PlayOneShot(sound);
     }
 }
