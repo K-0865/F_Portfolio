@@ -187,6 +187,7 @@ public class Character_Present_Data : MonoBehaviour
                 if (_ID == _battleManager._AliveID[i])
                 {
                     _battleManager._AliveID.RemoveAt(i);
+                    break;
                 }
             }
             Destroy(this.gameObject.GetComponent<Collider2D>());
@@ -195,12 +196,12 @@ public class Character_Present_Data : MonoBehaviour
             if (this.tag == "Player")
             {
                 _battleManager.allies_alive_count--;
-                //DieSound();
+                DieSound();
             }
             else
             {
                 _battleManager.enemies_alive_count--;
-                //DieSound();
+                DieSound();
             }
         }
     }

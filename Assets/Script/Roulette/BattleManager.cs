@@ -45,7 +45,7 @@ public class BattleManager : MonoBehaviour
     {
         //GameObject.Find("BattleManger").GetComponent<BattleManager>().isPause = true;
         _audioSource = GetComponent<AudioSource>();
-        //StartCoroutine(StartSound());
+        StartCoroutine(StartSound());
     }
 
     IEnumerator StartSound()
