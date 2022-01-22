@@ -35,10 +35,23 @@ public class BattleManager : MonoBehaviour
     [SerializeField] private GameObject Roulette;
     [SerializeField] private GameObject Clear;
     [SerializeField] private Canvas Canvas;
+    
+    [SerializeField] private AudioClip sound;
+
+    [SerializeField] private float Sec;
+    AudioSource _audioSource;
+    
     void Start()
     {
         //GameObject.Find("BattleManger").GetComponent<BattleManager>().isPause = true;
+        _audioSource = GetComponent<AudioSource>();
+        //StartCoroutine(StartSound());
+    }
 
+    IEnumerator StartSound()
+    {
+        yield return new WaitForSeconds(Sec);
+        _audioSource.PlayOneShot(sound);
     }
 
     // Update is called once per frame
