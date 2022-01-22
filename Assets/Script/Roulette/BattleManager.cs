@@ -93,6 +93,7 @@ public class BattleManager : MonoBehaviour
     {
         State = GameState.WIN;
         win_text.SetActive(true);
+        GManager.instance.player.Exp += 5;
         //GameObject battleStartText = Instantiate(win_text);
         //Clear.SetActive(true);
         yield return new WaitForSeconds(sec);

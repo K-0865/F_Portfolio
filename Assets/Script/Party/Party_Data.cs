@@ -27,9 +27,14 @@ public class Party_Data : MonoBehaviour
     private List<int> Rarity = null;
 
     private int Rarerity;
+    
+    [SerializeField] private AudioClip sound;
+    [SerializeField] private float Sec;
+    AudioSource _audioSource;
 
     void Start()
     {
+        _audioSource = GetComponent<AudioSource>();
         for (int i = 0; i < _Party_POS_IMG.Count; i++)
         {
             _Party_Pos_Frame[i].sprite = Resources.Load<Sprite>("Party_UI/EmptyFrame");
@@ -82,6 +87,8 @@ public class Party_Data : MonoBehaviour
         _UI_Select.SetActive(true);
         _Character_Frame.SetActive(true);
         _Character_BackGround.SetActive(true);
+
+        StartCoroutine(soundDelay());
         
         _TryChange = num;
     }
@@ -121,6 +128,8 @@ public class Party_Data : MonoBehaviour
             
         }
 
+        StartCoroutine(soundDelay());
+        
         _CharacterScreen.SetActive(false);
         _UI_Party.SetActive(true);
         _PartyScreen.SetActive(true);
@@ -130,4 +139,13 @@ public class Party_Data : MonoBehaviour
         _TryChange = 0;
     }
     
+    IEnumerator soundDelay ()
+    {        
+        _audioSource.PlayOneShot(sound);
+        yield return new WaitForSeconds(Sec);
+        
+        Debug.Log("SceneLoad");
+    }
+
 }
+
