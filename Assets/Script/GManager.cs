@@ -11,7 +11,8 @@ using System.IO;
     public int Exp = 0;
     public int Coin = 0;
     public int Jewel = 0;
-} 
+}
+
 
 public class GManager : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class GManager : MonoBehaviour
     public int mapid = 101;
     public int[] character_pos = new[] {102000,101000,0,0,0 };
     public SaveData player = new SaveData();
+    public List<bool> _Map_Logs = new List<bool>() {false, false, false, false, false};
     private string Savefile;
 
     public int []get_char_pos()
@@ -61,6 +63,7 @@ public class GManager : MonoBehaviour
     private void Awake()
     {
         Force_Camera();
+        F_Size();
         //Screen.SetResolution(2436,1125,false);
         Application.targetFrameRate = 60; // 60fpsに設定
         if (instance == null)
@@ -75,7 +78,7 @@ public class GManager : MonoBehaviour
         }
 
     }
-    private void Update()
+    private void F_Size()
     {
         var width = Screen.width; var height = Screen.height;
  
