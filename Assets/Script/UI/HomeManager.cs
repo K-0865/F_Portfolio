@@ -5,58 +5,83 @@ using UnityEngine.UI;
 public class HomeManager : MonoBehaviour
 {
 	[SerializeField] private bool still = false;
+	[SerializeField] private bool FullScreen = false;
 	[SerializeField] private int toggle = 1;
 	
 	[SerializeField] private Image background;
 	[SerializeField] private Image Character;
 	[SerializeField] private GameObject menuobject;
 	[SerializeField] private GameObject other;
-	public void Start()
-	{
-	}
+	[SerializeField] private GameObject returnobject;
 
+	public void ScreenSwitch()
+	{
+		if (FullScreen)
+		{
+			if (still)
+			{
+				Character.enabled = false;
+			}
+			menuobject.SetActive(false);
+			other.SetActive(false);
+			returnobject.SetActive(true);
+			FullScreen = false;
+		}
+		else
+		{
+			if (still == false)
+			{
+				Character.enabled = true;
+			}
+			menuobject.SetActive(true);
+			other.SetActive(true);
+			returnobject.SetActive(false);
+			FullScreen = true;
+		}
+	}
+	
 	public void StillSwitch()
 	{
 		if (still)
 		{
+			still = false;
 			switch (toggle)
 			{
 				case 1:
-					background.sprite = Resources.Load<Sprite>("MainMenu/1010_Still");
+					Character.sprite = Resources.Load<Sprite>("Home/1010_Ruby");
+					background.sprite = Resources.Load<Sprite>("Home/Home1");
 					break;
 				case 2:
-					background.sprite = Resources.Load<Sprite>("MainMenu/1120_Ruby_Sapphire");
+					Character.sprite = Resources.Load<Sprite>("Home/1020_Sapphire");
+					background.sprite = Resources.Load<Sprite>("Home/DSC00549_1");
 					break;
 				case 3:
-					background.sprite = Resources.Load<Sprite>("MainMenu/1000_set");
+					Character.sprite = Resources.Load<Sprite>("Home/1030_Emerald");
+					background.sprite = Resources.Load<Sprite>("Home/DSC00295");
 					break;
 				default:
 					break;
 			}
 			Character.enabled = true;
-			still = false;
 		}
 		else
 		{
+			still = true;
 			switch (toggle)
 			{
 				case 1:
-					Character.sprite = Resources.Load<Sprite>("MainMenu/1010_Ruby");
-					toggle = 2;
+					background.sprite = Resources.Load<Sprite>("Home/1010_Still");
 					break;
 				case 2:
-					Character.sprite = Resources.Load<Sprite>("MainMenu/1020_Sapphire");
-					toggle = 3;
+					background.sprite = Resources.Load<Sprite>("Home/1120_Ruby_Sapphire");
 					break;
 				case 3:
-					Character.sprite = Resources.Load<Sprite>("MainMenu/1210_Ruby");
-					toggle = 1;
+					background.sprite = Resources.Load<Sprite>("Home/1000_set");
 					break;
 				default:
 					break;
 			}
 			Character.enabled = false;
-			still = true;
 		}
 	}
 
@@ -65,19 +90,38 @@ public class HomeManager : MonoBehaviour
 		switch (toggle)
 		{
 			case 1:
-				Character.sprite = Resources.Load<Sprite>("MainMenu/1010_Ruby");
+				Character.sprite = Resources.Load<Sprite>("Home/1020_Sapphire");
+				background.sprite = Resources.Load<Sprite>("Home/DSC00549_1");
 				toggle = 2;
 				break;
 			case 2:
-				Character.sprite = Resources.Load<Sprite>("MainMenu/1020_Sapphire");
+				Character.sprite = Resources.Load<Sprite>("Home/1030_Emerald");
+				background.sprite = Resources.Load<Sprite>("Home/DSC00295");
 				toggle = 3;
 				break;
 			case 3:
-				Character.sprite = Resources.Load<Sprite>("MainMenu/1210_Ruby");
+				Character.sprite = Resources.Load<Sprite>("Home/1010_Ruby");
+				background.sprite = Resources.Load<Sprite>("Home/Home1");
 				toggle = 1;
 				break;
 			default:
 				break;
+		}
+		if(still){
+			switch (toggle)
+			{
+				case 1:
+					background.sprite = Resources.Load<Sprite>("Home/1010_Still");
+					break;
+				case 2:
+					background.sprite = Resources.Load<Sprite>("Home/1120_Ruby_Sapphire");
+					break;
+				case 3:
+					background.sprite = Resources.Load<Sprite>("Home/1000_set");
+					break;
+				default:
+					break;
+			}
 		}
 	}
 	public void CharacterChangeL()
@@ -85,19 +129,39 @@ public class HomeManager : MonoBehaviour
 		switch (toggle)
 		{
 			case 1:
-				Character.sprite = Resources.Load<Sprite>("MainMenu/1210_Ruby");
+				Character.sprite = Resources.Load<Sprite>("Home/1030_Emerald");
+				background.sprite = Resources.Load<Sprite>("Home/DSC00295");
 				toggle = 3;
 				break;
 			case 2:
-				Character.sprite = Resources.Load<Sprite>("MainMenu/1210_Ruby");
+				Character.sprite = Resources.Load<Sprite>("Home/1010_Ruby");
+				background.sprite = Resources.Load<Sprite>("Home/Home1");
 				toggle = 1;
 				break;
 			case 3:
-				Character.sprite = Resources.Load<Sprite>("MainMenu/1210_Ruby");
+				Character.sprite = Resources.Load<Sprite>("Home/1020_Sapphire");
+				background.sprite = Resources.Load<Sprite>("Home/DSC00549_1");
 				toggle = 2;
 				break;
 			default:
 				break;
+		}
+		
+		if(still){
+			switch (toggle)
+			{
+				case 1:
+					background.sprite = Resources.Load<Sprite>("Home/1010_Still");
+					break;
+				case 2:
+					background.sprite = Resources.Load<Sprite>("Home/1120_Ruby_Sapphire");
+					break;
+				case 3:
+					background.sprite = Resources.Load<Sprite>("Home/1000_set");
+					break;
+				default:
+					break;
+			}
 		}
 	}
 }
