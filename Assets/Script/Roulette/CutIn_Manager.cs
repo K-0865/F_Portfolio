@@ -15,6 +15,7 @@ public class CutIn_Manager : MonoBehaviour
     [SerializeField] private Canvas Canvas;
 
     [SerializeField] private List<Vector3> pos;
+    [SerializeField] Vector3 _scale;
 
     private bool[] D_Slider = {false, false };
     private bool[] D_Slider_Done = {false, false };
@@ -95,6 +96,11 @@ public class CutIn_Manager : MonoBehaviour
         for (int x = 0; x < Frame.Count; x++)
         {
             pos.Add(Frame[x].transform.localPosition);
+            _scale = new Vector3(1,1,1);
+            Frame[x].transform.localScale = _scale;
+            Dialogue[x].transform.localScale = _scale;
+            Dialogue[x].transform.localPosition = new Vector3(-147f, Dialogue[x].transform.localPosition.y,
+                Dialogue[x].transform.localPosition.z);
             // pos[x] = Character[x].transform.localPosition;
             // Debug.Log(pos[x]);
         }
@@ -133,6 +139,9 @@ public class CutIn_Manager : MonoBehaviour
                     // Frame[num].transform.localPosition = new Vector3(780f,
                     //     Frame[num].transform.localPosition.y, Frame[num].transform.localPosition.z);
                     Dialogue[num].transform.localScale = Frame[num].transform.localScale;
+                    Dialogue[num].transform.localScale = new Vector3(-1f, 1f, 1f);
+                    Dialogue[num].transform.localPosition = new Vector3(98f, Dialogue[num].transform.localPosition.y,
+                        Dialogue[num].transform.localPosition.z);
                     
                 }
                 else
@@ -140,9 +149,9 @@ public class CutIn_Manager : MonoBehaviour
                     Frame[num].transform.localScale = new Vector3(1f, 1f, 1f);
                     // Frame[num].transform.localPosition = new Vector3(740f,
                     //     Frame[num].transform.localPosition.y, Frame[num].transform.localPosition.z);
-                    Dialogue[num].transform.localScale = Frame[num].transform.localScale;
-                   
-
+                    Dialogue[num].transform.localScale = new Vector3(1f, 1f, 1f);
+                    Dialogue[num].transform.localPosition = new Vector3(-147f, Dialogue[num].transform.localPosition.y,
+                             Dialogue[num].transform.localPosition.z);
                 }
 
             
@@ -151,16 +160,16 @@ public class CutIn_Manager : MonoBehaviour
             }
             
             Character[num].enabled = true;
-            if (Dialogue[num].transform.localScale.x == -1f)
-            {
-                Dialogue[num].transform.localPosition = new Vector3(98f, Dialogue[num].transform.localPosition.y,
-                    Dialogue[num].transform.localPosition.z);
-            }
-            else if (Dialogue[num].transform.localScale.x == 1f)
-            {
-                Dialogue[num].transform.localPosition = new Vector3(-147f, Dialogue[num].transform.localPosition.y,
-                    Dialogue[num].transform.localPosition.z);
-            }
+            // if (Dialogue[num].transform.localScale.x == -1f)
+            // {
+            //     Dialogue[num].transform.localPosition = new Vector3(98f, Dialogue[num].transform.localPosition.y,
+            //         Dialogue[num].transform.localPosition.z);
+            // }
+            // else if (Dialogue[num].transform.localScale.x == 1f)
+            // {
+            //     Dialogue[num].transform.localPosition = new Vector3(-147f, Dialogue[num].transform.localPosition.y,
+            //         Dialogue[num].transform.localPosition.z);
+            // }
             
             
         }
@@ -236,6 +245,10 @@ public class CutIn_Manager : MonoBehaviour
             Character[i].enabled = false;
             Dialogue[i].enabled = false;
             Frame[i].transform.localPosition = new Vector3(pos[Frame.Count-1].x,pos[Frame.Count-1].y);
+            Frame[i].transform.localScale = _scale;
+            Dialogue[i].transform.localScale = _scale;
+            Dialogue[i].transform.localPosition = new Vector3(-147f, Dialogue[i].transform.localPosition.y,
+                Dialogue[i].transform.localPosition.z);
         }
         //Canvas.enabled = true;
         _battleManager.isPause = false;
