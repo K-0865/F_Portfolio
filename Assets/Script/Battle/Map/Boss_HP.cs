@@ -32,7 +32,6 @@ public class Boss_HP : MonoBehaviour
         else
         {
             Boss_Slider.SetActive(false);
-        
         }
     }
 }

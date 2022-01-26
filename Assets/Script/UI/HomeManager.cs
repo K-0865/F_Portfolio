@@ -49,7 +49,7 @@ public class HomeManager : MonoBehaviour
 			{
 				case 1:
 					Character.sprite = Resources.Load<Sprite>("Home/1010_Ruby");
-					background.sprite = Resources.Load<Sprite>("Home/Home1");
+					background.sprite = Resources.Load<Sprite>("Home/Barracks");
 					break;
 				case 2:
 					Character.sprite = Resources.Load<Sprite>("Home/1020_Sapphire");
@@ -73,10 +73,10 @@ public class HomeManager : MonoBehaviour
 					background.sprite = Resources.Load<Sprite>("Home/1010_Still");
 					break;
 				case 2:
-					background.sprite = Resources.Load<Sprite>("Home/1120_Ruby_Sapphire");
+					background.sprite = Resources.Load<Sprite>("Home/black");
 					break;
 				case 3:
-					background.sprite = Resources.Load<Sprite>("Home/1000_set");
+					background.sprite = Resources.Load<Sprite>("Home/black");
 					break;
 				default:
 					break;
@@ -114,10 +114,10 @@ public class HomeManager : MonoBehaviour
 					background.sprite = Resources.Load<Sprite>("Home/1010_Still");
 					break;
 				case 2:
-					background.sprite = Resources.Load<Sprite>("Home/1120_Ruby_Sapphire");
+					background.sprite = Resources.Load<Sprite>("Home/black");
 					break;
 				case 3:
-					background.sprite = Resources.Load<Sprite>("Home/1000_set");
+					background.sprite = Resources.Load<Sprite>("Home/black");
 					break;
 				default:
 					break;
@@ -154,10 +154,10 @@ public class HomeManager : MonoBehaviour
 					background.sprite = Resources.Load<Sprite>("Home/1010_Still");
 					break;
 				case 2:
-					background.sprite = Resources.Load<Sprite>("Home/1120_Ruby_Sapphire");
+					background.sprite = Resources.Load<Sprite>("Home/black");
 					break;
 				case 3:
-					background.sprite = Resources.Load<Sprite>("Home/1000_set");
+					background.sprite = Resources.Load<Sprite>("Home/black");
 					break;
 				default:
 					break;

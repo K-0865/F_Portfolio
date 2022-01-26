@@ -2294,7 +2294,7 @@ PrefabInstance:
     - target: {fileID: 8226851292555321964, guid: 286ee9bf48e76bc46b418a8ba72a8e7e,
         type: 3}
       propertyPath: mapid
-      value: 103
+      value: 105
       objectReference: {fileID: 0}
     - target: {fileID: 8226851292555321964, guid: 286ee9bf48e76bc46b418a8ba72a8e7e,
         type: 3}
@@ -4314,7 +4314,7 @@ MonoBehaviour:
   _start_enemy: 0
   _gamestart: 0
   battleFin: 0
-  _GageMax: 50
+  _GageMax: 30
   boss: 0
   Roulette: {fileID: 1161845926}
   Clear: {fileID: 2128298025}
@@ -7369,6 +7369,7 @@ MonoBehaviour:
   _roulette: {fileID: 1161845927}
   Canvas: {fileID: 1342111512}
   pos: []
+  _scale: {x: 0, y: 0, z: 0}
 --- !u!1 &1532303818
 GameObject:
   m_ObjectHideFlags: 0

@@ -77,7 +77,7 @@ MonoBehaviour:
     patternID: 0
     BossFlag: 0
   - ID: 101000
-    CharacterName: "\u30EB\u30D3"
+    CharacterName: "\u30A2\u30A4\u30C8"
     HP: 20000
     Attack: 2000
     Defence: 600
@@ -98,7 +98,7 @@ MonoBehaviour:
     patternID: 8101000
     BossFlag: 0
   - ID: 102000
-    CharacterName: "\u30B5\u30D5\u30A1\u30A4\u30A2"
+    CharacterName: "\u30EC\u30A4"
     HP: 25000
     Attack: 1500
     Defence: 600
@@ -183,8 +183,8 @@ MonoBehaviour:
     patternID: 8001000
     BossFlag: 0
   - ID: 104000
-    CharacterName: D
-    HP: 50000
+    CharacterName: "\u30B9\u30D4\u30CD\u30EB"
+    HP: 100000
     Attack: 2000
     Defence: 500
     Speed: 100
