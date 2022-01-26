@@ -7,7 +7,7 @@ public class char_factory : MonoBehaviour
 {
     //プレイヤーデータの読み込み
     [SerializeField]
-    private GManager player_data;
+    private GameManeger player_data;
     [SerializeField]
     private int [] player_pos;
     private BattleManager _battleManager;
@@ -21,9 +21,9 @@ public class char_factory : MonoBehaviour
     void Start()
     {
         
-        player_data = GManager.instance;
-        //player_pos = GameObject.Find("GManager").GetComponent<GManager.Player>().character_pos;
-        player_pos = GManager.instance.get_char_pos();
+        player_data = GameManeger.instance;
+        //player_pos = GameObject.Find("GameManeger").GetComponent<GameManeger.Player>().character_pos;
+        player_pos = GameManeger.instance.get_char_pos();
         
         
         _battleManager = GetComponentInParent<BattleManager>();
