@@ -100,9 +100,10 @@ public class Result : MonoBehaviour
         while (_ExpNow >= _ExpNext)
         {
             _LevelNow++;
-            LevelUp = true;
-            _ExpNow = _ExpTable.ExpTable[_LevelNow].Exp;
-            _ExpNext = _ExpTable.ExpTable[_LevelNow+1].PlayerLevel;
+            Debug.Log(_LevelNow);
+            //LevelUp = true;
+            //_ExpNow = _ExpTable.ExpTable[_LevelNow].Exp;
+            //_ExpNext = _ExpTable.ExpTable[_LevelNow+1].PlayerLevel;
         }
         // while (_ExpNow <= _ExpNext && _ExpPlus != 0)
         // {

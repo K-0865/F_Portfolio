@@ -13,6 +13,7 @@ public class CutIn_Manager : MonoBehaviour
     [SerializeField] private BattleManager _battleManager;
     [SerializeField] private Roulette _roulette;
     [SerializeField] private Canvas Canvas;
+    [SerializeField] private SaveData PlayerData;
 
     [SerializeField] private List<Vector3> pos;
     [SerializeField] Vector3 _scale;
@@ -248,9 +249,12 @@ public class CutIn_Manager : MonoBehaviour
             Frame[i].transform.localScale = _scale;
             Dialogue[i].transform.localScale = _scale;
             Dialogue[i].transform.localPosition = new Vector3(-147f, Dialogue[i].transform.localPosition.y,
-                Dialogue[i].transform.localPosition.z);
+            Dialogue[i].transform.localPosition.z);
         }
         //Canvas.enabled = true;
+        //GManager.instance.savePlayerData(SaveData);
+        _battleManager.RoulletStart = false;
+        _battleManager.BattleUI_Mask();
         _battleManager.isPause = false;
     }
 }

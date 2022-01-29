@@ -32,6 +32,7 @@ public class BattleManager : MonoBehaviour
     public bool battleFin = false;
     public int _GageMax;
     public bool boss = true;
+    public bool RoulletStart = false;
     [SerializeField] private GameObject Roulette;
     [SerializeField] private GameObject Clear;
     [SerializeField] private Canvas Canvas;
@@ -40,6 +41,8 @@ public class BattleManager : MonoBehaviour
 
     [SerializeField] private float Sec;
     AudioSource _audioSource;
+
+    [SerializeField] private GameObject Mask_UI;
 
     private bool ExpPlus;
     
@@ -65,7 +68,9 @@ public class BattleManager : MonoBehaviour
         //一定回数敵＋味方キャラの攻撃が当たったらRouletteを呼び出す
         if (hit_count > _GageMax)
         {
+            RoulletStart = true;
             StartCoroutine("callRoulette",16f) ;
+            BattleUI_Mask();
             //Canvas.enabled = false;
         }
 
@@ -157,6 +162,18 @@ public class BattleManager : MonoBehaviour
         else
         {
             isPause = true;
+        }
+    }
+
+    public void BattleUI_Mask()
+    {
+        if (RoulletStart)
+        {
+            Mask_UI.SetActive(false);
+        }
+        else
+        {
+            Mask_UI.SetActive(true);
         }
     }
 }

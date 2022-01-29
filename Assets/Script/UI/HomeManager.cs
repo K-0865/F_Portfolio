@@ -53,11 +53,11 @@ public class HomeManager : MonoBehaviour
 					break;
 				case 2:
 					Character.sprite = Resources.Load<Sprite>("Home/1020_Sapphire");
-					background.sprite = Resources.Load<Sprite>("Home/DSC00549_1");
+					background.sprite = Resources.Load<Sprite>("Home/Barracks");
 					break;
 				case 3:
 					Character.sprite = Resources.Load<Sprite>("Home/1030_Emerald");
-					background.sprite = Resources.Load<Sprite>("Home/DSC00295");
+					background.sprite = Resources.Load<Sprite>("Home/Barracks");
 					break;
 				default:
 					break;
@@ -91,17 +91,17 @@ public class HomeManager : MonoBehaviour
 		{
 			case 1:
 				Character.sprite = Resources.Load<Sprite>("Home/1020_Sapphire");
-				background.sprite = Resources.Load<Sprite>("Home/DSC00549_1");
+				background.sprite = Resources.Load<Sprite>("Home/Barracks");
 				toggle = 2;
 				break;
 			case 2:
 				Character.sprite = Resources.Load<Sprite>("Home/1030_Emerald");
-				background.sprite = Resources.Load<Sprite>("Home/DSC00295");
+				background.sprite = Resources.Load<Sprite>("Home/Barracks");
 				toggle = 3;
 				break;
 			case 3:
 				Character.sprite = Resources.Load<Sprite>("Home/1010_Ruby");
-				background.sprite = Resources.Load<Sprite>("Home/Home1");
+				background.sprite = Resources.Load<Sprite>("Home/Barracks");
 				toggle = 1;
 				break;
 			default:
@@ -130,17 +130,17 @@ public class HomeManager : MonoBehaviour
 		{
 			case 1:
 				Character.sprite = Resources.Load<Sprite>("Home/1030_Emerald");
-				background.sprite = Resources.Load<Sprite>("Home/DSC00295");
+				background.sprite = Resources.Load<Sprite>("Home/Barracks");
 				toggle = 3;
 				break;
 			case 2:
 				Character.sprite = Resources.Load<Sprite>("Home/1010_Ruby");
-				background.sprite = Resources.Load<Sprite>("Home/Home1");
+				background.sprite = Resources.Load<Sprite>("Home/Barracks");
 				toggle = 1;
 				break;
 			case 3:
 				Character.sprite = Resources.Load<Sprite>("Home/1020_Sapphire");
-				background.sprite = Resources.Load<Sprite>("Home/DSC00549_1");
+				background.sprite = Resources.Load<Sprite>("Home/Barracks");
 				toggle = 2;
 				break;
 			default:

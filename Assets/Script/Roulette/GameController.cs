@@ -10,7 +10,6 @@ enum State{
 }
 
 public class GameController : MonoBehaviour {
-    public Button[] stopbt;
 
     public GameObject[] reels;
     ReelController[] rc = new ReelController[3];
@@ -45,7 +44,7 @@ public class GameController : MonoBehaviour {
 
     //リールがスタートするまでStopボタンを押せないようにする
     public void Stopbt_f(int id){
-        stopbt [id].interactable = false;
+        //stopbt [id].interactable = false;
     }
 
     //リールの生成

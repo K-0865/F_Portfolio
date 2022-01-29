@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using UnityEngine.SceneManagement;
 
 [Serializable]　public class SaveData
 {
@@ -75,6 +76,11 @@ public class GManager : MonoBehaviour
         else
         {
             Destroy(this.gameObject);
+        }
+
+        if(SceneManager.GetActiveScene().name == "PreHome")
+        {
+            Load();
         }
 
     }

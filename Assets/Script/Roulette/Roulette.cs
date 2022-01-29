@@ -25,12 +25,20 @@ public class Roulette : MonoBehaviour
     [SerializeField] private int _AliveCharacterID1;
     [SerializeField] private int _AliveCharacterID2;
     [SerializeField] private int _AliveCharacterID3;
+    [SerializeField] private int _AliveCharacterID4;
+    [SerializeField] private int _AliveCharacterID5;
 
     [SerializeField] private int _AliveBoss;
 
     [SerializeField] private GameObject Reel_l;
     [SerializeField] private GameObject Reel_C;
     [SerializeField] private GameObject Reel_R;
+
+    [SerializeField] private float DisplayStart;
+    [SerializeField] private float ReelL;
+    [SerializeField] private float ReelC;
+    [SerializeField] private float ReelR;
+    [SerializeField] private float Reelfin;
 
     [SerializeField] private GameObject RouletteManager;
 
@@ -58,6 +66,13 @@ public class Roulette : MonoBehaviour
                 case 2:
                     _AliveCharacterID3 = _battleManager._AliveID[i];
                     break;
+                case 3:
+                    _AliveCharacterID4 = _battleManager._AliveID[i];
+                    break;
+                case 4:
+                    _AliveCharacterID5 = _battleManager._AliveID[i];
+                    break;
+
             }
         }
 
@@ -71,14 +86,20 @@ public class Roulette : MonoBehaviour
             if ((data.Dialogue[i].CharacterID1 == _AliveCharacterID1 ||
                  data.Dialogue[i].CharacterID1 == _AliveCharacterID2 ||
                  data.Dialogue[i].CharacterID1 == _AliveCharacterID3) && (
+                 //data.Dialogue[i].CharacterID1 == _AliveCharacterID4) && (
+                 //data.Dialogue[i].CharacterID1 == _AliveCharacterID5) && (
                     data.Dialogue[i].CharacterID2 == _AliveCharacterID1 ||
                     data.Dialogue[i].CharacterID2 == _AliveCharacterID2 ||
                     data.Dialogue[i].CharacterID2 == _AliveCharacterID3 ||
+                    //data.Dialogue[i].CharacterID2 == _AliveCharacterID4 ||
+                    //data.Dialogue[i].CharacterID2 == _AliveCharacterID5 ||
                     data.Dialogue[i].CharacterID2 == 0 ||
                     data.Dialogue[i].CharacterID2 == null) && (
                     data.Dialogue[i].CharacterID3 == _AliveCharacterID1 ||
                     data.Dialogue[i].CharacterID3 == _AliveCharacterID2 ||
                     data.Dialogue[i].CharacterID3 == _AliveCharacterID3 ||
+                    //data.Dialogue[i].CharacterID3 == _AliveCharacterID4 ||
+                    //data.Dialogue[i].CharacterID3 == _AliveCharacterID5 ||
                     data.Dialogue[i].CharacterID3 == 0 ||
                     data.Dialogue[i].CharacterID3 == null)
             )
@@ -175,12 +196,12 @@ public class Roulette : MonoBehaviour
         Debug.Log(data.Dialogue[target3].Dialogue);
 
         //リールの操作に関するコルーチン
-        StartCoroutine("DisplaySlot", 2);
+        StartCoroutine("DisplaySlot", DisplayStart);
         Debug.Log("スタート");
-        StartCoroutine("ReelStopL", 4);
-        StartCoroutine("ReelStopC", 5);
-        StartCoroutine("ReelStopR", 6);
-        StartCoroutine("ReelFin", 15);
+        StartCoroutine("ReelStopL", ReelL);
+        StartCoroutine("ReelStopC", ReelC);
+        StartCoroutine("ReelStopR", ReelR);
+        StartCoroutine("ReelFin", Reelfin);
 
     }
 
