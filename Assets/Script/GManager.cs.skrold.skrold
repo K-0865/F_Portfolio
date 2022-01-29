@@ -14,9 +14,9 @@ using System.IO;
 }
 
 
-public class GameManeger : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
-    public static GameManeger instance = null;
+    public static GameManager instance = null;
     private int lastWidth = 0;
     private int lastHeight = 0;
     public int mapid = 101;

@@ -16,40 +16,40 @@ MonoBehaviour:
   - PlayerLevel: 1
     Exp: 0
   - PlayerLevel: 2
-    Exp: 5
+    Exp: 6
   - PlayerLevel: 3
-    Exp: 8
+    Exp: 13
   - PlayerLevel: 4
-    Exp: 10
-  - PlayerLevel: 5
-    Exp: 12
-  - PlayerLevel: 6
-    Exp: 15
-  - PlayerLevel: 7
-    Exp: 18
-  - PlayerLevel: 8
     Exp: 20
-  - PlayerLevel: 9
-    Exp: 23
-  - PlayerLevel: 10
-    Exp: 26
-  - PlayerLevel: 11
-    Exp: 28
-  - PlayerLevel: 12
-    Exp: 31
-  - PlayerLevel: 13
+  - PlayerLevel: 5
+    Exp: 27
+  - PlayerLevel: 6
     Exp: 34
+  - PlayerLevel: 7
+    Exp: 41
+  - PlayerLevel: 8
+    Exp: 48
+  - PlayerLevel: 9
+    Exp: 55
+  - PlayerLevel: 10
+    Exp: 62
+  - PlayerLevel: 11
+    Exp: 69
+  - PlayerLevel: 12
+    Exp: 76
+  - PlayerLevel: 13
+    Exp: 83
   - PlayerLevel: 14
-    Exp: 36
+    Exp: 90
   - PlayerLevel: 15
-    Exp: 39
+    Exp: 97
   - PlayerLevel: 16
-    Exp: 42
+    Exp: 104
   - PlayerLevel: 17
-    Exp: 44
+    Exp: 111
   - PlayerLevel: 18
-    Exp: 47
+    Exp: 118
   - PlayerLevel: 19
-    Exp: 50
+    Exp: 125
   - PlayerLevel: 20
-    Exp: 52
+    Exp: 132

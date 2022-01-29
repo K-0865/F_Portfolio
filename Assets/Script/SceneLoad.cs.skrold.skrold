@@ -32,7 +32,7 @@ public class SceneLoad : MonoBehaviour
         _audioSource.PlayOneShot(sound);
         yield return new WaitForSeconds(Sec);
         
-        GameManeger.instance.mapid = mapid;
+        GameManager.instance.mapid = mapid;
         SceneManager.LoadScene(Scene);
     }
     

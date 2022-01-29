@@ -15,13 +15,22 @@ public class Exp_Charge: MonoBehaviour
     private float GageMax;
     private float GageBefore;
     
+    private int _LevelNext;
     private void Start()
     {
-        int PL = GManager.instance.player.Level;
+        int PL = GameManager.instance.player.Level;
+        
+        while (GameManager.instance.player.Exp >= _ExpTable.ExpTable[PL].Exp)
+        {
+            PL++;
+            GameManager.instance.player.Level = PL;
+        }
+        
         for (int i = 0; i < _ExpTable.ExpTable.Count; i++)
         {
             if (_ExpTable.ExpTable[i].PlayerLevel == PL)
             {
+
                 if (1 == PL)
                 {
                     Exp_Gage.minValue = 0;
@@ -41,9 +50,7 @@ public class Exp_Charge: MonoBehaviour
                 }
             }
         }
-        Exp_Gage.value = GManager.instance.player.Exp;
-        PlayerLevel.text = GManager.instance.player.Level.ToString();
-
+        Exp_Gage.value = GameManager.instance.player.Exp;
+        PlayerLevel.text = GameManager.instance.player.Level.ToString();
     }
-    
 }

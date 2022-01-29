@@ -11,9 +11,9 @@ public class Quest_Canvas : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        for (int i = 0; i < GameManager.instance._Map_Logs.Count; i++)
+        for (int i = 0; i < GManager.instance._Map_Logs.Count; i++)
         {
-            List<bool> foo = GameManager.instance._Map_Logs;
+            List<bool> foo = GManager.instance._Map_Logs;
             if (foo[i])
             {
                 _star[i].sprite = Resources.Load<Sprite>("QuestSelect_UI/Clear_Star");

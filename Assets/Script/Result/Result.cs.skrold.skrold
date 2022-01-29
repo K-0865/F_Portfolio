@@ -35,7 +35,7 @@ public class Result : MonoBehaviour
 
         LevelUp = false;
 
-        _LevelNow = GameManeger.instance.player.Level;
+        _LevelNow = GameManager.instance.player.Level;
         Debug.Log(_ExpTable.ExpTable.Count + "con");
         
         for (int i = 0; i < _ExpTable.ExpTable.Count; i++)
@@ -61,7 +61,7 @@ public class Result : MonoBehaviour
         _ExpNow = _ExpTable.ExpTable[_LevelNow].Exp;
         _ExpNext = _ExpTable.ExpTable[_LevelNow+1].PlayerLevel;
         _Level.text = "Level:" + _LevelNow;
-        _Coin.text = "Coin:" + GameManeger.instance.player.Coin;
+        _Coin.text = "Coin:" + GameManager.instance.player.Coin;
         for (int i = 0; i < _ExpPlus; i++)
         {
             StartCoroutine("CalcExp", 0.1);
@@ -104,10 +104,5 @@ public class Result : MonoBehaviour
             _ExpNow = _ExpTable.ExpTable[_LevelNow].Exp;
             _ExpNext = _ExpTable.ExpTable[_LevelNow+1].PlayerLevel;
         }
-        // while (_ExpNow <= _ExpNext && _ExpPlus != 0)
-        // {
-        //     _LevelNow++;
-        //     LevelUp = true;
-        // }
     }
 }

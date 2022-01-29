@@ -40,12 +40,15 @@ public class BattleManager : MonoBehaviour
 
     [SerializeField] private float Sec;
     AudioSource _audioSource;
+
+    private bool ExpPlus;
     
     void Start()
     {
         //GameObject.Find("BattleManger").GetComponent<BattleManager>().isPause = true;
         _audioSource = GetComponent<AudioSource>();
         StartCoroutine(StartSound());
+        ExpPlus = true;
     }
 
     IEnumerator StartSound()
@@ -112,10 +115,14 @@ public class BattleManager : MonoBehaviour
         State = GameState.WIN;
         win_text.SetActive(true);        
         lose_text.SetActive(false);
-        GameManeger.instance._Map_Logs[GameManeger.instance.mapid - 101] = true;
-        GameManeger.instance.player.Exp += 5;
+        GameManager.instance._Map_Logs[GameManager.instance.mapid - 101] = true;
         //GameObject battleStartText = Instantiate(win_text);
         Clear.SetActive(true);
+        if (ExpPlus)
+        {
+            GameManager.instance.player.Exp += 5;
+            ExpPlus = false;
+        }
         yield return new WaitForSeconds(sec);
         Clear.GetComponent<SceneLoad>().OnClickLoadScene();
         battleFin = true;
@@ -125,7 +132,7 @@ public class BattleManager : MonoBehaviour
         State = GameState.WIN;
         win_text.SetActive(false);
         lose_text.SetActive(true);
-        //GameManeger.instance.player.Exp += 5;
+        //GameManager.instance.player.Exp += 5;
         //GameObject battleStartText = Instantiate(win_text);
         Clear.SetActive(true);
         yield return new WaitForSeconds(sec);
@@ -152,6 +159,4 @@ public class BattleManager : MonoBehaviour
             isPause = true;
         }
     }
-
-    
 }

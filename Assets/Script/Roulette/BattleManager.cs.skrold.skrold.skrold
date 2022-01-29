@@ -115,12 +115,12 @@ public class BattleManager : MonoBehaviour
         State = GameState.WIN;
         win_text.SetActive(true);        
         lose_text.SetActive(false);
-        GameManager.instance._Map_Logs[GameManager.instance.mapid - 101] = true;
+        GManager.instance._Map_Logs[GManager.instance.mapid - 101] = true;
         //GameObject battleStartText = Instantiate(win_text);
         Clear.SetActive(true);
         if (ExpPlus)
         {
-            GameManager.instance.player.Exp += 5;
+            GManager.instance.player.Exp += 5;
             ExpPlus = false;
         }
         yield return new WaitForSeconds(sec);
@@ -132,7 +132,7 @@ public class BattleManager : MonoBehaviour
         State = GameState.WIN;
         win_text.SetActive(false);
         lose_text.SetActive(true);
-        //GameManager.instance.player.Exp += 5;
+        //GManager.instance.player.Exp += 5;
         //GameObject battleStartText = Instantiate(win_text);
         Clear.SetActive(true);
         yield return new WaitForSeconds(sec);

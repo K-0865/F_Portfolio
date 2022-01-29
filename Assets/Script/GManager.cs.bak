@@ -5,9 +5,9 @@ using UnityEngine;
 using System.IO;
 
 
-public class GManager : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
-    public static GManager instance = null;
+    public static GameManager instance = null;
     
     //全sceneに置くことで次のsceneに移ったときに破棄されずにこのオブジェクトが各シーンを移動できるようにする
     private void Awake()
