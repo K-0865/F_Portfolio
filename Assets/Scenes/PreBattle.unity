@@ -1897,7 +1897,11 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   _enemy_clone:
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -2136,7 +2140,7 @@ PrefabInstance:
     - target: {fileID: 8226851292555321964, guid: 286ee9bf48e76bc46b418a8ba72a8e7e,
         type: 3}
       propertyPath: mapid
-      value: 105
+      value: 106
       objectReference: {fileID: 0}
     - target: {fileID: 8226851292555321964, guid: 286ee9bf48e76bc46b418a8ba72a8e7e,
         type: 3}
@@ -6763,6 +6767,12 @@ MonoBehaviour:
   _battleManager: {fileID: 843994334}
   _roulette: {fileID: 1161845927}
   Canvas: {fileID: 1342111512}
+  PlayerData:
+    Level: 1
+    Stamina: 0
+    Exp: 0
+    Coin: 0
+    Jewel: 0
   pos: []
   _scale: {x: 0, y: 0, z: 0}
 --- !u!1 &1532303818

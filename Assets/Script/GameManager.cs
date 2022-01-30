@@ -20,9 +20,9 @@ public class GameManager : MonoBehaviour
     private int lastWidth = 0;
     private int lastHeight = 0;
     public int mapid = 101;
-    public int[] character_pos = new[] {102000,101000,0,0,0 };
+    public int[] character_pos = new[] {102000,101000,103000,0,0 };
     public SaveData player = new SaveData();
-    public List<bool> _Map_Logs = new List<bool>() {false, false, false, false, false};
+    public List<bool> _Map_Logs = new List<bool>() {false, false, false, false, false, false};
     private string Savefile;
 
     public int []get_char_pos()

@@ -120,7 +120,10 @@ public class BattleManager : MonoBehaviour
         State = GameState.WIN;
         win_text.SetActive(true);        
         lose_text.SetActive(false);
-        GameManager.instance._Map_Logs[GameManager.instance.mapid - 101] = true;
+        if (GameManager.instance.mapid != 106)
+        {
+            GameManager.instance._Map_Logs[GameManager.instance.mapid - 101] = true;
+        }
         //GameObject battleStartText = Instantiate(win_text);
         Clear.SetActive(true);
         if (ExpPlus)
