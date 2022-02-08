@@ -6,7 +6,6 @@ using UnityEngine;
 
 [System.Serializable]
 
-
 public class Skill_Data
 {
     public int SkillID;

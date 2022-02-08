@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2dfadb6ec9a4d9428605fb8a0fa50f8, type: 3}
+  m_Name: Story_1
+  m_EditorClassIdentifier: 
+  Story11:
+  - Speaker: "\u30A2\u30A4\u30C8"
+    StoryDialogue: aaaaaa
+    CharaSprite1: 1010_Ruby
+    CharaSprite2: 
+    Auto: 0
+  - Speaker: "\u30EC\u30A4"
+    StoryDialogue: bbbbbb
+    CharaSprite1: 1010_Ruby
+    CharaSprite2: 1020_Sapphire
+    Auto: 0.1
+  - Speaker: "\u30E9\u30AF\u30C8"
+    StoryDialogue: cccccc
+    CharaSprite1: 1030_Emerald
+    CharaSprite2: 1020_Sapphire
+    Auto: 0.2
+  - Speaker: "\u30B9\u30D4\u30CD\u30EB"
+    StoryDialogue: dddddd
+    CharaSprite1: 1040_Spinel
+    CharaSprite2: 
+    Auto: 0.3
+  - Speaker: "\u30B9\u30D4\u30CD\u30EB"
+    StoryDialogue: eeeeeee
+    CharaSprite1: 
+    CharaSprite2: 1040_Spinel
+    Auto: 0.4
+  - Speaker: "\u30A2\u30A4\u30C8"
+    StoryDialogue: ffffffffffffffffffff
+    CharaSprite1: 1040_Spinel
+    CharaSprite2: 1010_Ruby
+    Auto: 0.5

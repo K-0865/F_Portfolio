@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Result.unity
     guid: 98a714dbabd93d34eb7e479efce66312
+  - enabled: 1
+    path: Assets/Scenes/Story_Select.unity
+    guid: f0caa494c24104841a6c00ea4f3c9fe3
   m_configObjects: {}
