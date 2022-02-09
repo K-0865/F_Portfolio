@@ -10,6 +10,7 @@ public class TextWriter : MonoBehaviour
     [SerializeField]private StoryUI uitext;
     [SerializeField] private Image Character1;
     [SerializeField] private Image Character2;
+    [SerializeField] private Text Name;
     [SerializeField] private Image AutoButton;
 
     [SerializeField] private Story_1 Story1_1;
@@ -25,14 +26,17 @@ public class TextWriter : MonoBehaviour
         if (uitext.AutoForward)
         {
             uitext.AutoForward = false;
+            uitext.AutoForward_2 = false;
             AutoButton.color = new Color32(255, 255, 255, 255);
             Debug.Log(uitext.AutoForward);
         }
         else
         {
             uitext.AutoForward = true;
+            uitext.AutoForward_2 = true;
             AutoButton.color = new Color32(155, 155, 155, 255);
             Debug.Log(uitext.AutoForward);
+           
         }
     }
     
@@ -46,7 +50,8 @@ public class TextWriter : MonoBehaviour
     IEnumerator Auto()
     {
         while (uitext.playing) yield return 0;
-        while (uitext.isAuto()) yield return 0;
+        while (!uitext.isAuto()) yield return 0;
+        StartCoroutine("Skip");
     }
 
     // 文章を表示させるコルーチン
@@ -72,6 +77,15 @@ public class TextWriter : MonoBehaviour
             else
             {
                 Character2.enabled = false;
+            }
+
+            if(Story1_1.Story11[i].Speaker != "")
+            {
+                Name.enabled = true;
+            }
+            else
+            {
+                Name.enabled = false;  
             }
 
             uitext.DrawText(Story1_1.Story11[i].Speaker, Story1_1.Story11[i].StoryDialogue);

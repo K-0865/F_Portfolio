@@ -11,15 +11,34 @@ public class StoryUI : MonoBehaviour
 
     public bool playing = false;
     public bool AutoForward = false;
+    public bool AutoForward_2 = false;
     [SerializeField]private float textSpeed = 0.1f;
-
+    [SerializeField]private TextWriter textwriter;
     public bool isClick = false;
+    
 
     void Start(){}
-
-    public void OnClickSkip()
+    void Update(){
+        if(AutoForward && AutoForward_2){
+            if (!playing)
+            {
+                StartCoroutine("WaitTime",2f);
+                AutoForward_2 = false;
+            }
+        }
+    }
+    IEnumerator WaitTime (float sec){
+        yield return new WaitForSeconds(sec);
+        if(AutoForward){
+            isClick = true;
+            AutoForward_2 = true;
+        }
+}
+        public void OnClickSkip()
     {
-        isClick = true;
+        if(!playing){
+            isClick = true;
+        }
     }
     
     // クリックで次のページを表示させるための関数
@@ -30,6 +49,7 @@ public class StoryUI : MonoBehaviour
 
     public bool isAuto()
     {
+        //AutoForward = true;
         return true;
     }
     // テキストを生成する関数
@@ -50,7 +70,7 @@ public class StoryUI : MonoBehaviour
             time += Time.deltaTime;
 
             // クリックされると一気に表示
-            if ( isClicked() ) break;
+           if ( isClicked() ) break;
 
             int len = Mathf.FloorToInt ( time / textSpeed);
             if (len > text.Length) break;
