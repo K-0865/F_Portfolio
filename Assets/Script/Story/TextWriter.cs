@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class TextWriter : MonoBehaviour
 {
     [SerializeField]private StoryUI uitext;
+    [SerializeField] private Story_Log Log;
     [SerializeField] private Image Character1;
     [SerializeField] private Image Character2;
     [SerializeField] private Text Name;
@@ -89,6 +90,7 @@ public class TextWriter : MonoBehaviour
             }
 
             uitext.DrawText(Story1_1.Story11[i].Speaker, Story1_1.Story11[i].StoryDialogue);
+            Log.DrawLog(Story1_1.Story11[i].Speaker, Story1_1.Story11[i].StoryDialogue,i);
             yield return StartCoroutine("Skip");
             uitext.isClick = false;
         }
