@@ -14,11 +14,12 @@ public class Story_Log : MonoBehaviour
 
     [SerializeField] private int Max = 0;
     [SerializeField] private float Lognum;
-    [SerializeField] private Slider Log_Slider;
-
-    public void isSlider()
+    [SerializeField] private Scrollbar _scroll;
+    
+    public void isScroll()
     {
-        Lognum = Log_Slider.value * -100*Max;
+        //Lognum = Log_Slider.value * -100*Max;
+        Lognum = 100+(((Max-2)*-300)* _scroll.value);
         this.gameObject.transform.localPosition = new Vector3(100,Lognum);
     }
 
@@ -26,7 +27,10 @@ public class Story_Log : MonoBehaviour
     {
         var parent = this.transform;
         Max = num;
-        
+        if (Max > 2){
+            _scroll.size = (float)1 / (Max -1);
+        }
+       
         list_LogName.Add(Instantiate(LogName,Vector3.zero, Quaternion.identity, parent));
         list_LogText.Add(Instantiate(LogText,Vector3.zero, Quaternion.identity, parent));
         
@@ -35,10 +39,11 @@ public class Story_Log : MonoBehaviour
     
         list_LogName[num].transform.localPosition = new Vector2(-750f,-220f+300*num);
         list_LogText[num].transform.localPosition = new Vector2(-100f,-350f+300*num);
-
+        _scroll.value = 1;
+        isScroll();
         if (num <= 4)
         {
-            Log_Slider.enabled = true;
+            _scroll.enabled = true;
         }
 
     }
