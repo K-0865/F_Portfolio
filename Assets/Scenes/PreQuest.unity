@@ -1985,12 +1985,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0444711dc12a3be48b92db973e2eca51, type: 3}
---- !u!4 &1151463242 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1740393900280793403, guid: 0444711dc12a3be48b92db973e2eca51,
-    type: 3}
-  m_PrefabInstance: {fileID: 1151463241}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1234835841
 GameObject:
   m_ObjectHideFlags: 0
@@ -3214,6 +3208,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1665272636}
   m_CullTransparentMesh: 1
+--- !u!4 &1778396553 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8175871888330141283, guid: 0444711dc12a3be48b92db973e2eca51,
+    type: 3}
+  m_PrefabInstance: {fileID: 1151463241}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1827066025
 GameObject:
   m_ObjectHideFlags: 0
@@ -3496,7 +3496,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5fdd9c88e8aa425418eb8eacef1c16bc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5b5b7bfd8a1b2b945a97e063e028973b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3931,7 +3931,7 @@ RectTransform:
   - {fileID: 943400896}
   - {fileID: 2024952307}
   - {fileID: 1524014798}
-  - {fileID: 1151463242}
+  - {fileID: 1778396553}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -32,7 +32,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Result.unity
     guid: 98a714dbabd93d34eb7e479efce66312
+  - enabled: 0
+    path: 
+    guid: f0caa494c24104841a6c00ea4f3c9fe3
+  - enabled: 1
+    path: Assets/Scenes/Story.unity
+    guid: 1bf6dba98b57ce0479557b737f118726
   - enabled: 1
     path: Assets/Scenes/Story_Select.unity
-    guid: f0caa494c24104841a6c00ea4f3c9fe3
+    guid: ffb39dd0e10f2464b961b229b7ea477e
   m_configObjects: {}
