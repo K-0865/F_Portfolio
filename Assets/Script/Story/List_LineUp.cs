@@ -4,15 +4,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Story_Log : MonoBehaviour
+public class List_LineUp : MonoBehaviour
 {
-    [SerializeField] private Text LogName;
-    [SerializeField] private Text LogText;
+    [SerializeField] private GameObject Banner;
+    private Text BannerText;
     
-    List<Text> list_LogName = new List<Text>();
-    List<Text> list_LogText = new List<Text>();
+    List<GameObject> list_Banner = new List<GameObject>();
 
     [SerializeField] private int Max = 0;
+    [SerializeField] private int BannerSize;
+    [SerializeField] private float LineUp_X;
+    [SerializeField] private float LineUp_Y;
     [SerializeField] private float Lognum;
     [SerializeField] private Scrollbar _scroll;
     
@@ -23,7 +25,7 @@ public class Story_Log : MonoBehaviour
         this.gameObject.transform.localPosition = new Vector3(100,Lognum);
     }
 
-    public void DrawLog(string name,string text,int num)
+    public void DrawLog(string text,int num)
     {
         var parent = this.transform;
         Max = num;
@@ -31,14 +33,13 @@ public class Story_Log : MonoBehaviour
             _scroll.size = (float)1 / (Max -1);
         }
        
-        list_LogName.Add(Instantiate(LogName,Vector3.zero, Quaternion.identity, parent));
-        list_LogText.Add(Instantiate(LogText,Vector3.zero, Quaternion.identity, parent));
-        
-        list_LogName[num].text = name;
-        list_LogText[num].text = text;
+        list_Banner.Add(Instantiate(Banner,Vector3.zero, Quaternion.identity, parent));
+        Text BannerText = Banner.GetComponentInChildren<Text>();
+
+        BannerText.text = text;
     
-        list_LogName[num].transform.localPosition = new Vector2(-750f,-220f+300*num);
-        list_LogText[num].transform.localPosition = new Vector2(-100f,-350f+300*num);
+        list_Banner[num].transform.localPosition = new Vector2(-750f,-220f+300*num);
+
         _scroll.value = 1;
         isScroll();
         if (num <= 4)

@@ -417,7 +417,6 @@ MonoBehaviour:
   LogText: {fileID: 6284935054039607033, guid: a70df8f6fb360a14faa9bd17b8ccb2af, type: 3}
   Max: 0
   Lognum: 0
-  Log_Slider: {fileID: 0}
   _scroll: {fileID: 1735380345}
 --- !u!4 &322733475
 Transform:
